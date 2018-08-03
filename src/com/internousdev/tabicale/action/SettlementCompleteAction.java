@@ -5,6 +5,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+/*
+import com.internousdev.tabicale.dao.CartInfoDAO;
+import com.internousdev.tabicale.dao.PurchaseHistoryInfoDAO;
+import com.internousdev.tabicale.dto.CartInfoDTO;
+import com.internousdev.tabicale.dto.DestinationInfoDTO;
+import com.internousdev.tabicale.dto.PurchaseHistoryInfoDTO;
+*/
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
