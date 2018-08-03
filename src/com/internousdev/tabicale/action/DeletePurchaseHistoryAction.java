@@ -56,6 +56,7 @@ public class DeletePurchaseHistoryAction extends ActionSupport implements Sessio
 	public String getCategoryId() {
 		return categoryId;
 	}
+
 	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
 	}
@@ -63,12 +64,15 @@ public class DeletePurchaseHistoryAction extends ActionSupport implements Sessio
 	public String getSex() {
 		return sex;
 	}
+
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+
 	public Map<String, Object> getSession() {
 		return session;
 	}
+
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
