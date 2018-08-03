@@ -1,4 +1,4 @@
-package com.internousdev.TabiCale.dto;
+package com.internousdev.tabicale.dto;
 
 import java.util.Date;
 

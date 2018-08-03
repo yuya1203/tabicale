@@ -1,12 +1,12 @@
-package com.internousdev.TabiCale.dao;
+package com.internousdev.tabicale.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.internousdev.TabiCale.dto.UserInfoDTO;
-import com.internousdev.TabiCale.util.DBConnector;
+import com.internousdev.tabicale.dto.UserInfoDTO;
+import com.internousdev.tabicale.util.DBConnector;
 
 public class UserInfoDAO {
 	public int createUser(String familyName, String firstName, String familyNameKana,

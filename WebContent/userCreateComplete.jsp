@@ -25,9 +25,9 @@
 
 <%-- <s:submit value="ログアウト" class="submit_btn" onclick="goLogoutAction();"/> --%>
 
-		<%-- 	<div>
+		<div>
 				<p><a href='<s:url action="GoHomeAction"/>'>ホームへ</a></p>
-			</div> --%>
+			</div>
 <div id="footer">
 
 </div>

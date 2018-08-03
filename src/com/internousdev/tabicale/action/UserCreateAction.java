@@ -1,4 +1,4 @@
-package com.internousdev.TabiCale.action;
+package com.internousdev.tabicale.action;
 
 import java.util.ArrayList;
 import java.util.List;

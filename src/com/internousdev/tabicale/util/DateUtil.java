@@ -1,4 +1,4 @@
-package com.internousdev.TabiCale.util;
+package com.internousdev.tabicale.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,4 +11,3 @@ public class DateUtil {
 		return simpleDateFormat.format(date);
 	}
 }
-

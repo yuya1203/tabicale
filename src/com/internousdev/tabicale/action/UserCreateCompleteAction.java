@@ -1,10 +1,10 @@
-package com.internousdev.TabiCale.action;
+package com.internousdev.tabicale.action;
 
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.TabiCale.dao.UserInfoDAO;
+import com.internousdev.tabicale.dao.UserInfoDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware{

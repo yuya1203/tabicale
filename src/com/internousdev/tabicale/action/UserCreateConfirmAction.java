@@ -1,4 +1,4 @@
-package com.internousdev.TabiCale.action;
+package com.internousdev.tabicale.action;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.TabiCale.util.InputChecker;
+import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
 
