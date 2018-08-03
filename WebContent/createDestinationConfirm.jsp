@@ -2,18 +2,18 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<!-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> -->
+
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 
-<!-- <link rel="stylesheet" href="./css/style.css"> -->
+<link rel="stylesheet" href="./css/style.css">
 <title>宛先情報確認</title>
 </head>
 <body>
-<!-- <jsp:include page="header.jsp" /> -->
+<jsp:include page="header.jsp" />
 <div id="contents">
 <h1>宛先情報確認画面</h1>
 <s:form action="CreateDestinationCompleteAction">
@@ -69,6 +69,6 @@
 </s:form>
 </div>
 
-<!-- <s:include value="footer.jsp" />-->
+<s:include value="footer.jsp" />
 </body>
 </html>
