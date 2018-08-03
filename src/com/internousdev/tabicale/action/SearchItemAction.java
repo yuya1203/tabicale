@@ -17,17 +17,29 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 	private Map<String, Object> session;
 	public String execute() {
 		String result = ERROR;
-		
+
 		InputChecker inputChecker = new Input Checker();
 		if(keywords==null){
 			keywords="";
 		}
 		keywordsErrorMessageList = inputchecker.doCheck("検索ワード", keywords, 0 ,16, true, true, true, true, false, true, true);
-		
+
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 		switch(categoryId){
 			case "1":
-				productInfoDtoList = productInfoDAO.getProductInfoListAll(keywords.replaceAll("　", " "))
+				productInfoDtoList = productInfoDAO.getProductInfoListAll(keywords.replaceAll("　", " ").split(" "));
+				result = SUCCESS;
+				break;
+
+			default:
+				productInfoDtoList = productInfoDAO.getProductInfoListByKeywords(kwywords.relaceAll("　"," ").aplit(" "), categoryId);
+				result = SUCCESS;
+				break;
+		}
+
+		Iterator<ProductInfoDTO> iterator = productInfoDtoList.iterator();
+		if(!(iterator.hasNext())){
+
 		}
 	}
 }
