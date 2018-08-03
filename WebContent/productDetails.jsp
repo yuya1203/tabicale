@@ -24,7 +24,7 @@
                 <table class="vertical-list-table-mini">
                      <tr>
                            <th scope= "row"><s:label value="商品名"/></th>
-                                 <td><s:property value="%{#session.productName}"/></td>
+                           <td><s:property value="%{#session.productName}"/></td>
                      </tr>
                      <tr>
                           <th scope="row"><s:label value="商品目かな"/></th>
@@ -48,7 +48,7 @@
                      </tr>
                  </table>
             </div>
-     </div>
+       </div>
      <s:hiden name="productId" value="%{#session.productId}"/>
      <s:hiden name="productName" value="%{#session.productName}"/>
      <s:hiden name="productNameKana" value="%{#session.productNameKana}"/>
