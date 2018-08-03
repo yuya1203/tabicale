@@ -8,16 +8,9 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tabicale.dao.CartInfoDAO;
 import com.internousdev.tabicale.dao.DestinationInfoDAO;
-import com.internousdev.tabicale.dao.MCategoryDAO;
-import com.internousdev.tabicale.dao.ProductInfoDAO;
-import com.internousdev.tabicale.dao.UserInfoDAO;
 import com.internousdev.tabicale.dto.DestinationInfoDTO;
 import com.internousdev.tabicale.dto.MCategoryDTO;
-import com.internousdev.tabicale.dto.ProductInfoDTO;
-import com.internousdev.tabicale.dto.UserInfoDTO;
-import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport implements SessionAware{
@@ -98,10 +91,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 						 || (loginId.equals("admin10") && password.equals("admin10"))
 						 || (loginId.equals("admin11") && password.equals("admin11"))
 						 || (loginId.equals("admin12") && password.equals("admin12"))){
-					result = "";
+
 					ProductInfoDAO productInfoDao = new ProductInfoDAO();
 					productInfoDtoList = productInfoDao.getProductInfoList();
 					session.put("productInfoDtoList", productInfoDtoList);
+					result = "admin";
 
 				}else{
 					result = SUCCESS;
