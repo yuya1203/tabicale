@@ -15,7 +15,7 @@
 
 <div id ="contents">
 <h1>宛先情報入力画面</h1>
-<!--
+
 <s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 	<div class="error">
 		<div class="error-message">
@@ -71,7 +71,7 @@
 		</div>
 	</div>
 </s:if>
--->
+
 <s:form action="CreateDestinationConfirmAction">
 <table class="vertical-list-table">
 <tr>
@@ -93,12 +93,12 @@
 	<th scope="row"><s:label value="名ふりがな"/></th>
 	<td><s:textfield name="firstNameKana" class="txt" /></td>
 </tr>
-<!--
+
 <tr>
 	<th scope="row"><s:label value="性別"/></th>
 	<td><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></td>
 </tr>
--->
+
 <tr>
 	<th scope="row"><s:label value="住所"/></th>
 	<td><s:textfield name="userAddress" class="txt" /></td>
