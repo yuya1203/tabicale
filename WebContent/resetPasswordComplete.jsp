@@ -1,20 +1,59 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="text/javascript" href="./js/smoothscroll.js">
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<title>フッター</title>
-</head>
-<body>
-<div id="footer">
-Copyright 2018 TABICALE allrights reserved.
-</div>
-</body>
-</html>
+package com.internousdev.tabicale.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.sampleweb.dao.UserInfoDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ResetPasswordCompleteAction extends ActionSupport implements SessionAware {
+	private String categoryId;
+	private String loginId;
+	private String password;
+	private Map<String, Object> session;
+
+	public String execute() {
+		String result = ERROR;
+		UserInfoDAO userInfoDAO = new UserInfoDAO();
+		int count = userInfoDAO.resetPassword(String.valueOf(session.get("loginId")), String.valueOf(session.get("newPassword")));
+		if (count > 0) {
+			result = SUCCESS;
+		} else {
+			result = ERROR;
+		}
+		return result;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+}
