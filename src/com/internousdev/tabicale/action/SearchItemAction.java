@@ -8,14 +8,12 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.MCategoryDAO;
-import com.internousdev.tabicale.dao.ProductInfoDAO;
 import com.internousdev.tabicale.dto.MCategoryDTO;
 import com.internousdev.tabicale.dto.PaginationDTO;
-import com.internousdev.tabicale.ProductInfoDTO;
 import com.internousdev.tabicale.util.InputChecker;
-import com.internousdev.tabicale.util.Pagination;
-
 import com.opensymphony.xwork2.ActionSupport;
+
+import javafx.scene.control.Pagination;
 
 public class SearchItemAction extends ActionSupport implements SessionAware {
 	private String categoryId;
@@ -28,7 +26,7 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 	public String execute() {
 		String result = ERROR;
 
-		InputChecker inputChecker = new Input Checker();
+		InputChecker inputChecker = new InputChecker();
 		if(keywords==null){
 			keywords="";
 		}
