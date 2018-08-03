@@ -1,9 +1,19 @@
 package com.internousdev.tabicale.action;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.tabicale.dao.MCategoryDAO;
+import com.internousdev.tabicale.dao.ProductInfoDAO;
+import com.internousdev.tabicale.dto.MCategoryDTO;
+import com.internousdev.tabicale.dto.PaginationDTO;
+import com.internousdev.tabicale.ProductInfoDTO;
+import com.internousdev.tabicale.util.InputChecker;
+import com.internousdev.tabicale.util.Pagination;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -32,14 +42,88 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 				break;
 
 			default:
-				productInfoDtoList = productInfoDAO.getProductInfoListByKeywords(kwywords.relaceAll("　"," ").aplit(" "), categoryId);
+				productInfoDtoList = productInfoDAO.getProductInfoListByKeywords(keywords.replaceAll("　"," ").split(" "), categoryId);
 				result = SUCCESS;
 				break;
 		}
 
 		Iterator<ProductInfoDTO> iterator = productInfoDtoList.iterator();
 		if(!(iterator.hasNext())){
-
+			productInfoDtoList = null;
 		}
+		session.put("keywordsErrorMessageList", keywordsErrorMessageList);
+
+		if(!session.countainsKey("mCategoryList")) {
+			MCategoryDAO mCategoryDao = new MCategoryDAO();
+			mCategoryDtoList = mCategoryDao.getMCategoryList();
+			session.put("mCategoryDtoList",  mCategoryDtoList);
+		}
+
+		if(!(productInfoDtoList==null)){
+			Pagination pagination = new Pagination();
+			PaginationDTO paginationDTO = new Pagination();
+			if(pageNo==null){
+				paginationDTO = pagination.initialize(productInfoDtoList, 9);
+			} else {
+				paginationDTO = pagination.getPage(productInfoDtoList, 9, pageNo);
+			}
+
+			session.put("paroductInfoDtoList",  paginationDTO.getCurrentProductInfoPage());
+			session.put("totalPageSize",  paginationDTO.getTotalPageSize());
+			session.put("currentPageNo",  paginationDTO.getCurrentPageNo());
+			session.put("totalRecordSize",  paginationDTO.getTotalRecordSize());
+			session.put("startRecordNo",  paginationDTO.getStartRecordNo());
+			session.put("endRecordNo",  paginationDTO.getEndRecordNo());
+			session.put("previousPage",  paginationDTO.getPreviousPage());
+			session.put("previousPageNo",  paginationDTO.getPreviousPageNo());
+			session.put("nextPage",  paginationDTO.getNextPage());
+			session.put("nextPageNo",  paginationDTO.getNextPageNo());
+		} else {
+			session.put("productInfoDtoList",  null);
+		}
+		return result;
 	}
+	public String getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+	public String getKeywords() {
+		return keywords;
+	}
+	public void setKeywords(String keywords) {
+		this.keywords = keywords;
+	}
+	public String getPageNo() {
+		return pageNo;
+	}
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+	}
+	public List<MCategoryDTO> getmCategoryDtoList() {
+		return mCategoryDtoList;
+	}
+	public void setmCategoryDtoList(List<MCategoryDTO> mCategoryDtoList) {
+		this.mCategoryDtoList = mCategoryDtoList;
+	}
+	public List<String> getKeywordsErrorMessageList() {
+		return keywordsErrorMessageList;
+	}
+	public void setKeywordsErrorMessageList(List<String> keywordsErrorMessageList) {
+		this.keywordsErrorMessageList = keywordsErrorMessageList;
+	}
+	public List<ProductInfoDTO> getProductInfoDtoList() {
+		return productInfoDtoList;
+	}
+	public void setProductInfoDtoList(List<ProductInfoDTO> productInfoDtoList) {
+		this.productInfoDtoList = productInfoDtoList;
+	}
+	public Map<String, Object> getSession() {
+		return session;
+	}
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
 }
