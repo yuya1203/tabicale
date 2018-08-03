@@ -1,59 +1,20 @@
-package com.internousdev.tabicale.action;
-
-import java.util.Map;
-
-import org.apache.struts2.interceptor.SessionAware;
-
-import com.internousdev.sampleweb.dao.UserInfoDAO;
-import com.opensymphony.xwork2.ActionSupport;
-
-public class ResetPasswordCompleteAction extends ActionSupport implements SessionAware {
-	private String categoryId;
-	private String loginId;
-	private String password;
-	private Map<String, Object> session;
-
-	public String execute() {
-		String result = ERROR;
-		UserInfoDAO userInfoDAO = new UserInfoDAO();
-		int count = userInfoDAO.resetPassword(String.valueOf(session.get("loginId")), String.valueOf(session.get("newPassword")));
-		if (count > 0) {
-			result = SUCCESS;
-		} else {
-			result = ERROR;
-		}
-		return result;
-	}
-
-	public String getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
-	}
-
-	public String getLoginId() {
-		return loginId;
-	}
-
-	public void setLoginId(String loginId) {
-		this.loginId = loginId;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Map<String, Object> getSession() {
-		return session;
-	}
-
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
-	}
-}
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/style.css">
+<title>パスワード再設定完了</title>
+</head>
+<body>
+<jsp:include page="header.jsp" />
+<div id="contents">
+<h1>パスワード再設定完了画面</h1>
+	パスワード再設定が完了しました。
+	</div>
+<s:include value="footer.jsp"/>
+</body>
+</html>}
