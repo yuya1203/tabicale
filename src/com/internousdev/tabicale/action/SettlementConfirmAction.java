@@ -70,13 +70,13 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 			dto.setProductName(String.valueOf(productNameList[i]));
 			dto.setProductNameKana(String.valueOf(productNameKanaList[i]));
 			dto.setImageFilePath(String.valueOf(imageFilePathList[i]));
-			dto.setImageGileName(String.valueOf(imageFileNameList[i]));
+			dto.setImageFileName(String.valueOf(imageFileNameList[i]));
 			dto.setPrice(Integer.parseInt(String.valueOf(priceList[i])));
 			dto.setReleaseCompany(String.valueOf(releaseCompanyList[i]));
 			try{
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 				dto.setReleaseDate(sdf.parse(String.valueOf(releaseDateList[i])));
-			}catch(SQLException e){
+			}catch(ParseException e){
 				e.printStackTrace();
 			}
 			dto.setProductCount(Integer.parseInt(String.valueOf(productCountList[i])));
