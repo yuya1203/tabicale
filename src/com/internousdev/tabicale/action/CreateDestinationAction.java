@@ -12,7 +12,7 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 	private String categoryId;
 	private static final String MALE = "男性";
 	private static final String FEMALE ="女性";
-	private String defaultSexValue = "MALE";
+	private String defaultSexValue =  MALE;
 	private String sex;
 	private List<String> sexList = new ArrayList<String>();
 	private Map<String, Object> session;
