@@ -151,17 +151,17 @@
 		<result name="error">admin.jsp</result>
 	</action>
 
-	<action name="AddProductConfirmAction" class="com.internousdev.tabicale.action.AddProductAction" method="execute">
+	<action name="AddProductConfirmAction" class="com.internousdev.tabicale.action.AddProductConfirmAction" method="execute">
 		<result name="success">addProductConfirmAction.jsp</result>
 		<result name="error">addProductAction.jsp</result>
 	</action>
 
-	<action name="AddProductCompleteAction" class="com.internousdev.tabicale.action.AddProductAction" method="execute">
+	<action name="AddProductCompleteAction" class="com.internousdev.tabicale.action.AddProductCompleteAction" method="execute">
 		<result name="success">addProductCompleteAction.jsp</result>
 		<result name="error">addProductConfirmAction.jsp</result>
 	</action>
 
-	<action name="DeleteProductAction" class="com.internousdev.tabicale.action.AddProductAction" method="execute">
+	<action name="DeleteProductAction" class="com.internousdev.tabicale.action.DeleteProductAction" method="execute">
 		<result name="success">admin.jsp</result>
 	</action>
 
