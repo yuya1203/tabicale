@@ -253,4 +253,28 @@ public class ProductInfoDAO {
 		return count;
 	}
 
+	//管理者画面・商品削除
+		public int delete(int productId){
+			DBConnector dbConnector = new DBConnector();
+			Connection connection = dbConnector.getConnection();
+			int count =0;
+			String sql = "delete from product_info where product_id=?";
+
+			try{
+				PreparedStatement preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setInt(1, productId);
+				count = preparedStatement.executeUpdate();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			try{
+				connection.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			return count;
+		}
+
+
+
 }
