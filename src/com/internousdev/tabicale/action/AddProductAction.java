@@ -61,7 +61,6 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		return result;
 	}
 
-
 	public int getProductId(){
 		return productId;
 	}

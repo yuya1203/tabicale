@@ -92,7 +92,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		session.put("releaseDate", releaseDate);
 		session.put("releaseCompany", releaseCompany);
 
-
 		//選択した画像ファイル名をコンソールに表示する
 		System.out.println(userImageFileName);
 

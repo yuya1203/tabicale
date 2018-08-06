@@ -34,7 +34,6 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 		return result;
 	}
 
-
 	public int getProductId(){
 		return productId;
 	}
