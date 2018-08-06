@@ -1,4 +1,4 @@
-package com.internousdev.sampleweb.action;
+package com.internousdev.tabicale.action;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +8,9 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.ProductInfoDAO;
+import com.internousdev.tabicale.dto.MCategoryDTO;
+import com.internousdev.tabicale.dto.ProductInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ProductDetailsAction extends ActionSupport implements SessionAware{
