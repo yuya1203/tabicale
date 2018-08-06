@@ -32,8 +32,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 		}
 
 		//ユーザーIDよりカート情報を全て取得します
-		//テスト用userId="guest2"
-		cartInfoDtoList = cartInfoDao.getCartInfoDtoList("guest2");
+		cartInfoDtoList = cartInfoDao.getCartInfoDtoList(userId);
 
 		//カートが空だったのか判断します
 		Iterator<CartInfoDTO> iterator = cartInfoDtoList.iterator();
@@ -43,7 +42,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 		session.put("cartInfoDtoList", cartInfoDtoList);
 
 		//カート内の合計金額を取得します
-		int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice("guest2")));
+		int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(userId)));
 		session.put("totalPrice", totalPrice);
 		result = SUCCESS;
 

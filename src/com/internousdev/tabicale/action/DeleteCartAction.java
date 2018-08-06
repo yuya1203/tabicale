@@ -79,17 +79,15 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 				userId = String.valueOf(session.get("tempUserId"));
 			}
 
-			//userId="guest2"
-			cartInfoDtoList = cartInfoDao.getCartInfoDtoList("guest2");
+			cartInfoDtoList = cartInfoDao.getCartInfoDtoList(userId);
 			Iterator<CartInfoDTO> iterator = cartInfoDtoList.iterator();
 			if(!(iterator.hasNext())){
 				cartInfoDtoList = null;
 			}
 			session.put("cartInfoDtoList", cartInfoDtoList);
 
-			//userId="guest2"
 			//削除した後の合計金額を取得します
-			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice("guest2")));
+			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(userId)));
 			session.put("totalPrice", totalPrice);
 
 			/*
