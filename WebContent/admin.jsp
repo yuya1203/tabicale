@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="./css/style.css">
 <title>管理者画面</title>
 
+
 </head>
 <body>
 
@@ -33,12 +34,12 @@
 <tr>
 <td><s:form action="DeleteProductAction">
 <s:hidden name="productId" value="%{productId}"/>
-<input type ="submit" class="submit_btn" value="削除"/>
+<input type ="submit" class="submit_btn" value="削除" />
 </s:form></td>
 <td><s:property value="productName"/></td>
 <td><s:property value="productNamekana"/></td>
 <td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>'width="50px" height="50px"/></td>
-<td><s:property value="proce"/>円</td>
+<td><s:property value="price"/>円</td>
 <td><s:property value="releaseCompany"/></td>
 <td><s:property value="releaseDate"/></td>
 </tr>
