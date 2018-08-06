@@ -2,6 +2,7 @@ package com.internousdev.tabicale.dto;
 
 import java.util.Date;
 
+//宛先情報登録の際に利用する情報です。
 public class DestinationInfoDTO {
 	private int id;
 	private String userId;

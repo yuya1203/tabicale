@@ -17,12 +17,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class AddProductConfirmAction extends ActionSupport implements SessionAware{
 
-	private String productId;
+	private int productId;
 	private String productName;
 	private String productNameKana;
 	private String productDescription;
-	private String categoryId;
-	private String price;
+	private int categoryId;
+	private int price;
 
 	private String releaseDate;
 	private String releaseCompany;
@@ -80,13 +80,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 			}
 		}
 
-		if(categoryId != null) {
-			if(!(categoryId.equals("2") || categoryId.equals("3") || categoryId.equals("4"))) {
-				return ERROR;
-			}
-			}else {
-				return ERROR;
-			}
 
 		//入力された値を保存する
 		session.put("productId", productId);
@@ -98,7 +91,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 		session.put("releaseDate", releaseDate);
 		session.put("releaseCompany", releaseCompany);
-
 
 		//選択した画像ファイル名をコンソールに表示する
 		System.out.println(userImageFileName);
@@ -164,10 +156,10 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	}
 
 
-	public String getProductId(){
+	public int getProductId(){
 		return productId;
 	}
-	public void setProductId(String productId){
+	public void setProductId(int productId){
 		this.productId = productId;
 	}
 
@@ -192,17 +184,17 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		this.productDescription = productDescription;
 	}
 
-	public String getCategoryId(){
+	public int getCategoryId(){
 		return categoryId;
 	}
-	public void setCategoryId(String categoryId){
+	public void setCategoryId(int categoryId){
 		this.categoryId = categoryId;
 	}
 
-	public String getPrice(){
+	public int getPrice(){
 		return price;
 	}
-	public void setPrice(String price){
+	public void setPrice(int price){
 		this.price = price;
 	}
 

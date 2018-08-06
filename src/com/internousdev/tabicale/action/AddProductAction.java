@@ -8,12 +8,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class AddProductAction extends ActionSupport implements SessionAware{
 
-	private String productId;
+	private int productId;
 	private String productName;
 	private String productNameKana;
 	private String productDescription;
-	private String categoryId;
-	private String price;
+	private int categoryId;
+	private int price;
 
 	private String imageFilePath;
 	private String imageFileName;
@@ -61,11 +61,10 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		return result;
 	}
 
-
-	public String getProductId(){
+	public int getProductId(){
 		return productId;
 	}
-	public void setProductId(String productId){
+	public void setProductId(int productId){
 		this.productId = productId;
 	}
 
@@ -90,17 +89,17 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		this.productDescription = productDescription;
 	}
 
-	public String getCategoryId(){
+	public int getCategoryId(){
 		return categoryId;
 	}
-	public void setCategoryId(String categoryId){
+	public void setCategoryId(int categoryId){
 		this.categoryId = categoryId;
 	}
 
-	public String getPrice(){
+	public int getPrice(){
 		return price;
 	}
-	public void setPrice(String price){
+	public void setPrice(int price){
 		this.price = price;
 	}
 
