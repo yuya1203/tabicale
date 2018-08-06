@@ -4,7 +4,7 @@
 "http://struts.apache.org/dtds/struts-2.3.dtd">
 <!-- Strutsの詳細設定 -->
 <struts>
-	<constant name="struts.ui.theme" value=""></constant>
+	<constant name="struts.ui.theme" value="simple"/>
 	<constant name="struts.devMode" value="true" />
 	<package name="com.internousdev.tabicale.action" extends="struts-default">
 
@@ -99,28 +99,23 @@
 
 
 	<!-- 6.カート機能 -->
-	<!--
 	<action name="CartAction" class="com.internousdev.tabicale.action.CartAction" method="execute">
 		<result name="success">cart.jsp</result>
 		<result name="error">home.jsp</result>
 	</action>
 
-	 -->
 
-	 <!--
 	<action name="AddCartAction" class="com.internousdev.tabicale.action.AddCartAction" method="execute">
 		<result name="success">cart.jsp</result>
 		<result name="error">home.jsp</result>
 		<result name="input">cart.jsp</result>
 	</action>
-	-->
 
-	<!--
 	<action name="DeleteCartAction" class="com.internousdev.tabicale.action.DeleteCartAction" method="execute">
 		<result name="success">cart.jsp</result>
 		<result name="error">cart.jsp</result>
 	</action>
-	 -->
+
 
 	<!-- 7.宛先情報選択機能 -->
 	<!--
@@ -217,11 +212,10 @@
 	-->
 
 	<!-- HOME -->
-	<!--
+
   	<action name="HomeAction" class="com.internousdev.tabicale.action.HomeAction" method="execute">
 		<result name="success">home.jsp</result>
 	</action>
-	 -->
 
 	</package>
 </struts>
