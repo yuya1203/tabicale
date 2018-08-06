@@ -1,55 +1,31 @@
 package com.internousdev.tabicale.action;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.UserInfoDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class UserCreateAction extends ActionSupport implements SessionAware{
+public class CreateUserCompleteAction extends ActionSupport implements SessionAware{
+
 	private String familyName;
 	private String firstName;
 	private String familyNameKana;
 	private String firstNameKana;
 	private int sex;
-	private List<String> sexList = new ArrayList<String>();
 	private String email;
 	private String loginId;
 	private String password;
-	private static final String MALE = "男性";
-	private static final String FEMALE = "女性";
-	private String defaultSexValue = MALE;
 	private String categoryId;
 	private Map<String, Object> session;
 	public String execute() {
 		String result = ERROR;
-
-		session.remove("familyNameErrorMessageList");
-		session.remove("firstNameErrorMessageList");
-		session.remove("famimyNameKanaErrorMessageList");
-		session.remove("firstNameKanaErrorMessageList");
-		session.remove("emailErrorMessageList");
-		session.remove("userIdErrorMessageList");
-		session.remove("passwordErrorMessageList");
-
-		session.put("familyName", familyName);
-		session.put("firstName", firstName);
-		session.put("familyNameKana", familyNameKana);
-		session.put("firstNameKana", firstNameKana);
-		if(sex==0) {
-			session.put("sex", MALE);
-		}else {
-			session.put("sex", String.valueOf(session.get("sex")));
+		UserInfoDAO UserInfoDao = new UserInfoDAO();
+		int count = UserInfoDao.createUser(familyName,firstName,familyNameKana,firstNameKana,sex,email,loginId,password);
+		if(count > 0) {
+			result = SUCCESS;
 		}
-		sexList.add(MALE);
-		sexList.add(FEMALE);
-		session.put("sexList", sexList);
-		session.put("email", email);
-		session.put("loginId", loginId);
-		session.put("password", password);
-		result = SUCCESS;
 		return result;
 	}
 
@@ -91,12 +67,6 @@ public class UserCreateAction extends ActionSupport implements SessionAware{
 	public void setSex(int sex) {
 		this.sex = sex;
 	}
-	public List<String> getSexList() {
-		return sexList;
-	}
-	public void setSexList(List<String> sexList) {
-		this.sexList = sexList;
-	}
 	public String getEmail() {
 		return email;
 	}
@@ -115,16 +85,11 @@ public class UserCreateAction extends ActionSupport implements SessionAware{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getDefaultSexValue() {
-		return defaultSexValue;
-	}
-	public void setDefaultSexValue(String defaultSexValue) {
-		this.defaultSexValue = defaultSexValue;
-	}
 	public Map<String, Object> getSession() {
 		return session;
 	}
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
 }

@@ -10,7 +10,7 @@ import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
 
-public class UserCreateConfirmAction extends ActionSupport implements SessionAware{
+public class CreateUserConfirmAction extends ActionSupport implements SessionAware{
 
 	private String familyName;
 	private String firstName;
