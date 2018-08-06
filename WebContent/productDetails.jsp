@@ -49,18 +49,19 @@
                  </table>
             </div>
        </div>
-     <s:hiden name="productId" value="%{#session.productId}"/>
-     <s:hiden name="productName" value="%{#session.productName}"/>
-     <s:hiden name="productNameKana" value="%{#session.productNameKana}"/>
-     <s:hiden name="imageFilePath" value="%{#session.imageFIlePath}"/>
-     <s:hiden name="imageFileName" value="%{#session.imageFileName}"/>
-     <s:hiden name="price" value="%{#session.price}"/>
-     <s:hiden name="releaseCompany" value="%{#session.releaseCompany}"/>
-     <s:hiden name="releaseDate" value="%{#session.releaseDate}"/>
-     <s:hiden name="productDescription" vslue="%{#session.productDescription}"/>
+     <s:hidden name="productId" value="%{#session.productId}"/>
+     <s:hidden name="productName" value="%{#session.productName}"/>
+     <s:hidden name="productNameKana" value="%{#session.productNameKana}"/>
+     <s:hidden name="imageFilePath" value="%{#session.imageFIlePath}"/>
+     <s:hidden name="imageFileName" value="%{#session.imageFileName}"/>
+     <s:hidden name="price" value="%{#session.price}"/>
+     <s:hidden name="releaseCompany" value="%{#session.releaseCompany}"/>
+     <s:hidden name="releaseDate" value="%{#session.releaseDate}"/>
+     <s:hidden name="productDescription" vslue="%{#session.productDescription}"/>
      </div>
-     <div class="submit_btn_box"/>
+     <div class="submit_btn_box">
      <s:submit value="カートに追加" class="submit_btn"/>
+     </div>
      </s:form>
      <div class="box">
      <div class="product-details-recomment-box">
