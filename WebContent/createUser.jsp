@@ -81,7 +81,7 @@
 </s:if>
 			<!-- ユーザー登録欄 -->
 
-			<s:form action="UserCreateConfirmAction">
+			<s:form action="CreateUserConfirmAction">
 <table class="vertical-list-table">
 
 <tr>

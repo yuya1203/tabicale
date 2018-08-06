@@ -20,7 +20,7 @@
 		<div>
 			<h3>登録する内容は以下でよろしいですか。</h3>
 
-				<s:form action="UserCreateCompleteAction">
+				<s:form action="CreateUserCompleteAction">
 			<table class="vertical-list-table">
 <tr>
 	<th scope="row"><s:label value="姓:"/></th>
