@@ -1,8 +1,8 @@
 set names utf8;
 set foreign_key_checks=0;
 
-drop database if exists TabiCale;
-create database if not exists TabiCale;
+drop database if exists tabicale;
+create database if not exists tabicale;
 
 use tabicale;
 
