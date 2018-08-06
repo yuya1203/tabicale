@@ -35,16 +35,16 @@ public class Pagination {
 		paginationDTO.setCurrentProductInfoPage(productInfoPages);
 
 		if((paginationDTO.getStartRecordNo() - 1) <= 0){
-			paginationDTO.setHasPreviousPage(false);
+			paginationDTO.setPreviousPage(false);
 		}else{
-			paginationDTO.setHasPreviousPage(true);
+			paginationDTO.setPreviousPage(true);
 			paginationDTO.setPreviousPageNo(paginationDTO.getCurrentPageNo() - 1);
 		}
 
 		if(paginationDTO.getEndRecordNo() + pageSize > paginationDTO.getTotalRecordSize()){
-			paginationDTO.setHasNextPage(false);
+			paginationDTO.setNextPage(false);
 		}else{
-			paginationDTO.setHasNextPage(true);
+			paginationDTO.setNextPage(true);
 			paginationDTO.setNextPageNo(paginationDTO.getCurrentPageNo() + 1);
 		}
 		return paginationDTO;
@@ -78,16 +78,16 @@ public class Pagination {
 		paginationDTO.setCurrentProductInfoPage(productInfoPages);
 
 		if((paginationDTO.getStartRecordNo() - 1) <= 0){
-			paginationDTO.setHasPreviousPage(false);
+			paginationDTO.setPreviousPage(false);
 		}else{
-			paginationDTO.setHasPreviousPage(true);
+			paginationDTO.setPreviousPage(true);
 			paginationDTO.setPreviousPageNo(paginationDTO.getCurrentPageNo() - 1);
 		}
 
 		if(paginationDTO.getEndRecordNo() + pageSize > paginationDTO.getTotalRecordSize()){
-			paginationDTO.setHasNextPage(false);
+			paginationDTO.setNextPage(false);
 		}else{
-			paginationDTO.setHasNextPage(true);
+			paginationDTO.setNextPage(true);
 			paginationDTO.setNextPageNo(paginationDTO.getCurrentPageNo() + 1);
 		}
 
