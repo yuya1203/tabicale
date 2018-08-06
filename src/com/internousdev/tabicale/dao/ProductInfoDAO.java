@@ -218,4 +218,39 @@ public class ProductInfoDAO {
 		}
 		return productInfoDtoList;
 	}
+
+	public int createProduct(int productId,String productName, String productNameKana,
+			String productDescription,int categoryId, int price, String imageFilePath,
+			String imageFileName,String releaseDate, String releaseCompany){
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		int count = 0;
+		String sql = "INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,categoryId,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date) VALUES (?,?,?,?,?,?,?,?,?,?,now(),0)";
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, productId);
+			preparedStatement.setString(2, productName);
+			preparedStatement.setString(3, productNameKana);
+			preparedStatement.setString(4, productDescription);
+			preparedStatement.setInt(5, categoryId);
+			preparedStatement.setInt(6, price);
+			preparedStatement.setString(7, imageFilePath);
+			preparedStatement.setString(8, imageFileName);
+			preparedStatement.setString(9, releaseDate);
+			preparedStatement.setString(10, releaseCompany);
+			preparedStatement.setInt(11, 0);
+
+			count = preparedStatement.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		try{
+			connection.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return count;
+	}
+
 }

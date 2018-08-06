@@ -109,7 +109,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		System.out.println("imageLocation" + filePath);
 
 		CommonUtility commonUtility = new CommonUtility();
-		userImageFileName = commonUtility.getRamdomValue() + userImageFileName;
+		userImageFileName = commonUtility.getRandomValue() + userImageFileName;
 
 		//サーバー上に保存した画像をimageファルダにコピーする
 		File fileToCreate = new File(filePath,userImageFileName);
@@ -132,8 +132,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 		releaseDateErrorMessageList = inputChecker.doCheck("発売年月", releaseDate, 1, 16, false, true, true, true, false, false, false);
 		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
-
-		userImageErrorMessageList = inputChecker.doCheck("画像", userImage, 1, 255, true, true, true, true, true, true, false);
 
 
 
