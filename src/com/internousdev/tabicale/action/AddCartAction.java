@@ -54,10 +54,11 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 
 		//カートに入れる個数を数字だけのデータにします
 		productCount = String.valueOf((productCount.split(" ,",0))[0]);
+		System.out.println(productCount);
 
 		//データベースにカート情報を追加します
 		CartInfoDAO cartInfoDao = new CartInfoDAO();
-		int count = cartInfoDao.regist(userId, tempUserId, productId, tempUserId, price);
+		int count = cartInfoDao.regist(userId, tempUserId, productId, productCount, price);
 		if(count > 0){
 			result = SUCCESS;
 		}
