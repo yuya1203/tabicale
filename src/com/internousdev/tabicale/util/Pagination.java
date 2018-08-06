@@ -3,6 +3,7 @@ package com.internousdev.tabicale.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.internousdev.tabicale.dto.PaginationDTO;
 import com.internousdev.tabicale.dto.ProductInfoDTO;
 
 
@@ -34,16 +35,16 @@ public class Pagination {
 		paginationDTO.setCurrentProductInfoPage(productInfoPages);
 
 		if((paginationDTO.getStartRecordNo() - 1) <= 0){
-			paginationDTO.setPreviousPage(false);
+			paginationDTO.setHasPreviousPage(false);
 		}else{
-			paginationDTO.setPreviousPage(true);
+			paginationDTO.setHasPreviousPage(true);
 			paginationDTO.setPreviousPageNo(paginationDTO.getCurrentPageNo() - 1);
 		}
 
 		if(paginationDTO.getEndRecordNo() + pageSize > paginationDTO.getTotalRecordSize()){
-			paginationDTO.setNextPage(false);
+			paginationDTO.setHasNextPage(false);
 		}else{
-			paginationDTO.setNextPage(true);
+			paginationDTO.setHasNextPage(true);
 			paginationDTO.setNextPageNo(paginationDTO.getCurrentPageNo() + 1);
 		}
 		return paginationDTO;
@@ -77,16 +78,16 @@ public class Pagination {
 		paginationDTO.setCurrentProductInfoPage(productInfoPages);
 
 		if((paginationDTO.getStartRecordNo() - 1) <= 0){
-			paginationDTO.setPreviousPage(false);
+			paginationDTO.setHasPreviousPage(false);
 		}else{
-			paginationDTO.setPreviousPage(true);
+			paginationDTO.setHasPreviousPage(true);
 			paginationDTO.setPreviousPageNo(paginationDTO.getCurrentPageNo() - 1);
 		}
 
 		if(paginationDTO.getEndRecordNo() + pageSize > paginationDTO.getTotalRecordSize()){
-			paginationDTO.setNextPage(false);
+			paginationDTO.setHasNextPage(false);
 		}else{
-			paginationDTO.setNextPage(true);
+			paginationDTO.setHasNextPage(true);
 			paginationDTO.setNextPageNo(paginationDTO.getCurrentPageNo() + 1);
 		}
 

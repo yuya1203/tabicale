@@ -12,12 +12,10 @@ import com.internousdev.tabicale.util.DBConnector;
 
 public class ProductInfoDAO {
 
-	private String keyword;
-
 	public List<ProductInfoDTO> getProductInfoList(){
 		DBConnector dbConnector=new DBConnector();
 		Connection connection=dbConnector.getConnection();
-		List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
+		List<ProductInfoDTO> productInfoDtoList=new ArrayList<ProductInfoDTO>();
 		String sql="select * from product_info";
 
 		try{
@@ -51,6 +49,7 @@ public class ProductInfoDAO {
 		}
 		return productInfoDtoList;
 	}
+
 	public ProductInfoDTO getProductInfo(int productId){
 		DBConnector dbConnector=new DBConnector();
 		Connection connection=dbConnector.getConnection();
@@ -70,7 +69,7 @@ public class ProductInfoDAO {
 				productInfoDTO.setPrice(resultSet.getInt("price"));
 				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
-				productInfoDTO.setRegistDate(resultSet.getDate("release_date"));
+				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
 				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDTO.setStatus(resultSet.getInt("status"));
 				productInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
@@ -89,7 +88,7 @@ public class ProductInfoDAO {
 	public List<ProductInfoDTO> getProductInfoListByCategoryId(int categoryId,int productId,int limitOffset,int limitRowCount){
 		DBConnector dbConnector=new DBConnector();
 		Connection connection=dbConnector.getConnection();
-		List<com.internousdev.tabicale.dto.ProductInfoDTO> productInfoDtoList=new ArrayList<ProductInfoDTO>();
+		List<ProductInfoDTO> productInfoDtoList=new ArrayList<ProductInfoDTO>();
 		String sql="select * from product_info where category_id=? and product_id not in(?) order by rand() limit ?,?";
 		try{
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
@@ -99,7 +98,7 @@ public class ProductInfoDAO {
 			preparedStatement.setInt(4, limitRowCount);
 			ResultSet resultSet=preparedStatement.executeQuery();
 			while(resultSet.next()){
-				com.internousdev.tabicale.dto.ProductInfoDTO productInfoDTO=new ProductInfoDTO();
+				ProductInfoDTO productInfoDTO=new ProductInfoDTO();
 				productInfoDTO.setId(resultSet.getInt("id"));
 				productInfoDTO.setProductId(resultSet.getInt("product_id"));
 				productInfoDTO.setProductName(resultSet.getString("product_name"));
@@ -107,7 +106,7 @@ public class ProductInfoDAO {
 				productInfoDTO.setProductDescription(resultSet.getString("product_description"));
 				productInfoDTO.setCategoryId(resultSet.getInt("category_id"));
 				productInfoDTO.setPrice(resultSet.getInt("price"));
-				productInfoDTO.setImageFilePath(resultSet.getString("image_file_name"));
+				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
 				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
 				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
@@ -134,24 +133,89 @@ public class ProductInfoDAO {
 		String sql="select * from product_info where";
 		boolean initializeFlag=true;
 		for(String keyword: keywordsList){
-			sql +="(product_name like '%" + keyword + "%' or pruduct_name_kana like '%" + keyword + "%')";
-			initializeFlag=false;
-		}else{
-			sql += " and (product_name like'%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+			if(initializeFlag){
+				sql +="(product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+				initializeFlag=false;
+			}else{
+				sql += " and (product_name like'%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+			}
 		}
-	}
-	try{
-		PreparedStatement preparedStatement=connection.prepareStatement(sql);
-		ResultSet resultSet=preparedStatement.executeQuery();
-		while(resultSet.next()){
-			com.internousdev.tabicale.dto.ProductInfoDTO productInfoDTO=new ProductInfoDTO();
-			productInfoDTO.setId(resultSet.getInt("id"));
-			productInfoDTO.setProductId(resultSet.getInt("product_Id"));
-			productInfoDTO.setProductName(resultSet.getString("product_name"));
-			productInfoDTO.setProductNameKana(resultSet.getString("product_name_kana"));
-			productInfoDTO.setProductDescription(resultSet.getString("product_description"));
-
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				ProductInfoDTO productInfoDTO = new ProductInfoDTO();
+				productInfoDTO.setId(resultSet.getInt("id"));
+				productInfoDTO.setProductId(resultSet.getInt("product_id"));
+				productInfoDTO.setProductName(resultSet.getString("product_name"));
+				productInfoDTO.setProductNameKana(resultSet.getString("product_name_kana"));
+				productInfoDTO.setProductDescription(resultSet.getString("product_description"));
+				productInfoDTO.setCategoryId(resultSet.getInt("category_id"));
+				productInfoDTO.setPrice(resultSet.getInt("price"));
+				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
+				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
+				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
+				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
+				productInfoDTO.setStatus(resultSet.getInt("status"));
+				productInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
+				productInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
+				productInfoDtoList.add(productInfoDTO);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return productInfoDtoList;
 	}
 
+	public List<ProductInfoDTO> getProductInfoListByKeywords(String[] keywordsList, String categoryId) {
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
+		String sql = "select * from product_info where";
+		boolean initializeFlag = true;
+		for (String keyword : keywordsList) {
+			if (initializeFlag) {
+				sql += " category_id=" + categoryId + " and (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+				initializeFlag = false;
+			} else {
+				sql += " and (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+			}
+		}
+
+		try{
+			PreparedStatement preparedStatement=connection.prepareStatement(sql);
+			ResultSet resultSet=preparedStatement.executeQuery();
+			while(resultSet.next()){
+				ProductInfoDTO productInfoDTO=new ProductInfoDTO();
+				productInfoDTO.setId(resultSet.getInt("id"));
+				productInfoDTO.setProductId(resultSet.getInt("product_id"));
+				productInfoDTO.setProductName(resultSet.getString("product_name"));
+				productInfoDTO.setProductNameKana(resultSet.getString("product_name_kana"));
+				productInfoDTO.setProductDescription(resultSet.getString("product_description"));
+				productInfoDTO.setCategoryId(resultSet.getInt("category_id"));
+				productInfoDTO.setPrice(resultSet.getInt("price"));
+				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
+				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
+				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
+				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
+				productInfoDTO.setStatus(resultSet.getInt("status"));
+				productInfoDTO.setUpdateDate(resultSet.getDate("regist_date"));
+				productInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
+				productInfoDtoList.add(productInfoDTO);
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		try{
+			connection.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return productInfoDtoList;
+	}
 }
