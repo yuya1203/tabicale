@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.UserInfoDAO;
+import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ResetPasswordConfirmAction extends ActionSupport implements SessionAware{

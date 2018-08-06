@@ -19,8 +19,8 @@ public class HomeAction extends ActionSupport implements SessionAware{
 	public String execute(){
 
 		if(!(session.containsKey("loginId")) && !(session.containsKey("tempUserId"))){
-			CommonUtility ommonUtility = new CommonUtility();
-			session.put("tempUserId",  commonUtility.getRanmdomValue());
+			CommonUtility commonUtility = new CommonUtility();
+			session.put("tempUserId",  commonUtility.getRandomValue());
 		}
 
 		if(!session.containsKey("logined")){

@@ -22,9 +22,9 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 	/*
 	private String sex;
 	private List<String> sexList = new ArrayList<String>();
-	private static final String Male = "男性";
+	private static final String MALE = "男性";
 	private static final String FEMALE = "女性";
-	private String defaultsexValue = MALE;
+	private String defaultSexValue = MALE;
 	*/
 
 	private String productName;
@@ -33,6 +33,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 	private String imageFileName;
 	private String price;
 	private String releaseCompany;
+	private String releaseDate;
 	private String productCount;
 	private String subtotal;
 	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
@@ -106,6 +107,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 		this.mCategoryDtoList = mCategoryDtoList;
 	}
 
+	/*
 	public String getSex() {
 		return sex;
 	}
@@ -129,6 +131,8 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 	public void setDefaultSexValue(String defaultSexValue) {
 		this.defaultSexValue = defaultSexValue;
 	}
+
+	*/
 
 	public Collection<String> getCheckList() {
 		return checkList;
