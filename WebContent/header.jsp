@@ -86,7 +86,7 @@ onclick="goProductListAction();"/>
 <s:if test="#session.logined==1">
 <li>
 <s:submit value="マイページ" class="submit_btn"
-onclick="gpMyPageAction();"/>
+onclick="goMyPageAction();"/>
 </li>
 </s:if>
 

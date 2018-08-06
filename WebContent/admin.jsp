@@ -14,7 +14,7 @@
 <div id="contents">
 <h1>管理者画面</h1>
 
-<s:if test="#session.productionInfoDtoList.size()>0">
+<s:if test="#session.productInfoDtoList.size()>0">
 
 <table class="horizontal-list-table">
 <thead>

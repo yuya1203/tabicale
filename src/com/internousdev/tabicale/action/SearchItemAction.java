@@ -8,8 +8,10 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.MCategoryDAO;
+import com.internousdev.tabicale.dao.ProductInfoDAO;
 import com.internousdev.tabicale.dto.MCategoryDTO;
 import com.internousdev.tabicale.dto.PaginationDTO;
+import com.internousdev.tabicale.dto.ProductInfoDTO;
 import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -30,7 +32,7 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 		if(keywords==null){
 			keywords="";
 		}
-		keywordsErrorMessageList = inputchecker.doCheck("検索ワード", keywords, 0 ,16, true, true, true, true, false, true, true);
+		keywordsErrorMessageList = inputChecker.doCheck("検索ワード", keywords, 0 ,16, true, true, true, true, false, true, true);
 
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 		switch(categoryId){
@@ -51,7 +53,7 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 		}
 		session.put("keywordsErrorMessageList", keywordsErrorMessageList);
 
-		if(!session.countainsKey("mCategoryList")) {
+		if(!session.containsKey("mCategoryList")) {
 			MCategoryDAO mCategoryDao = new MCategoryDAO();
 			mCategoryDtoList = mCategoryDao.getMCategoryList();
 			session.put("mCategoryDtoList",  mCategoryDtoList);
@@ -59,7 +61,7 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 
 		if(!(productInfoDtoList==null)){
 			Pagination pagination = new Pagination();
-			PaginationDTO paginationDTO = new Pagination();
+			PaginationDTO paginationDTO = new PaginationDTO();
 			if(pageNo==null){
 				paginationDTO = pagination.initialize(productInfoDtoList, 9);
 			} else {
@@ -72,9 +74,9 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 			session.put("totalRecordSize",  paginationDTO.getTotalRecordSize());
 			session.put("startRecordNo",  paginationDTO.getStartRecordNo());
 			session.put("endRecordNo",  paginationDTO.getEndRecordNo());
-			session.put("previousPage",  paginationDTO.getPreviousPage());
+			session.put("previousPage",  paginationDTO.hasPreviousPage());
 			session.put("previousPageNo",  paginationDTO.getPreviousPageNo());
-			session.put("nextPage",  paginationDTO.getNextPage());
+			session.put("nextPage",  paginationDTO.hasNextPage());
 			session.put("nextPageNo",  paginationDTO.getNextPageNo());
 		} else {
 			session.put("productInfoDtoList",  null);
