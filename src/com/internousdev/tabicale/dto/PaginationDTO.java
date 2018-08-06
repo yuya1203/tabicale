@@ -57,16 +57,16 @@ public class PaginationDTO {
 	public void setCurrentProductInfoPage(List<ProductInfoDTO> currentProductInfoPage) {
 		this.currentProductInfoPage = currentProductInfoPage;
 	}
-	public boolean isHasNextPage() {
+	public boolean hasNextPage() {
 		return hasNextPage;
 	}
-	public void setHasNextPage(boolean hasNextPage) {
+	public void setNextPage(boolean hasNextPage) {
 		this.hasNextPage = hasNextPage;
 	}
-	public boolean isHasPreviousPage() {
+	public boolean hasPreviousPage() {
 		return hasPreviousPage;
 	}
-	public void setHasPreviousPage(boolean hasPreviousPage) {
+	public void setPreviousPage(boolean hasPreviousPage) {
 		this.hasPreviousPage = hasPreviousPage;
 	}
 	public int getNextPageNo() {
