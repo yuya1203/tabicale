@@ -4,15 +4,14 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-//import com.internousdev.tabicale.dao.UserInfoDAO;
-
+import com.internousdev.tabicale.dao.UserInfoDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 
 public class LogoutAction extends ActionSupport implements SessionAware{
 	private String categoryId;
 	private Map<String, Object> session;
-	/*public String execute(){
+	public String execute(){
 		String result = ERROR;
 		UserInfoDAO userInfoDao = new UserInfoDAO();
 		String loginId = String.valueOf(session.get("loginId"));
@@ -25,7 +24,7 @@ public class LogoutAction extends ActionSupport implements SessionAware{
 			result = SUCCESS;
 		}
 		return result;
-	}*/
+	}
 
 	public String getCategoryId(){
 		return categoryId;
