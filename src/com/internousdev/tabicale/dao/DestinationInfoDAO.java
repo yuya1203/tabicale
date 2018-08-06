@@ -12,7 +12,7 @@ import com.internousdev.tabicale.util.DBConnector;
 
 public class DestinationInfoDAO {
 
-	//DBへ宛先登録情報をinsertする。
+	//DBへ宛先登録情報をinsertします。
 	public int insert(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana, String email, String telNumber, String userAddress) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
@@ -41,7 +41,7 @@ public class DestinationInfoDAO {
 		return count;
 	}
 
-	//DBから登録した情報を取得して、DestinationInfoDTOへ登録させる。
+	//DBから登録した情報を取得して、DestinationInfoDTOへ登録させます。
 	public List<DestinationInfoDTO> getDestinationInfo(String loginId) throws SQLException {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
