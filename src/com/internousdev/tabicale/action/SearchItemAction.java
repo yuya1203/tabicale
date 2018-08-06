@@ -13,9 +13,9 @@ import com.internousdev.tabicale.dto.MCategoryDTO;
 import com.internousdev.tabicale.dto.PaginationDTO;
 import com.internousdev.tabicale.dto.ProductInfoDTO;
 import com.internousdev.tabicale.util.InputChecker;
+import com.internousdev.tabicale.util.Pagination;
 import com.opensymphony.xwork2.ActionSupport;
 
-import javafx.scene.control.Pagination;
 
 public class SearchItemAction extends ActionSupport implements SessionAware {
 	private String categoryId;
