@@ -8,6 +8,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.CartInfoDAO;
+import com.internousdev.tabicale.dao.MCategoryDAO;
 import com.internousdev.tabicale.dto.CartInfoDTO;
 import com.internousdev.tabicale.dto.MCategoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
@@ -48,7 +49,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 		//ヘッダー部分に表示するカテゴリリストのセッション切れ対策です
 		if(!session.containsKey("mCategroyList")){
 			MCategoryDAO mCategoryDao = new MCategoryDAO();
-			mcategoryDtoList = mCategoryDao.getMCategoryList();
+			mCategoryDtoList = mCategoryDao.getMCategoryList();
 			session.put("mCategoryDtoList", mCategoryDtoList);
 		}
 

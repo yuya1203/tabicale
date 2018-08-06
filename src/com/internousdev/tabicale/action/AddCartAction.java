@@ -10,6 +10,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.CartInfoDAO;
 import com.internousdev.tabicale.dto.CartInfoDTO;
+import com.internousdev.tabicale.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddCartAction extends ActionSupport implements SessionAware{

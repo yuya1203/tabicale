@@ -3,7 +3,7 @@ package com.internousdev.tabicale.util;
 public class CommonUtility {
 
 	//ランダムな数字を作成します
-	public String getRamdomValue(){
+	public String getRandomValue(){
 		String value="";
 		double d;
 		for(int i=1;i<=16;i++){
