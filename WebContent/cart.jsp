@@ -6,6 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>カート画面</title>
+<script type="text/javascript">
+	function goDeleteCartAction() {
+		document.getElementById("form").action='DeleteCartAction';
+	}
+</script>
 </head>
 <body>
 
@@ -35,7 +40,7 @@
 			<tbody>
 				<s:iterator value="#session.cartInfoDtoList">
 					<tr>
-						<td><s:checkbox name="checkList" value="checked" filedValue="%id{}"/></td>
+						<td><s:checkbox name="checkList" value="checked" fieldValue="%{id}"/></td>
 						<s:hidden name="productId" value="%{productId}"/>
 						<td><s:property value="productName"/></td>
 						<td><s:property value="productNameKana"/></td>
@@ -62,6 +67,11 @@
 		<div>
 			<div>
 				<s:submit value="決済"/>
+			</div>
+		</div>
+		<div>
+			<div>
+				<s:submit value="削除" onclick="this.form.action='DeleteCartAction'"/>
 			</div>
 		</div>
 	</s:form>

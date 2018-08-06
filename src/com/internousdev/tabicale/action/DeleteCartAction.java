@@ -45,6 +45,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 		//チェックリストの値を検証し処理を分岐させます
 		//チェックリストの値は配列[cartId,cartId,cartId]のような形式です
+		System.out.println(checkList);
 		CartInfoDAO cartInfoDao = new CartInfoDAO();
 		int count = 0;
 		List<String> checkListErrorMessageList = new ArrayList<String>();
@@ -78,15 +79,17 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 				userId = String.valueOf(session.get("tempUserId"));
 			}
 
-			cartInfoDtoList = cartInfoDao.getCartInfoDtoList(userId);
+			//userId="guest2"
+			cartInfoDtoList = cartInfoDao.getCartInfoDtoList("guest2");
 			Iterator<CartInfoDTO> iterator = cartInfoDtoList.iterator();
 			if(!(iterator.hasNext())){
 				cartInfoDtoList = null;
 			}
 			session.put("cartInfoDtoList", cartInfoDtoList);
 
+			//userId="guest2"
 			//削除した後の合計金額を取得します
-			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(userId)));
+			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice("guest2")));
 			session.put("totalPrice", totalPrice);
 
 			/*
