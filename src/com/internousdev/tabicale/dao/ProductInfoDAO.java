@@ -7,16 +7,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.internousdev.tabicare.dto.ProductInfoDTO;
+import com.internousdev.tabicale.dto.ProductInfoDTO;
+import com.internousdev.tabicale.util.DBConnector;
 
 public class ProductInfoDAO {
 
 	private String keyword;
 
-	public List<ProductInfoDAO> getProductInfoList(){
+	public List<ProductInfoDTO> getProductInfoList(){
 		DBConnector dbConnector=new DBConnector();
-		Connection connection=dbConnector.getConnector();
-		List<ProductInfoDTO> productInfoDtoList=new ArrayList<ProductInfoDTO>();
+		Connection connection=dbConnector.getConnection();
+		List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
 		String sql="select * from product_info";
 
 		try{
@@ -57,7 +58,7 @@ public class ProductInfoDAO {
 		String sql="select * from product_info where product_id=?";
 		try{
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
-			PreparedStatement.setInt(1,product);
+			preparedStatement.setInt(1,productId);
 			ResultSet resultSet=preparedStatement.executeQuery();
 			while(resultSet.next()){
 				productInfoDTO.setId(resultSet.getInt("id"));
