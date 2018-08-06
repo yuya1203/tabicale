@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.PurchaseHistoryInfoDAO;
+import com.internousdev.tabicale.dto.PurchaseHistoryInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class DeletePurchaseHistoryAction extends ActionSupport implements SessionAware{
