@@ -17,12 +17,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class AddProductConfirmAction extends ActionSupport implements SessionAware{
 
-	private int productId;
+	private String productId;
 	private String productName;
 	private String productNameKana;
 	private String productDescription;
-	private int categoryId;
-	private int price;
+	private String categoryId;
+	private String price;
 
 	private String releaseDate;
 	private String releaseCompany;
@@ -156,10 +156,10 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	}
 
 
-	public int getProductId(){
+	public String getProductId(){
 		return productId;
 	}
-	public void setProductId(int productId){
+	public void setProductId(String productId){
 		this.productId = productId;
 	}
 
@@ -184,17 +184,17 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		this.productDescription = productDescription;
 	}
 
-	public int getCategoryId(){
+	public String getCategoryId(){
 		return categoryId;
 	}
-	public void setCategoryId(int categoryId){
+	public void setCategoryId(String categoryId){
 		this.categoryId = categoryId;
 	}
 
-	public int getPrice(){
+	public String getPrice(){
 		return price;
 	}
-	public void setPrice(int price){
+	public void setPrice(String price){
 		this.price = price;
 	}
 

@@ -68,7 +68,7 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 				paginationDTO = pagination.getPage(productInfoDtoList, 9, pageNo);
 			}
 
-			session.put("paroductInfoDtoList",  paginationDTO.getCurrentProductInfoPage());
+			session.put("productInfoDtoList",  paginationDTO.getCurrentProductInfoPage());
 			session.put("totalPageSize",  paginationDTO.getTotalPageSize());
 			session.put("currentPageNo",  paginationDTO.getCurrentPageNo());
 			session.put("totalRecordSize",  paginationDTO.getTotalRecordSize());
