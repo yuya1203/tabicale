@@ -51,7 +51,7 @@
 </s:if>
 
 <div class="submit_btn_box">
-<s:form action="AddProductionAction">
+<s:form action="AddProductAction">
 <input type="submit" class="submit_btn" value="商品追加"/>
 </s:form>
 </div>

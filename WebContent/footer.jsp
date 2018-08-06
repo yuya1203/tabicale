@@ -14,5 +14,8 @@
 <title>フッター</title>
 </head>
 <body>
+<div id="footer">
+
+</div>
 </body>
 </html>

@@ -1,28 +1,32 @@
 package com.internousdev.tabicale.action;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.ProductInfoDAO;
+import com.internousdev.tabicale.dto.ProductInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class DeleteProductAction extends ActionSupport implements SessionAware{
 private int productId;
-//List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductionInfoDTO>();
+List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
 private Map<String, Object> session;
 
 
-/*public String execute(){
+public String execute(){
 	String result = ERROR;
-	ProductionInfoDAO dao = new ProductionInfoDAO();
+	ProductInfoDAO dao = new ProductInfoDAO();
 	int count = dao.delete(productId);
 	if(count > 0){
-		productionInfoDtoList = dao.getProductionInfoList();
-		session.put("productInfoDtoList", productionInfoDtoList);
-		result SUCCESS;
+		productInfoDtoList = dao.getProductInfoList();
+		session.put("productInfoDtoList", productInfoDtoList);
+		result = SUCCESS;
 	}
 	return result;
-}*/
+}
 
 public int getProductId(){
 	return productId;
