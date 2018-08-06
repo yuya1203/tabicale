@@ -24,6 +24,7 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 	public String execute() {
 		String result = ERROR;
 		DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
+		//宛先情報が登録になっているかcount変数で確認する。
 		int count = destinationInfoDao.insert(String.valueOf(session.get("loginId")), familyName, firstName, familyNameKana, firstNameKana, email, telNumber, userAddress);
 		if(count > 0) {
 			result = SUCCESS;

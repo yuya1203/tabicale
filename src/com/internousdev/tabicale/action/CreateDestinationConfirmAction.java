@@ -38,6 +38,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		String result = ERROR;
 		InputChecker inputChecker = new InputChecker();
 	//	フォームの入力内容をinputCheckerを使用してチェックする。
+	//	入力に不備があった場合、sessionにエラーメッセージをのせる(createDestination.jspに表示)。
 		familyNameErrorMessageList = inputChecker.doCheck("姓", familyName, 1, 16, true, true, true, false, false, false, true);
 		firstNameErrorMessageList = inputChecker.doCheck("名", firstName, 1, 16, true, true, true, false, false, false, true);
 		familyNameKanaErrorMessageList = inputChecker.doCheck("姓ふりがな", familyNameKana, 1, 16, false, false, true, false, false, false, false);
