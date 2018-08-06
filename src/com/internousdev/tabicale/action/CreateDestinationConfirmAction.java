@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CreateDestinationConfirmAction extends ActionSupport implements SessionAware {
