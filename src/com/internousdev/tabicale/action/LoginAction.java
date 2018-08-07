@@ -40,10 +40,10 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		if(savedLoginId==true) {
 			session.put("savedLoginId", true);
-			session.put("loginId", loginId);
+			session.put("saveId", loginId);
 		}else{
 			session.put("savedLoginId", false);
-			session.remove("loginId", loginId);
+			session.remove("saveId", loginId);
 		}
 
 		InputChecker inputChecker = new InputChecker();

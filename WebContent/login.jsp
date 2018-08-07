@@ -50,7 +50,7 @@ function goResetPasswordAction(){
 		<tr>
 			<th scope="row"><s:label value="ログインID:"/></th>
 			<s:if test="#session.savedLoginId==true">
-			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" value='%{#session.loginId}' autocomplete="off"/></td>
+			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" value='%{#session.saveId}' autocomplete="off"/></td>
 			</s:if>
 			<s:else>
 			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" autocomplete="off"/></td>
