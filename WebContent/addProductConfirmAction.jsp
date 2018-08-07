@@ -56,6 +56,7 @@
 		<s:hidden name="productName" value="%{#session.productName}"/>
 		<s:hidden name="productNameKana" value="%{#session.productNameKana}"/>
 		<s:hidden name="productDescription" value="%{#session.productDescription}"/>
+		<s:hidden name="categoryId" value="%{#session.categoryId}"/>
 		<s:hidden name="price" value="%{#session.price}"/>
 		<s:hidden name="imageFilePath" value="%{#session.imageFilePath}"/>
 		<s:hidden name="imageFileName" value="%{#session.imageFileName}"/>

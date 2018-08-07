@@ -112,7 +112,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		try{
 			FileUtils.copyFile(userImage, fileToCreate);
 			session.put("imageFileName", userImageFileName);
-			session.put("imageFilePath", filePath);
+			session.put("imageFilePath","./images");
 			session.put("image_flg", userImageFileName);
 			}catch(IOException e){
 				e.printStackTrace();

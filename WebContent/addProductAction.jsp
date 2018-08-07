@@ -130,7 +130,8 @@ function $(id){
 					</tr>
 					<tr>
 						<th>カテゴリID</th>
-						<td><s:textfield name="categoryId" value="%{#session.categoryId}"/></td>
+						<td><s:select name="categoryId" list="#session.mCategoryDtoList" listValue="categoryName"
+						listKey="categoryId" class="cs-div" id="categoryId"/></td>
 					</tr>
 					<tr>
 						<th>価格</th>
