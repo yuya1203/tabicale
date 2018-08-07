@@ -26,7 +26,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<s:iterator value="#session.desutinationInfoDTOList" status="st">
+				<s:iterator value="#session.destinationInfoDTOList" status="st">
 					<tr>
 						<td>
 							<s:if test="#st.index == 0">
