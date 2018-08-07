@@ -50,20 +50,31 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	private List<String> releaseDateErrorMessageList = new ArrayList<String>();
 	private List<String> releaseCompanyErrorMessageList = new ArrayList<String>();
 
+	private List<String> imageFilePathErrorMessageList = new ArrayList<String>();
+
 
 
 	public String execute(){
 		String result = ERROR;
 		InputChecker inputChecker = new InputChecker();
 
-		System.out.println(userImageFileName+"userImageFileName");
+
+		productIdErrorMessageList = inputChecker.doCheck("商品ID", productId, 1, 16, false, false, false, true, false, false, false);
+		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false);
+		productNameKanaErrorMessageList = inputChecker.doCheck("商品名カナ", productNameKana, 1, 100, true, false, false, true, true, true, false);
+		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false);
+		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false);
+		priceErrorMessageList = inputChecker.doCheck("価格", price, 1, 16, false, false, false, true, false, false, false);
+
+		releaseDateErrorMessageList = inputChecker.doCheck("発売年月", releaseDate, 1, 16, false, true, true, true, false, false, false);
+		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
 
 
 		//画像ファイルが選択されているか確認する
 		if(userImage != null){
 			imageFilePathError = null;
 		}else{
-			imageFilePathError = "画像ファイルを選んでください";
+			imageFilePathErrorMessageList.add("画像ファイルを選んでください");
 		}
 
 
@@ -80,7 +91,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 			//jpegかjpgでないときエラー文を挿入
 			if(!fileExtension.equals("jpeg")&& !fileExtension.equals("jpg")){
-				imageFilePathError = "使用できるファイルは'.jpeg.jpg'です";
+				imageFilePathErrorMessageList.add("使用できるファイルは'.jpeg.jpg'です");
 			}
 		}
 
@@ -96,40 +107,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		session.put("releaseDate", releaseDate);
 		session.put("releaseCompany", releaseCompany);
 
-		//選択した画像ファイル名をコンソールに表示する
-		System.out.println(userImageFileName);
-
-		//選択した画像ファイルをサーバーに保存する
-		String  filePath = ServletActionContext.getServletContext().getRealPath("/").concat("images/");
-
-		System.out.println("imageLocation" + filePath);
-
-		CommonUtility commonUtility = new CommonUtility();
-		userImageFileName = commonUtility.getRandomValue() + userImageFileName;
-
-		//サーバー上に保存した画像をimageファルダにコピーする
-		File fileToCreate = new File(filePath,userImageFileName);
-		try{
-			FileUtils.copyFile(userImage, fileToCreate);
-			session.put("imageFileName", userImageFileName);
-			session.put("imageFilePath","./images");
-			session.put("image_flg", userImageFileName);
-			}catch(IOException e){
-				e.printStackTrace();
-			}
-
-
-		productIdErrorMessageList = inputChecker.doCheck("商品ID", productId, 1, 16, false, false, false, true, false, false, false);
-		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false);
-		productNameKanaErrorMessageList = inputChecker.doCheck("商品名カナ", productNameKana, 1, 100, true, false, false, true, true, true, false);
-		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false);
-		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false);
-		priceErrorMessageList = inputChecker.doCheck("価格", price, 1, 16, false, false, false, true, false, false, false);
-
-		releaseDateErrorMessageList = inputChecker.doCheck("発売年月", releaseDate, 1, 16, false, true, true, true, false, false, false);
-		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
-
-
 
 		if(productIdErrorMessageList.size()==0
 				&& productNameErrorMessageList.size()==0
@@ -138,7 +115,30 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 				&& categoryIdErrorMessageList.size()==0
 				&& priceErrorMessageList.size()==0
 				&& releaseDateErrorMessageList.size()==0
-				&& releaseCompanyErrorMessageList.size()==0) {
+				&& releaseCompanyErrorMessageList.size()==0
+				&& imageFilePathErrorMessageList.size()==0) {
+
+					//選択した画像ファイル名をコンソールに表示する
+					System.out.println(userImageFileName);
+
+					//選択した画像ファイルをサーバーに保存する
+					String  filePath = ServletActionContext.getServletContext().getRealPath("/").concat("images/");
+
+					System.out.println("imageLocation" + filePath);
+
+					CommonUtility commonUtility = new CommonUtility();
+					userImageFileName = commonUtility.getRandomValue() + userImageFileName;
+
+					//サーバー上に保存した画像をimageファルダにコピーする
+					File fileToCreate = new File(filePath,userImageFileName);
+					try{
+						FileUtils.copyFile(userImage, fileToCreate);
+						session.put("imageFileName", userImageFileName);
+						session.put("imageFilePath","./images");
+						session.put("image_flg", userImageFileName);
+						}catch(IOException e){
+							e.printStackTrace();
+				}
 					result = SUCCESS;
 				}else {
 					session.put("productIdErrorMessageList", productIdErrorMessageList);
@@ -149,11 +149,10 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 					session.put("priceErrormessageList", priceErrorMessageList);
 					session.put("releaseDateErrorMessageList", releaseDateErrorMessageList);
 					session.put("releaseCompanyErrorMessageList", releaseCompanyErrorMessageList);
+					session.put("imageFilePathErrorMessageList", imageFilePathErrorMessageList);
 					result = ERROR;
 				}
 
-		session.put("checked", 1);
-		result = SUCCESS;
 		return result;
 	}
 

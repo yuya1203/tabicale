@@ -6,10 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css"/>
+
+<meta http-equiv="refresh" content="3;URL='admin.jsp'"/>
+
 <title>商品追加完了画面</title>
 </head>
 <body>
-
+	<jsp:include page="adminHeader.jsp"/>
 	<div class="contents">
 		<h1>商品追加完了画面</h1>
 
