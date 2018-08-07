@@ -19,6 +19,7 @@ function alertFunction(){
 
 </head>
 <body>
+<jsp:include page="adminHeader.jsp"/>
 
 <div id="contents">
 <h1>管理者画面</h1>
