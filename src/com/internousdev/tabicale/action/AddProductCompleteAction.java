@@ -1,10 +1,13 @@
 package com.internousdev.tabicale.action;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.ProductInfoDAO;
+import com.internousdev.tabicale.dto.ProductInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddProductCompleteAction extends ActionSupport implements SessionAware{
@@ -24,12 +27,20 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 
 	private Map<String,Object>session;
 
+	private List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
+
 	public String execute(){
 		String result = ERROR;
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 		int count = productInfoDAO.createProduct(productId,productName,productNameKana,productDescription,categoryId,price,imageFilePath,imageFileName,releaseDate,releaseCompany);
 		if(count > 0){
 			result = SUCCESS;
+
+			ProductInfoDAO productInfoDao = new ProductInfoDAO();
+			productInfoDtoList = productInfoDao.getProductInfoList();
+			session.put("productInfoDtoList", productInfoDtoList);
+
+			session.remove("mCategoryDtoList");
 		}
 		return result;
 	}

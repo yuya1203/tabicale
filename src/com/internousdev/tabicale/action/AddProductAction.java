@@ -1,10 +1,14 @@
 package com.internousdev.tabicale.action;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.MCategoryDAO;
+import com.internousdev.tabicale.dto.MCategoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddProductAction extends ActionSupport implements SessionAware{
@@ -25,6 +29,8 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 	private String releaseCompany;
 
 	private Map<String,Object>session;
+
+	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 
 
 	public String execute(){
@@ -58,6 +64,10 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		session.put("releaseDate", releaseDate);
 		session.put("releaseCompany", releaseCompany);
 
+		MCategoryDAO mCategoryDao = new MCategoryDAO();
+		mCategoryDtoList = mCategoryDao.getMCategoryList();
+		mCategoryDtoList.remove(0);
+		session.put("mCategoryDtoList",  mCategoryDtoList);
 
 		result = SUCCESS;
 		return result;

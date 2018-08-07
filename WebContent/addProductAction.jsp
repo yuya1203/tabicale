@@ -45,7 +45,7 @@ function $(id){
 </script>
 </head>
 <body>
-	<s:include value="header.jsp"/>
+	<jsp:include page="adminHeader.jsp"/>
 
 	<div class="admin-main">
 		<div class="top">
@@ -109,6 +109,13 @@ function $(id){
 			</div>
 			</div>
 		</s:if>
+		<s:if test="!session.imageFilePathErrorMessageList.isEmpty()">
+			<div class="error">
+			<div class="error-message">
+				<s:iterator value="#session.imageFilePathErrorMessageList"><s:property /><br></s:iterator>
+			</div>
+			</div>
+		</s:if>
 
 			<s:form method="post" action="AddProductConfirmAction" enctype="multipart/form-data">
 				<table class="addList">
@@ -144,9 +151,6 @@ function $(id){
 					<tr>
 						<th>発売会社</th>
 						<td><s:textfield name="releaseCompany" value="%{#session.releaseCompany}"/></td>
-					</tr>
-					<tr>
-						<td colspan="2"><s:property value="imageFilePathError"/></td>
 					</tr>
 					<tr>
 						<th>商品画像</th>

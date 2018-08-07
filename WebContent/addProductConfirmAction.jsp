@@ -9,7 +9,7 @@
 <title>商品追加確認画面</title>
 </head>
 <body>
-
+	<jsp:include page="adminHeader.jsp"/>
 	<div class="contents">
 		<h1>商品追加確認画面</h1>
 		<s:form action="AddProductCompleteAction">
