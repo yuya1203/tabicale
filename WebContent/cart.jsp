@@ -59,7 +59,7 @@
 					<s:hidden name="releaseCompany" value="%{releaseCompany}"/>
 					<s:hidden name="releaseDate" value="%{releaseDate}"/>
 					<s:hidden name="productCount" value="%{productCount}"/>
-					<s:hidden name="subtotal" value="{%subtotal}"/>
+					<s:hidden name="subtotal" value="%{subtotal}"/>
 				</s:iterator>
 			</tbody>
 		</table>
