@@ -7,6 +7,14 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/style.css">
 <title>管理者画面</title>
+<script>
+function alertFunction(){
+
+	alert("本当に削除しますか？");
+}
+
+
+</script>
 
 
 </head>
@@ -34,7 +42,7 @@
 <tr>
 <td><s:form action="DeleteProductAction">
 <s:hidden name="productId" value="%{productId}"/>
-<input type ="submit" class="submit_btn" value="削除" />
+<input type ="submit" class="submit_btn" value="削除" onclick="alertFunction()"  />
 </s:form></td>
 <td><s:property value="productName"/></td>
 <td><s:property value="productNameKana"/></td>
