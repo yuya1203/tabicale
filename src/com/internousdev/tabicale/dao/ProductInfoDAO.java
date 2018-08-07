@@ -225,7 +225,7 @@ public class ProductInfoDAO {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		int count = 0;
-		String sql = "INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,categoryId,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date) VALUES (?,?,?,?,?,?,?,?,?,?,now(),0)";
+		String sql = "INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,release_date,release_company,regist_date,update_date) VALUES (?,?,?,?,?,?,?,?,?,?,now(),now())";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -239,7 +239,6 @@ public class ProductInfoDAO {
 			preparedStatement.setString(8, imageFileName);
 			preparedStatement.setString(9, releaseDate);
 			preparedStatement.setString(10, releaseCompany);
-			preparedStatement.setInt(11, 0);
 
 			count = preparedStatement.executeUpdate();
 		}catch(SQLException e){

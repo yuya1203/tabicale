@@ -50,11 +50,13 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	private List<String> releaseDateErrorMessageList = new ArrayList<String>();
 	private List<String> releaseCompanyErrorMessageList = new ArrayList<String>();
 
-	private List<String> userImageErrorMessageList = new ArrayList<String>();
+
 
 	public String execute(){
 		String result = ERROR;
 		InputChecker inputChecker = new InputChecker();
+
+		System.out.println(userImageFileName+"userImageFileName");
 
 
 		//画像ファイルが選択されているか確認する
@@ -63,6 +65,8 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		}else{
 			imageFilePathError = "画像ファイルを選んでください";
 		}
+
+
 
 		//特定の拡張子以外の画像ファイルを選択できないようにする
 		//最後の.の位置を取得します
@@ -108,7 +112,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		try{
 			FileUtils.copyFile(userImage, fileToCreate);
 			session.put("imageFileName", userImageFileName);
-			session.put("imageFilePath", "./images/"+userImageFileName);
+			session.put("imageFilePath", filePath);
 			session.put("image_flg", userImageFileName);
 			}catch(IOException e){
 				e.printStackTrace();
@@ -118,7 +122,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		productIdErrorMessageList = inputChecker.doCheck("商品ID", productId, 1, 16, false, false, false, true, false, false, false);
 		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false);
 		productNameKanaErrorMessageList = inputChecker.doCheck("商品名カナ", productNameKana, 1, 100, true, false, false, true, true, true, false);
-		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 255, true, true, true, true, true, true, false);
+		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false);
 		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false);
 		priceErrorMessageList = inputChecker.doCheck("価格", price, 1, 16, false, false, false, true, false, false, false);
 
@@ -134,8 +138,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 				&& categoryIdErrorMessageList.size()==0
 				&& priceErrorMessageList.size()==0
 				&& releaseDateErrorMessageList.size()==0
-				&& releaseCompanyErrorMessageList.size()==0
-				&& userImageErrorMessageList.size()==0 ) {
+				&& releaseCompanyErrorMessageList.size()==0) {
 					result = SUCCESS;
 				}else {
 					session.put("productIdErrorMessageList", productIdErrorMessageList);
@@ -146,7 +149,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 					session.put("priceErrormessageList", priceErrorMessageList);
 					session.put("releaseDateErrorMessageList", releaseDateErrorMessageList);
 					session.put("releaseCompanyErrorMessageList", releaseCompanyErrorMessageList);
-					session.put("userImageErrorMesssageList", userImageErrorMessageList);
 					result = ERROR;
 				}
 
@@ -180,7 +182,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	public String getProductDescription(){
 		return productDescription;
 	}
-	public void SetProductDescription(String productDescription){
+	public void setProductDescription(String productDescription){
 		this.productDescription = productDescription;
 	}
 

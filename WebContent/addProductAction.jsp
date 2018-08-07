@@ -151,9 +151,6 @@ function $(id){
 						<th>商品画像</th>
 						<td class="image"><s:file name="userImage" accept='image/jpg, image/jpeg' /></td>
 					</tr>
-
-
-
 				</table>
 					<s:submit value="商品追加"/>
 			</s:form>
