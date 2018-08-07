@@ -44,7 +44,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 				if(!(iterator.hasNext())){
 					dtoList = null;
 				}
-				session.put("desutinationInfoDTOList", dtoList);
+				session.put("destinationInfoDtoList", dtoList);
 			}catch(SQLException e){
 				e.printStackTrace();
 			}
@@ -84,7 +84,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 			dto.setSubtotal(Integer.parseInt(String.valueOf(subtotalList[i])));
 			dtoList.add(dto);
 		}
-		session.put("purchaseHistoryInfoDTOList", dtoList);
+		session.put("purchaseHistoryInfoDtoList", dtoList);
 
 		if(!session.containsKey("loginId")){
 			result = ERROR;
