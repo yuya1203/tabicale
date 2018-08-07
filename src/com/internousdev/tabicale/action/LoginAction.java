@@ -40,7 +40,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		if(savedLoginId==true) {
 			session.put("savedLoginId", true);
-			session.put("savaId", loginId);
+			session.put("saveId", loginId);
 		}else{
 			session.put("savedLoginId", false);
 			session.remove("saveId", loginId);
