@@ -21,7 +21,7 @@ public class Pagination {
 		//現在のページ番号に対する開始レコード番号(オフセット)
 		paginationDTO.setStartRecordNo(pageSize * (paginationDTO.getCurrentPageNo() -1));
 		//現在のページ番号に対する終了レコード番号
-		paginationDTO.setEndRecordNo(paginationDTO.getStartRecordNo() + (pageSize - 1));
+		paginationDTO.setEndRecordNo(Math.min(paginationDTO.getStartRecordNo() + (pageSize - 1),paginationDTO.getTotalPageSize()));
 
 		List<Integer> pageNumberList=new ArrayList<Integer>();
 		for(int pageNumber =1;pageNumber <= paginationDTO.getTotalPageSize(); pageNumber++){
