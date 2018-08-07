@@ -64,7 +64,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		String[] productCountList = util.parseArrayList(productCount);
 		String[] subtotalList = util.parseArrayList(subtotal);
 
-		for(int i = 0; i < productIdList.length-1; i++){
+		for(int i = 0; i < productIdList.length; i++){
 			PurchaseHistoryInfoDTO dto = new PurchaseHistoryInfoDTO();
 			dto.setUserId(String.valueOf(session.get("loginId")));
 			dto.setProductId(Integer.parseInt(String.valueOf(productIdList[i])));
