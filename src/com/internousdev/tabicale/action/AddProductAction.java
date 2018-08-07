@@ -1,5 +1,6 @@
 package com.internousdev.tabicale.action;
 
+import java.io.File;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -18,6 +19,8 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 	private String imageFilePath;
 	private String imageFileName;
 
+	private File userImage;
+
 	private String releaseDate;
 	private String releaseCompany;
 
@@ -34,8 +37,7 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		session.remove("categoryIdErrorMessageList");
 		session.remove("priceErrorMessageList");
 
-		session.remove("imageFilePathErrorMessageList");
-		session.remove("imageFileNameErrorMessageList");
+		session.remove("userImageErrorMessageList");
 
 		session.remove("releaseDateErrorMessageList");
 		session.remove("releaseCompanyErrorMessageList");
@@ -51,7 +53,7 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		session.put("price", price);
 
 		session.put("imageFilePath", imageFilePath);
-		session.put("imageFileName", imageFileName);
+		session.put("userImage", userImage);
 
 		session.put("releaseDate", releaseDate);
 		session.put("releaseCompany", releaseCompany);
@@ -115,6 +117,13 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 	}
 	public void setImageFileName(String imageFileName) {
 		this.imageFileName = imageFileName;
+	}
+
+	public File getUserImage(){
+		return userImage;
+	}
+	public void setUserImage(File userImage){
+		this.userImage = userImage;
 	}
 
 	public String getReleaseDate(){

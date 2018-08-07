@@ -86,7 +86,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 						e.printStackTrace();
 					}
 					result = "settlement";
-				}else if((loginId.equals("admin") && password.equals("admin"))
+				}/*else if((loginId.equals("admin") && password.equals("admin"))
 						 || (loginId.equals("admin2") && password.equals("admin2"))
 						 || (loginId.equals("admin3") && password.equals("admin3"))
 						 || (loginId.equals("admin4") && password.equals("admin4"))
@@ -104,8 +104,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 					session.put("productInfoDtoList", productInfoDtoList);
 					result = "admin";
 
-				}else{
+				}*/else{
 					result = SUCCESS;
+					if(userInfoDTO.getStatus().equals("1")){
+						ProductInfoDAO productInfoDao = new ProductInfoDAO();
+						productInfoDtoList = productInfoDao.getProductInfoList();
+						session.put("productInfoDtoList", productInfoDtoList);
+						result = "admin";
+					}
 				}
 			}
 				session.put("logined", 1);

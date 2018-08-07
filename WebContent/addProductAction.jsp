@@ -130,7 +130,8 @@ function $(id){
 					</tr>
 					<tr>
 						<th>カテゴリID</th>
-						<td><s:textfield name="categoryId" value="%{#session.categoryId}"/></td>
+						<td><s:select name="categoryId" list="#session.mCategoryDtoList" listValue="categoryName"
+						listKey="categoryId" class="cs-div" id="categoryId"/></td>
 					</tr>
 					<tr>
 						<th>価格</th>
@@ -151,9 +152,6 @@ function $(id){
 						<th>商品画像</th>
 						<td class="image"><s:file name="userImage" accept='image/jpg, image/jpeg' /></td>
 					</tr>
-
-
-
 				</table>
 					<s:submit value="商品追加"/>
 			</s:form>

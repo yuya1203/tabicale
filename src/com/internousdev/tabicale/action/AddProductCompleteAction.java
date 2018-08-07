@@ -58,7 +58,7 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 	public String getProductDescription(){
 		return productDescription;
 	}
-	public void SetProductDescription(String productDescription){
+	public void setProductDescription(String productDescription){
 		this.productDescription = productDescription;
 	}
 
