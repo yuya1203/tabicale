@@ -15,9 +15,6 @@
 	<div class="Logout">
 		<a href="<s:url action='LogoutAction'/>">ログアウト</a>
 	</div>
-	<div class="">
-		<a href ="<s:url action=''/>">管理者画面</a>
-	</div>
 </div>
 
 </body>

@@ -14,6 +14,7 @@ import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.ProductInfoDAO;
+import com.internousdev.tabicale.dto.ProductInfoDTO;
 import com.internousdev.tabicale.util.CommonUtility;
 import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
@@ -55,9 +56,11 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	private List<String> releaseCompanyErrorMessageList = new ArrayList<String>();
 
 	private List<String> imageFilePathErrorMessageList = new ArrayList<String>();
+	private List<String> identicalErrorMessageList = new ArrayList<String>();
 
 
 
+	@SuppressWarnings("unchecked")
 	public String execute(){
 		String result = ERROR;
 		InputChecker inputChecker = new InputChecker();
@@ -71,6 +74,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 		releaseDateErrorMessageList = checkDate("発売年月", releaseDate);
 		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
+		identicalErrorMessageList = inputChecker.doIdenticalCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productName, productNameKana);
 
 
 		//画像ファイルが選択されているか確認する
@@ -123,7 +127,8 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 				&& priceErrorMessageList.size()==0
 				&& releaseDateErrorMessageList.size()==0
 				&& releaseCompanyErrorMessageList.size()==0
-				&& imageFilePathErrorMessageList.size()==0) {
+				&& imageFilePathErrorMessageList.size()==0
+				&& identicalErrorMessageList.size()==0) {
 
 					//選択した画像ファイル名をコンソールに表示する
 					System.out.println(userImageFileName);
@@ -157,6 +162,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 					session.put("releaseDateErrorMessageList", releaseDateErrorMessageList);
 					session.put("releaseCompanyErrorMessageList", releaseCompanyErrorMessageList);
 					session.put("imageFilePathErrorMessageList", imageFilePathErrorMessageList);
+					session.put("identicalErrorMessageList",identicalErrorMessageList);
 					result = ERROR;
 				}
 
