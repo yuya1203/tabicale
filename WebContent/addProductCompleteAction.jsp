@@ -14,14 +14,17 @@
 <body>
 	<jsp:include page="adminHeader.jsp"/>
 	<div class="contents">
-		<h1>商品追加完了画面</h1>
+		<div class="top">
+			<h1>商品追加完了画面</h1>
+		</div>
 
 		<div class="success">
 		商品追加が完了しました。
 		</div>
-		<s:form action="LoginAction">
-			<s:submit value="管理者画面へ戻る"/>
-		</s:form>
+
+		<div>
+			<p>3秒後に管理者画面に戻ります</p>
+		</div>
 	</div>
 
 </body>
