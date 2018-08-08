@@ -68,6 +68,9 @@
 
 		</s:form>
 	</div>
+	<div class="footer">
+		<s:include value="footer.jsp"/>
+	</div>
 
 </body>
 </html>

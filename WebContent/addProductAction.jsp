@@ -157,6 +157,9 @@ function $(id){
 			</s:form>
 		</div>
 	</div>
+	<div class="footer">
+		<s:include value="footer.jsp"/>
+	</div>
 
 </body>
 </html>
