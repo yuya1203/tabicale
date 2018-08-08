@@ -21,7 +21,6 @@
 		<div class="success">
 		商品追加が完了しました。
 		</div>
-
 		<div>
 			<p>3秒後に管理者画面に戻ります</p>
 		</div>
