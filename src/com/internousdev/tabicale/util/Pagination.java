@@ -58,7 +58,11 @@ public class Pagination {
 
 		PaginationDTO paginationDTO=new PaginationDTO();
 		//全ページ数
-		paginationDTO.setTotalPageSize((int)(Math.ceil(list.size() / pageSize)));
+		if(list.size()%pageSize==0){
+			paginationDTO.setTotalPageSize((int)(Math.ceil(list.size() / pageSize)));
+		}else{
+			paginationDTO.setTotalPageSize((int)(Math.ceil(list.size() / pageSize))+1);
+		}
 		//現在のページ番号
 		paginationDTO.setCurrentPageNo(Integer.parseInt(pageNo));
 		//全レコード数
