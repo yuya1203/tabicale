@@ -17,7 +17,7 @@ import com.internousdev.tabicale.dto.PurchaseHistoryInfoDTO;
 import com.internousdev.tabicale.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class SettlementConfirmAction extends ActionSupport implements SessionAware{
+public class SettlementConfirmAction extends ActionSupport implements SessionAware {
 
 	private String categoryId;
 	private Collection<String> checkList;
@@ -32,20 +32,21 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	private String productCount;
 	private String subtotal;
 	private Map<String, Object> session;
-	public String execute(){
+
+	public String execute() {
 		String result = ERROR;
 
-		if(session.containsKey("loginId")){
+		if (session.containsKey("loginId")) {
 			DestinationInfoDAO dao = new DestinationInfoDAO();
 			List<DestinationInfoDTO> dtoList = new ArrayList<>();
-			try{
+			try {
 				dtoList = dao.getDestinationInfo(String.valueOf(session.get("loginId")));
 				Iterator<DestinationInfoDTO> iterator = dtoList.iterator();
-				if(!(iterator.hasNext())){
+				if (!(iterator.hasNext())) {
 					dtoList = null;
 				}
 				session.put("destinationInfoDtoList", dtoList);
-			}catch(SQLException e){
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
@@ -64,7 +65,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		String[] productCountList = util.parseArrayList(productCount);
 		String[] subtotalList = util.parseArrayList(subtotal);
 
-		for(int i = 0; i < productIdList.length; i++){
+		for (int i = 0; i < productIdList.length; i++) {
 			PurchaseHistoryInfoDTO dto = new PurchaseHistoryInfoDTO();
 			dto.setUserId(String.valueOf(session.get("loginId")));
 			dto.setProductId(Integer.parseInt(String.valueOf(productIdList[i])));
@@ -74,10 +75,10 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 			dto.setImageFileName(String.valueOf(imageFileNameList[i]));
 			dto.setPrice(Integer.parseInt(String.valueOf(priceList[i])));
 			dto.setReleaseCompany(String.valueOf(releaseCompanyList[i]));
-			try{
+			try {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 				dto.setReleaseDate(sdf.parse(String.valueOf(releaseDateList[i])));
-			}catch(ParseException e){
+			} catch (ParseException e) {
 				e.printStackTrace();
 			}
 			dto.setProductCount(Integer.parseInt(String.valueOf(productCountList[i])));
@@ -86,9 +87,9 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		}
 		session.put("purchaseHistoryInfoDtoList", dtoList);
 
-		if(!session.containsKey("loginId")){
+		if (!session.containsKey("loginId")) {
 			result = ERROR;
-		}else{
+		} else {
 			result = SUCCESS;
 		}
 		return result;
