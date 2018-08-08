@@ -52,6 +52,8 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 			tempUserId = String.valueOf(session.get("tempUserId"));
 		}
 
+		System.out.println(userId+"userId");
+		System.out.println(tempUserId+"tempUserId");
 		//カートに入れる個数を数字だけのデータにします
 		productCount = String.valueOf((productCount.split(" ,",0))[0]);
 		System.out.println(productCount);
