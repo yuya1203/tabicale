@@ -19,5 +19,6 @@
 		<a href ="<s:url action=''/>">管理者画面</a>
 	</div>
 </div>
+
 </body>
 </html>
