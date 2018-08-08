@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.ProductInfoDAO;
 import com.internousdev.tabicale.util.CommonUtility;
 import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
@@ -18,6 +19,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AddProductConfirmAction extends ActionSupport implements SessionAware{
 
 	private String productId;
+	private int maxIdPlusOne;
 	private String productName;
 	private String productNameKana;
 	private String productDescription;
@@ -40,7 +42,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 	private String imageFilePathError;
 
-	private List<String> productIdErrorMessageList = new ArrayList<String>();
 	private List<String> productNameErrorMessageList = new ArrayList<String>();
 	private List<String> productNameKanaErrorMessageList = new ArrayList<String>();
 	private List<String> productDescriptionErrorMessageList = new ArrayList<String>();
@@ -59,7 +60,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		InputChecker inputChecker = new InputChecker();
 
 
-		productIdErrorMessageList = inputChecker.doCheck("商品ID", productId, 1, 16, false, false, false, true, false, false, false);
 		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false);
 		productNameKanaErrorMessageList = inputChecker.doCheck("商品名カナ", productNameKana, 1, 100, true, false, false, true, true, true, false);
 		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false);
@@ -96,8 +96,13 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		}
 
 
+		//maxIdPlusOne
+		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
+		maxIdPlusOne = productInfoDAO.maxIdPlusOne();
+		System.out.println(maxIdPlusOne);
+
 		//入力された値を保存する
-		session.put("productId", productId);
+		session.put("productId", maxIdPlusOne);
 		session.put("productName", productName);
 		session.put("productNameKana", productNameKana);
 		session.put("productDescription", productDescription);
@@ -108,8 +113,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		session.put("releaseCompany", releaseCompany);
 
 
-		if(productIdErrorMessageList.size()==0
-				&& productNameErrorMessageList.size()==0
+		if(productNameErrorMessageList.size()==0
 				&& productNameKanaErrorMessageList.size()==0
 				&& productDescriptionErrorMessageList.size()==0
 				&& categoryIdErrorMessageList.size()==0
@@ -131,6 +135,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 					//サーバー上に保存した画像をimageファルダにコピーする
 					File fileToCreate = new File(filePath,userImageFileName);
+
 					try{
 						FileUtils.copyFile(userImage, fileToCreate);
 						session.put("imageFileName", userImageFileName);
@@ -141,7 +146,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 				}
 					result = SUCCESS;
 				}else {
-					session.put("productIdErrorMessageList", productIdErrorMessageList);
 					session.put("productNameErrorMessageList", productNameErrorMessageList);
 					session.put("productNameKanaErrorMessageList", productNameKanaErrorMessageList);
 					session.put("productDescriptionErrorMessageList", productDescriptionErrorMessageList);

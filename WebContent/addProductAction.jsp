@@ -120,10 +120,6 @@ function $(id){
 			<s:form method="post" action="AddProductConfirmAction" enctype="multipart/form-data">
 				<table class="addList">
 					<tr>
-						<th>商品ID</th>
-						<td><s:textfield name="productId" value="%{#session.productId}" placeholder=""/></td>
-					</tr>
-					<tr>
 						<th>商品名</th>
 						<td><s:textfield name="productName" value="%{#session.productName}"/></td>
 					</tr>

@@ -274,6 +274,28 @@ public class ProductInfoDAO {
 			return count;
 		}
 
+		//登録されているproduct_idの内、最大値を取り出しプラス１する
+		public int maxIdPlusOne(){
+			DBConnector dbConnector = new DBConnector();
+			Connection connection = dbConnector.getConnection();
+			int count =0;
+			String sql = "SELECT max(id) as maxid FROM product_info";
 
+			try{
+				PreparedStatement preparedStatement = connection.prepareStatement(sql);
+				ResultSet rs = preparedStatement.executeQuery();
+				if(rs.next()){
+					count = rs.getInt("maxid");
+				}
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			try{
+				connection.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			return count+1;
+		}
 
 }

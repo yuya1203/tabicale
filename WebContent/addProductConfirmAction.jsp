@@ -16,7 +16,7 @@
 			<table class="addList-confirm">
 				<tr>
 					<th>商品ID</th>
-					<td><s:property value="productId"/></td>
+					<td><s:property value="%{#session.productId}"/></td>
 				</tr>
 				<tr>
 					<th>商品名</th>
