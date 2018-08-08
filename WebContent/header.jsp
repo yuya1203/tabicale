@@ -42,7 +42,7 @@ function goSearchItemAction(){
 <header>
 
 <div id="header">
-<div id="heder-title">
+<div id="header-title">
 TABICALE
 </div>
 <div id="header-menu">
