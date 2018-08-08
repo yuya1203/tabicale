@@ -116,6 +116,13 @@ function $(id){
 			</div>
 			</div>
 		</s:if>
+		<s:if test="!session.identicalErrorMessageList.isEmpty()">
+			<div class="error">
+			<div class="error-message">
+				<s:iterator value="#session.identicalErrorMessageList"><s:property /><br></s:iterator>
+			</div>
+			</div>
+		</s:if>
 
 			<s:form method="post" action="AddProductConfirmAction" enctype="multipart/form-data">
 				<table class="addList">

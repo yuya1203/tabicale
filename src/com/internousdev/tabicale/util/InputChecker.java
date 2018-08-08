@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils
 ;
+
+import com.internousdev.tabicale.dto.ProductInfoDTO;
 public class InputChecker {
 
 
@@ -135,7 +137,20 @@ public class InputChecker {
 		}
 		return stringList;
 	}
+
+	//商品名と商品名カナが同一なものがないか判断します
+	public List<String> doIdenticalCheck(List<ProductInfoDTO> productInfoDtoList,String productName,String productNameKana){
+		List<String> stringList = new ArrayList<String>();
+		for(int i=0;i<productInfoDtoList.size();i++){
+			if(productInfoDtoList.get(i).getProductName().equals(productName)){
+				stringList.add("同一の商品名が存在してます。");
+			}
+			if(productInfoDtoList.get(i).getProductNameKana().equals(productNameKana)){
+				stringList.add("同一の商品名カナが存在してます。");
+			}
+			System.out.println("i"+i);
+		}
+		return stringList;
+	}
+
 }
-
-
-

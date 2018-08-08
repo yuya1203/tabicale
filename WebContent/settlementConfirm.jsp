@@ -26,7 +26,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<s:iterator value="#session.destinationInfoDTOList" status="st">
+				<s:iterator value="#session.destinationInfoDtoList" status="st">
 					<tr>
 						<td>
 							<s:if test="#st.index == 0">
@@ -35,10 +35,10 @@
 							<s:else><input type="radio" name="id" value="<s:property value='id'/>"/></s:else>
 						</td>
 						<td>
-							<s:property value="familyName"/><span>　</span><s:property value="firstNama"/>
+							<s:property value="familyName"/><span>　</span><s:property value="firstName"/>
 						</td>
 						<td>
-							<s:property value="familyNameKna"/><span>　</span><s:property value="firstNameKana"/>
+							<s:property value="familyNameKana"/><span>　</span><s:property value="firstNameKana"/>
 						</td>
 						<td>
 							<s:property value="userAddress"/>

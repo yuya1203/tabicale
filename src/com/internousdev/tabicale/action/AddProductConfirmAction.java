@@ -2,11 +2,14 @@ package com.internousdev.tabicale.action;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -66,7 +69,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false);
 		priceErrorMessageList = inputChecker.doCheck("価格", price, 1, 16, false, false, false, true, false, false, false);
 
-		releaseDateErrorMessageList = inputChecker.doCheck("発売年月", releaseDate, 1, 16, false, true, true, true, false, false, false);
+		releaseDateErrorMessageList = checkDate("発売年月", releaseDate);
 		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
 
 
@@ -158,6 +161,22 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 				}
 
 		return result;
+	}
+
+	private List<String> checkDate(String propertyName, String value){
+		List<String> errorList = new ArrayList<String>();
+
+		if(StringUtils.isEmpty(value)){
+			errorList.add(propertyName + "を入力してください。");
+		}else{
+			try{
+				DateUtils.parseDateStrictly(value, new String[] { "yyyy-MM-dd","yyyy年MM月dd日"});
+			}catch(ParseException e){
+				e.printStackTrace();
+				errorList.add("yyyy-MM-dd または yyyy年MM月dd日 で入力してください");
+			}
+		}
+		return errorList;
 	}
 
 
