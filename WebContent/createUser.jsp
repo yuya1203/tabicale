@@ -16,12 +16,8 @@
 <title>ユーザー情報登録画面</title>
 </head>
 <body>
-<div id="header">
-		<div id="pr">
-		</div>
-	</div>
-	<div id="main">
-		<div id="top">
+<jsp:include page="header.jsp" />
+<div id="contents">
 			<p>ユーザー情報登録画面</p>
 		</div>
 		<div>
@@ -131,9 +127,7 @@
 </s:form>
 </div>
 
-<div id="footer">
-			Copyright 2018 TabiCale all rights reserved.
-		</div>
-</div>
+<s:include value="footer.jsp"/>
+
 </body>
 </html>

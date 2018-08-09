@@ -6,16 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <meta http-equiv="refresh" content="3;URL='HomeAction'"/> -->
+<meta http-equiv="refresh" content="3;URL='HomeAction'"/>
 <title>登録完了画面</title>
 </head>
 <body>
-<div id="header">
-		<div id="pr">
-		</div>
-	</div>
-	<div id="main">
-		<div id="top">
+<jsp:include page="header.jsp" />
 <div id="contents">
 <h1>登録完了画面</h1>
 <div class="success">
@@ -28,11 +23,6 @@
 		<div>
 				<p><a href='<s:url action="HomeAction"/>'>ホームへ</a></p>
 			</div>
-<div id="footer">
-
-</div>
-</div>
-	Copyright 2018 TabiCale all rights reserved.
-</div>
+<s:include value="footer.jsp"/>
 </body>
 </html>

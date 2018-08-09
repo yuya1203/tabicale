@@ -9,13 +9,12 @@
 <title>登録内容確認画面</title>
 </head>
 <body>
-	<div id="header">
-		<div id="pr">
-		</div>
-	</div>
+<jsp:include page="header.jsp" />
+<div id="contents">
 	<div id="main">
 		<div id="top">
 			<p>ユーザー登録画面</p>
+			</div>
 		</div>
 		<div>
 			<h3>登録する内容は以下でよろしいですか。</h3>
@@ -84,8 +83,6 @@
 </s:form>
 </div>
 </div>
-	<div id="footer">
-		Copyright 2018 TabiCale all rights reserved.
-		</div>
+	<s:include value="footer.jsp"/>
 </body>
 </html>
