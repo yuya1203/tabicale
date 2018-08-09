@@ -20,9 +20,9 @@
 
 <%-- <s:submit value="ログアウト" class="submit_btn" onclick="goLogoutAction();"/> --%>
 
-		<div>
+		<%-- <div>
 				<p><a href='<s:url action="HomeAction"/>'>ホームへ</a></p>
-			</div>
+			</div> --%>
 <s:include value="footer.jsp"/>
 </body>
 </html>
