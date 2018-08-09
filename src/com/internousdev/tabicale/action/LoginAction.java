@@ -80,6 +80,16 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(userInfoDao.isExistsUserInfo(loginId, password)) {
 			if(userInfoDao.login(loginId, password) > 0) {
 				UserInfoDTO userInfoDTO = userInfoDao.getUserInfo(loginId, password);
+
+				//管理者ユーザーの場合の処理
+				if(userInfoDTO.getStatus().equals("1")){
+					ProductInfoDAO productInfoDao = new ProductInfoDAO();
+					productInfoDtoList = productInfoDao.getProductInfoList();
+					session.put("productInfoDtoList", productInfoDtoList);
+					session.put("logined", 0);
+					return "admin";
+				}
+
 				session.put("loginId", userInfoDTO.getUserId());
 				int count = 0;
 				CartInfoDAO cartInfoDao = new CartInfoDAO();
@@ -99,37 +109,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 						e.printStackTrace();
 					}
 					result = "settlement";
-				}/*else if((loginId.equals("admin") && password.equals("admin"))
-						 || (loginId.equals("admin2") && password.equals("admin2"))
-						 || (loginId.equals("admin3") && password.equals("admin3"))
-						 || (loginId.equals("admin4") && password.equals("admin4"))
-						 || (loginId.equals("admin5") && password.equals("admin5"))
-						 || (loginId.equals("admin6") && password.equals("admin6"))
-						 || (loginId.equals("admin7") && password.equals("admin7"))
-						 || (loginId.equals("admin8") && password.equals("admin8"))
-						 || (loginId.equals("admin9") && password.equals("admin9"))
-						 || (loginId.equals("admin10") && password.equals("admin10"))
-						 || (loginId.equals("admin11") && password.equals("admin11"))
-						 || (loginId.equals("admin12") && password.equals("admin12"))){
-
-					ProductInfoDAO productInfoDao = new ProductInfoDAO();
-					productInfoDtoList = productInfoDao.getProductInfoList();
-					session.put("productInfoDtoList", productInfoDtoList);
-					result = "admin";
-
-				}*/else{
+				}else{
 					result = SUCCESS;
-					if(userInfoDTO.getStatus().equals("1")){
-						ProductInfoDAO productInfoDao = new ProductInfoDAO();
-						productInfoDtoList = productInfoDao.getProductInfoList();
-						session.put("productInfoDtoList", productInfoDtoList);
-						result = "admin";
-					}
-
-
 				}
-			}
 				session.put("logined", 1);
+			}
 		}else{
 			passwordIncorrectErrorMessageList.add("入力されたパスワードが異なります。");
 			session.put("passwordIncorrectErrorMessageList", passwordIncorrectErrorMessageList);
