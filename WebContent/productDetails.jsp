@@ -12,13 +12,14 @@
 <title>商品詳細</title>
 </head>
 <body>
+<jsp:include page="header.jsp" />
 <div id= "contents">
 <h1>商品詳細画面</h1>
      <s:form action= "AddCartAction">
      <div class="box">
          <div class= "2column-container">
             <div class = "right">
-                <img src='<s:property value="%{#session.imageFilePath}"/><s:property value="%{#session.imageFileName}"/>' class= "item-imag-box-320"/><br>
+                <img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class= "item-imag-box-320"/><br>
             </div>
             <div class="left">
                 <table class="vertical-list-table-mini">
