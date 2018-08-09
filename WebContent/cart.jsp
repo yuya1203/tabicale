@@ -13,7 +13,7 @@
 </script>
 </head>
 <body>
-
+<jsp:include page="header.jsp" />
 <!-- テスト用です -->
 <s:if test="#session.checkListErrorMessageList != null">
 	<s:iterator value='#session.checkListErrorMessageList'>
@@ -81,5 +81,8 @@
 		カート情報はありません
 	</div>
 </s:else>
+<div id="footer">
+	<s:include value="footer.jsp"/>
+</div>
 </body>
 </html>
