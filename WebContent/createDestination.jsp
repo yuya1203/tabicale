@@ -11,7 +11,7 @@
 <title>宛先情報入力</title>
 </head>
 <body>
-
+<jsp:include page="header.jsp"/>
 
 <div id ="contents">
 <h1>宛先情報入力画面</h1>
@@ -122,6 +122,6 @@
 </div>
 </s:form>
 </div>
-
+<s:include value="footer.jsp"/>
 </body>
 </html>
