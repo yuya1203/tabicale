@@ -24,6 +24,7 @@ public class CreateUserCompleteAction extends ActionSupport implements SessionAw
 		UserInfoDAO UserInfoDao = new UserInfoDAO();
 		int count = UserInfoDao.createUser(familyName,firstName,familyNameKana,firstNameKana,sex,email,loginId,password);
 		if(count > 0) {
+			session.remove("loginId");
 			result = SUCCESS;
 		}
 		return result;
