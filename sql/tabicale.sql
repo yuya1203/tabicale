@@ -60,6 +60,7 @@ category_id int not null comment "カテゴリID",
 price int comment "価格",
 image_file_path varchar(100) comment "画像ファイルパス",
 image_file_name varchar(50) comment "画像ファイル名",
+image_file_name_2 varchar(50) comment "画像ファイル名2",
 release_date datetime not null comment "発売年月",
 release_company varchar(50) comment "発売会社",
 status tinyint not null default 0 comment "ステータス",
@@ -71,21 +72,21 @@ default charset=utf8
 comment="商品情報テーブル"
 ;
 insert into product_info values
-(1,1,"本1","ほん1","本1の商品詳細",2,100,"./images","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
-(2,2,"本2","ほん2","本2の商品詳細",2,200,"./images","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
-(3,3,"本3","ほん3","本3の商品詳細",2,300,"./images","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
-(4,4,"本4","ほん4","本4の商品詳細",2,400,"./images","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
-(5,5,"本5","ほん5","本5の商品詳細",2,500,"./images","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
-(6,6,"家電1","かでん1","家電1の商品詳細",3,1000,"./images","sample.jpg","2000-01-01 12:00:00","プログラマカレッジ",0,now(),now()),
-(7,7,"家電2","かでん2","家電2の商品詳細",3,2000,"./images","sample.jpg","2000-03-10 12:00:00","プログラマカレッジ",0,now(),now()),
-(8,8,"家電3","かでん3","家電3の商品詳細",3,3000,"./images","sample.jpg","2000-05-15 12:00:00","プログラマカレッジ",0,now(),now()),
-(9,9,"家電4","かでん4","家電4の商品詳細",3,4000,"./images","sample.jpg","2000-07-20 12:00:00","プログラマカレッジ",0,now(),now()),
-(10,10,"家電5","かでん5","家電5の商品詳細",3,5000,"./images","sample.jpg","2000-09-25 12:00:00","プログラマカレッジ",0,now(),now()),
-(11,11,"おもちゃ1","おもちゃ1","おもちゃ1の商品詳細",4,100,"./images","sample.jpg","2010-02-01 10:00:00","internous",0,now(),now()),
-(12,12,"おもちゃ2","おもちゃ2","おもちゃ2の商品詳細",4,200,"./images","sample.jpg","2010-04-05 10:00:00","internous",0,now(),now()),
-(13,13,"おもちゃ3","おもちゃ3","おもちゃ3の商品詳細",4,300,"./images","sample.jpg","2010-06-10 10:00:00","internous",0,now(),now()),
-(14,14,"おもちゃ4","おもちゃ4","おもちゃ4の商品詳細",4,400,"./images","sample.jpg","2010-08-15 10:00:00","internous",0,now(),now()),
-(15,15,"おもちゃ5","おもちゃ5","おもちゃ5の商品詳細",4,500,"./images","sample.jpg","2010-10-20 10:00:00","internous",0,now(),now());
+(1,1,"本1","ほん1","本1の商品詳細",2,100,"./images","sample.jpg","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
+(2,2,"本2","ほん2","本2の商品詳細",2,200,"./images","sample.jpg","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
+(3,3,"本3","ほん3","本3の商品詳細",2,300,"./images","sample.jpg","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
+(4,4,"本4","ほん4","本4の商品詳細",2,400,"./images","sample.jpg","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
+(5,5,"本5","ほん5","本5の商品詳細",2,500,"./images","sample.jpg","sample.jpg","1990-10-01 10:00:00","発売会社",0,now(),now()),
+(6,6,"家電1","かでん1","家電1の商品詳細",3,1000,"./images","sample.jpg","sample.jpg","2000-01-01 12:00:00","プログラマカレッジ",0,now(),now()),
+(7,7,"家電2","かでん2","家電2の商品詳細",3,2000,"./images","sample.jpg","sample.jpg","2000-03-10 12:00:00","プログラマカレッジ",0,now(),now()),
+(8,8,"家電3","かでん3","家電3の商品詳細",3,3000,"./images","sample.jpg","sample.jpg","2000-05-15 12:00:00","プログラマカレッジ",0,now(),now()),
+(9,9,"家電4","かでん4","家電4の商品詳細",3,4000,"./images","sample.jpg","sample.jpg","2000-07-20 12:00:00","プログラマカレッジ",0,now(),now()),
+(10,10,"家電5","かでん5","家電5の商品詳細",3,5000,"./images","sample.jpg","sample.jpg","2000-09-25 12:00:00","プログラマカレッジ",0,now(),now()),
+(11,11,"おもちゃ1","おもちゃ1","おもちゃ1の商品詳細",4,100,"./images","sample.jpg","sample.jpg","2010-02-01 10:00:00","internous",0,now(),now()),
+(12,12,"おもちゃ2","おもちゃ2","おもちゃ2の商品詳細",4,200,"./images","sample.jpg","sample.jpg","2010-04-05 10:00:00","internous",0,now(),now()),
+(13,13,"おもちゃ3","おもちゃ3","おもちゃ3の商品詳細",4,300,"./images","sample.jpg","sample.jpg","2010-06-10 10:00:00","internous",0,now(),now()),
+(14,14,"おもちゃ4","おもちゃ4","おもちゃ4の商品詳細",4,400,"./images","sample.jpg","sample.jpg","2010-08-15 10:00:00","internous",0,now(),now()),
+(15,15,"おもちゃ5","おもちゃ5","おもちゃ5の商品詳細",4,500,"./images","sample.jpg","sample.jpg","2010-10-20 10:00:00","internous",0,now(),now());
 
 create table cart_info(
 id int primary key not null auto_increment comment "ID",
@@ -100,10 +101,6 @@ update_date datetime comment "更新日"
 default charset=utf8
 comment="カート情報テーブル"
 ;
-insert into cart_info values
-(1,"guest",null,1,1,100,now(),null),
-(2,"guest2",null,6,2,2000,now(),null),
-(3,"guest2",null,11,1,100,now(),null);
 
 create table purchase_history_info(
 id int primary key not null auto_increment comment "ID",
