@@ -95,6 +95,9 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 			sexList.add(FEMALE);
 			*/
 
+			//エラーメッセージの初期化
+			session.remove("checkListErrorMessageList");
+
 			result = SUCCESS;
 		}
 		return result;
