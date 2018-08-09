@@ -22,6 +22,9 @@ public class CartAction extends ActionSupport implements SessionAware{
 		String result = ERROR;
 		String userId= null;
 
+		//エラーメッセージの初期化
+		session.remove("checkListErrorMessageList");
+
 		//ログインしていない場合に仮のユーザーIdを発行します
 		CartInfoDAO cartInfoDao = new CartInfoDAO();
 		List<CartInfoDTO> cartInfoDtoList = new ArrayList<CartInfoDTO>();
