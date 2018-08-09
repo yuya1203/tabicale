@@ -30,6 +30,7 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 		session.put("productNameKana", productInfoDTO.getProductNameKana());
 		session.put("imageFilePath", productInfoDTO.getImageFilePath());
 		session.put("imageFileName", productInfoDTO.getImageFileName());
+		session.put("imageFileName2", productInfoDTO.getImageFileName2());
 		session.put("price", productInfoDTO.getPrice());
 
 		session.put("releaseCompany", productInfoDTO.getReleaseCompany());
