@@ -12,6 +12,7 @@ public class ProductInfoDTO {
 	private int price;
 	private String imageFilePath;
 	private String imageFileName;
+	private String imageFileName2;
 	private Date releaseDate;
 	private String releaseCompany;
 	private int status;
@@ -71,6 +72,12 @@ public class ProductInfoDTO {
 	}
 	public void setImageFileName(String imageFileName){
 		this.imageFileName=imageFileName;
+	}
+	public String getImageFileName2(){
+		return imageFileName2;
+	}
+	public void setImageFileName2(String imageFileName2){
+		this.imageFileName2 = imageFileName2;
 	}
 	public Date getReleaseDate(){
 		return releaseDate;

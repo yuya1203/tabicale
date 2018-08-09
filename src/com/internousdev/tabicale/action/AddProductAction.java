@@ -22,8 +22,10 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 
 	private String imageFilePath;
 	private String imageFileName;
+	private String imageFileName2;
 
 	private File userImage;
+	private File userImage2;
 
 	private String releaseDate;
 	private String releaseCompany;
@@ -44,6 +46,7 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		session.remove("priceErrorMessageList");
 
 		session.remove("userImageErrorMessageList");
+		session.remove("userImageErrorMessageList");
 
 		session.remove("releaseDateErrorMessageList");
 		session.remove("releaseCompanyErrorMessageList");
@@ -60,6 +63,7 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 
 		session.put("imageFilePath", imageFilePath);
 		session.put("userImage", userImage);
+		session.put("userImage2", userImage2);
 
 		session.put("releaseDate", releaseDate);
 		session.put("releaseCompany", releaseCompany);
@@ -129,11 +133,25 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		this.imageFileName = imageFileName;
 	}
 
+	public String getImageFileName2(){
+		return imageFileName2;
+	}
+	public void setImageFileName2(String imageFileName2){
+		this.imageFileName2 = imageFileName2;
+	}
+
 	public File getUserImage(){
 		return userImage;
 	}
 	public void setUserImage(File userImage){
 		this.userImage = userImage;
+	}
+
+	public File getUserImage2(){
+		return userImage2;
+	}
+	public void setUserImage2(File userImage2){
+		this.userImage2 = userImage2;
 	}
 
 	public String getReleaseDate(){

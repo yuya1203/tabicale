@@ -21,6 +21,7 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 
 	private String imageFilePath;
 	private String imageFileName;
+	private String imageFileName2;
 
 	private String releaseDate;
 	private String releaseCompany;
@@ -32,7 +33,7 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 	public String execute(){
 		String result = ERROR;
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
-		int count = productInfoDAO.createProduct(productId,productName,productNameKana,productDescription,categoryId,price,imageFilePath,imageFileName,releaseDate,releaseCompany);
+		int count = productInfoDAO.createProduct(productId,productName,productNameKana,productDescription,categoryId,price,imageFilePath,imageFileName,imageFileName2,releaseDate,releaseCompany);
 		if(count > 0){
 			result = SUCCESS;
 
@@ -99,6 +100,13 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 	}
 	public void setImageFileName(String imageFileName) {
 		this.imageFileName = imageFileName;
+	}
+
+	public String getImageFileName2(){
+		return imageFileName2;
+	}
+	public void setImageFileName2(String imageFileName2){
+		this.imageFileName2 = imageFileName2;
 	}
 
 	public String getReleaseDate(){

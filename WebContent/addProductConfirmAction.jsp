@@ -52,6 +52,10 @@
 					<th>画像</th>
 					<td><s:property value="userImage"/><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>'></td>
 				</tr>
+				<tr>
+					<th>画像2</th>
+					<td><s:property value="userImage2"/><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>'></td>
+				</tr>
 			</table>
 
 		<s:hidden name="productId" value="%{#session.productId}"/>
@@ -62,6 +66,7 @@
 		<s:hidden name="price" value="%{#session.price}"/>
 		<s:hidden name="imageFilePath" value="%{#session.imageFilePath}"/>
 		<s:hidden name="imageFileName" value="%{#session.imageFileName}"/>
+		<s:hidden name="imageFileName2" value="%{#session.imageFileName2}"/>
 		<s:hidden name="releaseCompany" value="%{#session.releaseCompany}"/>
 		<s:hidden name="releaseDate" value="%{#session.releaseDate}"/>
 

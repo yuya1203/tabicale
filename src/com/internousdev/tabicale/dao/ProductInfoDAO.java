@@ -69,6 +69,7 @@ public class ProductInfoDAO {
 				productInfoDTO.setPrice(resultSet.getInt("price"));
 				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
+				productInfoDTO.setImageFileName(resultSet.getString("image_file_name_2"));
 				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
 				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDTO.setStatus(resultSet.getInt("status"));
@@ -221,11 +222,11 @@ public class ProductInfoDAO {
 
 	public int createProduct(int productId,String productName, String productNameKana,
 			String productDescription,int categoryId, int price, String imageFilePath,
-			String imageFileName,String releaseDate, String releaseCompany){
+			String imageFileName,String imageFileName2,String releaseDate, String releaseCompany){
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		int count = 0;
-		String sql = "INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,release_date,release_company,regist_date,update_date) VALUES (?,?,?,?,?,?,?,?,?,?,now(),now())";
+		String sql = "INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_id,price,image_file_path,image_file_name,image_file_name_2,release_date,release_company,regist_date,update_date) VALUES (?,?,?,?,?,?,?,?,?,?,?,now(),now())";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -237,8 +238,9 @@ public class ProductInfoDAO {
 			preparedStatement.setInt(6, price);
 			preparedStatement.setString(7, imageFilePath);
 			preparedStatement.setString(8, imageFileName);
-			preparedStatement.setString(9, releaseDate);
-			preparedStatement.setString(10, releaseCompany);
+			preparedStatement.setString(9, imageFileName2);
+			preparedStatement.setString(10, releaseDate);
+			preparedStatement.setString(11, releaseCompany);
 
 			count = preparedStatement.executeUpdate();
 		}catch(SQLException e){
