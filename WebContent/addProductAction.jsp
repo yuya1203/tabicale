@@ -128,7 +128,7 @@ function $(id){
 						<td><s:textfield name="productName" value="%{#session.productName}"/></td>
 					</tr>
 					<tr>
-						<th>商品名カナ</th>
+						<th>商品名かな</th>
 						<td><s:textfield name="productNameKana" value="%{#session.productNameKana}"/></td>
 					</tr>
 					<tr>
