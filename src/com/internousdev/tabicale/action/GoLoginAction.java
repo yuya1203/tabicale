@@ -24,6 +24,7 @@ public class GoLoginAction extends ActionSupport implements SessionAware{
 		}
 		session.put("loginIdErrorMessageList", "");
 		session.put("passwordErrorMessageList", "");
+		session.put("passwordIncorrectErrorMessageList", "");
 		return SUCCESS;
 	}
 

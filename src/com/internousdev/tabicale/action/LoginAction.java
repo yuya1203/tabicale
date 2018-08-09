@@ -32,6 +32,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	private List<String> loginIdErrorMessageList = new ArrayList<String>();
 	private List<String> passwordErrorMessageList = new ArrayList<String>();
+	private List<String> passwordIncorrectErrorMessageList = new ArrayList<String>();
 
 	private Map<String, Object> session;
 
@@ -50,9 +51,20 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		loginIdErrorMessageList = inputChecker.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false);
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false);
 
-		if(loginIdErrorMessageList.size()!=0
+
+
+		/*if(loginIdErrorMessageList.size()!=0
 		&& passwordErrorMessageList.size()!=0){
 			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
+			session.put("passwordErrorMessageList", passwordErrorMessageList);
+			session.put("logined", 0);
+		}*/
+
+		if(loginIdErrorMessageList.size()!=0){
+			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
+			session.put("logined", 0);
+		}
+		if(passwordErrorMessageList.size()!=0){
 			session.put("passwordErrorMessageList", passwordErrorMessageList);
 			session.put("logined", 0);
 		}
@@ -64,6 +76,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		}
 
 		UserInfoDAO userInfoDao = new UserInfoDAO();
+
 		if(userInfoDao.isExistsUserInfo(loginId, password)) {
 			if(userInfoDao.login(loginId, password) > 0) {
 				UserInfoDTO userInfoDTO = userInfoDao.getUserInfo(loginId, password);
@@ -112,9 +125,15 @@ public class LoginAction extends ActionSupport implements SessionAware{
 						session.put("productInfoDtoList", productInfoDtoList);
 						result = "admin";
 					}
+
+
 				}
 			}
 				session.put("logined", 1);
+		}else{
+			passwordIncorrectErrorMessageList.add("入力されたパスワードが異なります。");
+			session.put("passwordIncorrectErrorMessageList", passwordIncorrectErrorMessageList);
+			session.put("logined", 0);
 		}
 		return result;
 	}
@@ -165,6 +184,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	public void setPasswordErrorMessageList(List<String> passwordErrorMessageList){
 		this.passwordErrorMessageList = passwordErrorMessageList;
+	}
+
+	public List<String> getPasswordIncorrectErrorMessageList(){
+		return passwordIncorrectErrorMessageList;
+	}
+
+	public void setPasswordIncorrectErrorMessageList(List<String> passwordIncorrectErrorMessageList){
+		this.passwordIncorrectErrorMessageList = passwordIncorrectErrorMessageList;
 	}
 
 	public List<ProductInfoDTO> getProductInfoDtoList(){
