@@ -120,7 +120,7 @@ default charset=utf8
 comment="購入履歴情報テーブル"
 ;
 create table destination_info(
-id int primary key not null comment "ID",
+id int primary key not null auto_increment comment "ID",
 user_id varchar(16) not null comment "ユーザーID",
 family_name varchar(32) not null comment "姓",
 first_name varchar(32) not null comment "名",
