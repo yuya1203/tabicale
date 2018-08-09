@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/style.css">
-<title>Insert title here</title>
+<title>管理者画面</title>
 </head>
 <body>
 <div class="header">
