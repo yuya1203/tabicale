@@ -8,7 +8,9 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="./css/style.css">
+<meta http-equiv="refresh" content="3;URL='settlementConfirm.jsp'"/>
 <title>宛先情報完了</title>
+
 </head>
 <body>
 <jsp:include page="header.jsp" />
