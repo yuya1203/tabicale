@@ -73,12 +73,7 @@
 	<table class="vertical-list-table">
 		<tr>
 			<th scope="row"><s:label value="ログインID"/></th>
-			<s:if test="#session.savedLoginId==true">
-			<td><s:textfield name="loginId" placeholder="ログインID" value='%{#session.saveId}' class="txt" /></td>
-			</s:if>
-			<s:else>
 			<td><s:textfield name="loginId" placeholder="ログインID" class="txt" /></td>
-			</s:else>
 		</tr>
 		<tr>
 			<th scope="row"><s:label value="現在のパスワード"/></th>
