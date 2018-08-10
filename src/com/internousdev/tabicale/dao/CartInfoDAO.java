@@ -200,4 +200,39 @@ public class CartInfoDAO {
 		}
 		return count;
 	}
+
+	//管理者画面用に全カート情報を取得します
+	public List<CartInfoDTO> getCartInfoDtoListByAdmin(){
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		List<CartInfoDTO> cartInfoDtoList = new ArrayList<CartInfoDTO>();
+
+		String sql = "select * from cart_info";
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				CartInfoDTO cartInfoDTO = new CartInfoDTO();
+				cartInfoDTO.setId(resultSet.getInt("id"));
+				cartInfoDTO.setUserId(resultSet.getString("user_id"));
+				cartInfoDTO.setTempUserId(resultSet.getString("temp_user_id"));
+				cartInfoDTO.setProductId(resultSet.getInt("product_id"));
+				cartInfoDTO.setProductCount(resultSet.getInt("product_count"));
+				cartInfoDTO.setPrice(resultSet.getInt("price"));
+				cartInfoDTO.setRegistDate(resultSet.getDate("regist_date"));
+				cartInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
+				cartInfoDtoList.add(cartInfoDTO);
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		try{
+			connection.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return cartInfoDtoList;
+	}
 }
