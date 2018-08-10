@@ -32,6 +32,7 @@ public class ProductInfoDAO {
 				productInfoDto.setPrice(resultSet.getInt("price"));
 				productInfoDto.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDto.setImageFileName(resultSet.getString("image_file_name"));
+				productInfoDto.setImageFileName2(resultSet.getString("image_file_name_2"));
 				productInfoDto.setReleaseDate(resultSet.getDate("release_date"));
 				productInfoDto.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDto.setStatus(resultSet.getInt("status"));
