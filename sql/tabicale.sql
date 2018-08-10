@@ -86,7 +86,17 @@ insert into product_info values
 (12,12,"ヨーロッパのカレンダー3","よーろっぱのかれんだー3","ヨーロッパのカレンダーです。",5,4500,"./images","Europa_Front_3.jpg","Europa_Cale_3.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
 (13,13,"オセアニアのカレンダー1","おせあにあのかれんだー1","オセアニアのカレンダーです。",6,3000,"./images","Oceania_Front_1.jpg","Oceania_Cale_1.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
 (14,14,"オセアニアのカレンダー2","おせあにあのかれんだー2","オセアニアのカレンダーです。",6,4000,"./images","Oceania_Front_2.jpg","Oceania_Cale_2.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
-(15,15,"オセアニアのカレンダー3","おせあにあのかれんだー3","オセアニアのカレンダーです。",6,5000,"./images","Oceania_Front_3.jpg","Oceania_Cale_3.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now());
+(15,15,"オセアニアのカレンダー3","おせあにあのかれんだー3","オセアニアのカレンダーです。",6,5000,"./images","Oceania_Front_3.jpg","Oceania_Cale_3.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(16,16,"アジアのカレンダー4","あじあのかれんだー4","アジアのカレンダーです。",2,1500,"./images","Asia_Front_4.jpg","Asia_Cale_4.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(17,17,"アジアのカレンダー5","あじあのかれんだー5","アジアのカレンダーです。",2,2500,"./images","Asia_Front_5.jpg","Asia_Cale_5.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(18,18,"アメリカのカレンダー4","あめりかのかれんだー4","アメリカのカレンダーです。",3,2000,"./images","America_Front_4.jpg","America_Cale_4.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(19,19,"アメリカのカレンダー5","あめりかのかれんだー5","アメリカのカレンダーです。",3,3000,"./images","America_Front_5.jpg","America_Cale_5.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(20,20,"アフリカのカレンダー4","あふりかのかれんだー4","アフリカのカレンダーです。",4,2500,"./images","Africa_Front_4.jpg","Africa_Cale_4.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(21,21,"アフリカのカレンダー5","あふりかのかれんだー5","アフリカのカレンダーです。",4,3500,"./images","Africa_Front_5.jpg","Africa_Cale_5.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(22,22,"ヨーロッパのカレンダー4","よーろっぱのかれんだー4","ヨーロッパのカレンダーです。",5,3000,"./images","Europa_Front_4.jpg","Europa_Cale_4.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(23,23,"ヨーロッパのカレンダー5","よーろっぱのかれんだー5","ヨーロッパのカレンダーです。",5,4000,"./images","Europa_Front_5.jpg","Europa_Cale_5.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(24,24,"オセアニアのカレンダー4","おせあにあのかれんだー4","オセアニアのカレンダーです。",6,3500,"./images","Oceania_Front_4.jpg","Oceania_Cale_4.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now()),
+(25,25,"オセアニアのカレンダー5","おせあにあのかれんだー5","オセアニアのカレンダーです。",6,4500,"./images","Oceania_Front_5.jpg","Oceania_Cale_5.jpg","2018-08-10 12:00:00","project.TabiCale",0,now(),now());
 
 create table cart_info(
 id int primary key not null auto_increment comment "ID",
