@@ -76,4 +76,37 @@ public class DestinationInfoDAO {
 		return destinationInfoDtoList;
 	}
 
+	//管理者用に全宛先情報を取得します
+	public List<DestinationInfoDTO> getDestinationInfoDtoListByAdmin(){
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		List<DestinationInfoDTO> destinationInfoDtoList = new ArrayList<DestinationInfoDTO>();
+		String sql = "select * from destination_info";
+
+		try {
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ResultSet resultSet = ps.executeQuery();
+			while(resultSet.next()){
+				DestinationInfoDTO dto = new DestinationInfoDTO();
+				dto.setId(resultSet.getInt("id"));
+				dto.setFamilyName(resultSet.getString("family_name"));
+				dto.setFirstName(resultSet.getString("first_name"));
+				dto.setFamilyNameKana(resultSet.getString("family_name_kana"));
+				dto.setFirstNameKana(resultSet.getString("first_name_kana"));
+				dto.setUserAddress(resultSet.getString("user_address"));
+				dto.setEmail(resultSet.getString("email"));
+				dto.setTelNumber(resultSet.getString("tel_number"));
+				destinationInfoDtoList.add(dto);
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		try{
+			connection.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return destinationInfoDtoList;
+	}
+
 }
