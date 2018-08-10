@@ -91,7 +91,7 @@ public class PurchaseHistoryInfoDAO {
 	public int regist(String loginId, int productId, int productCount, int destinationId, int price) {
 		DBConnector dbCon = new DBConnector();
 		Connection con = dbCon.getConnection();
-		String sql = "INSERT INTO purchase_history_info(user_id, product_id, product_count, price, destination_id, regist_date, update_date) VALUES (?, ?, ?, ?, ?, now(), '0000-01-01')";
+		String sql = "INSERT INTO purchase_history_info(user_id, product_id, product_count, price, destination_id, regist_date, update_date) VALUES (?, ?, ?, ?, ?, now(), 'now()')";
 		int count = 0;
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
