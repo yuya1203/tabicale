@@ -16,6 +16,9 @@
 	<div class="Logout">
 		<a href="<s:url action='LogoutAction'/>">ログアウト</a>
 	</div>
+	<div class="GoAdmin">
+		<a href="admin.jsp">管理者トップ</a>
+	</div>
 </div>
 
 </body>

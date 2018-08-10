@@ -148,7 +148,7 @@
 	<!-- 13.商品管理機能 -->
 	<action name="AddProductAction" class="com.internousdev.tabicale.action.AddProductAction" method="execute">
 		<result name="success">addProductAction.jsp</result>
-		<result name="error">admin.jsp</result>
+		<result name="error">adminProductInfo.jsp</result>
 	</action>
 
 	<action name="AddProductConfirmAction" class="com.internousdev.tabicale.action.AddProductConfirmAction" method="execute">
@@ -160,9 +160,28 @@
 		<result name="success">addProductCompleteAction.jsp</result>
 		<result name="error">addProductConfirmAction.jsp</result>
 	</action>
-
 	<action name="DeleteProductAction" class="com.internousdev.tabicale.action.DeleteProductAction" method="execute">
-		<result name="success">admin.jsp</result>
+		<result name="success">adminProductInfo.jsp</result>
+	</action>
+
+
+	<action name="AdminProductInfoAction" class="com.internousdev.tabicale.action.AdminProductInfoAction" method="execute">
+		<result name="success">adminProductInfo.jsp</result>
+	</action>
+	<action name="AdminUserInfoAction" class="com.internousdev.tabicale.action.AdminUserInfoAction" method="execute">
+		<result name="success">adminUserInfo.jsp</result>
+	</action>
+	<!--
+	<action name="AdminDestinationInfoAction" class="com.internousdev.tabicale.action.AdminDestinationInfoAction" method="execute">
+		<result name="success">adminDestinationInfo.jsp</result>
+	</action>
+	 -->
+
+	<action name="AdminPurchaseHistoryInfoAction" class="com.internousdev.tabicale.action.AdminPurchaseHistoryInfoAction" method="execute">
+		<result name="success">adminPurchaseHistoryInfo.jsp</result>
+	</action>
+	<action name="AdminCartInfoAction" class="com.internousdev.tabicale.action.AdminCartInfoAction" method="execute">
+		<result name="success">adminCartInfo.jsp</result>
 	</action>
 
 	<!-- HOME -->
