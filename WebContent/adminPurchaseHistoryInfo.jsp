@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="adminHeader.jsp" />
 <s:if test="#session.purchaseHistoryInfoDtoList.size()>0">
-		<table>
+		<table border="1">
 			<thead>
 				<tr>
 					<th><s:label value="id"/></th>
