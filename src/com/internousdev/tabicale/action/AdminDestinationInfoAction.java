@@ -32,7 +32,7 @@ public class AdminDestinationInfoAction extends ActionSupport implements Session
 
 	@Override
 	public void setSession(Map<String, Object> session) {
-		// TODO 自動作成されたメソッド・スタブ
+		// TODO 自動作成されたメソッドとスタブ
 		this.session = session;
 	}
 

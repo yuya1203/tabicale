@@ -23,6 +23,7 @@
 					<th><s:label value="tel_number"/></th>
 				</tr>
 			</thead>
+
 			<tbody>
 				<s:iterator value="#session.destinationInfoDtoList">
 					<tr>

@@ -76,7 +76,7 @@ public class DestinationInfoDAO {
 		return destinationInfoDtoList;
 	}
 
-	//管理者用に全宛先情報を取得します
+	//管理者用に全ての宛先情報を取得します
 	public List<DestinationInfoDTO> getDestinationInfoDtoListByAdmin(){
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
