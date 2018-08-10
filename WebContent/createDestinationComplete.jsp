@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="./css/style.css">
-<!-- <meta http-equiv="refresh" content="3;URL='SettlementConfirmAction'"/> -->
 <title>宛先情報完了</title>
 <script type="text/javascript">
 	window.onload = function(){
