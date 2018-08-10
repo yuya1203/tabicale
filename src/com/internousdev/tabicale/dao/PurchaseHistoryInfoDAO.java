@@ -131,4 +131,38 @@ public class PurchaseHistoryInfoDAO {
 		}
 		return count;
 	}
+
+	//管理者用の購入履歴情報を取得します
+	public List<PurchaseHistoryInfoDTO> getPurchaseHistoryInfoDtoListByAdmin(){
+		DBConnector dbCon = new DBConnector();
+		Connection con = dbCon.getConnection();
+		List<PurchaseHistoryInfoDTO> purchaseHistoryInfoDtoList = new ArrayList<PurchaseHistoryInfoDTO>();
+		String sql = "select * from purchase_history_info";
+
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				PurchaseHistoryInfoDTO dto = new PurchaseHistoryInfoDTO();
+				dto.setId(rs.getInt("id"));
+				dto.setUserId(rs.getString("user_id"));
+				dto.setProductId(rs.getInt("product_id"));
+				dto.setProductCount(rs.getInt("product_count"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setDestinationId(rs.getInt("destination_id"));
+				dto.setRegistDate(rs.getDate("regist_date"));
+				dto.setUpdateDate(rs.getDate("update_date"));
+				purchaseHistoryInfoDtoList.add(dto);
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		try{
+			con.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return purchaseHistoryInfoDtoList;
+	}
 }

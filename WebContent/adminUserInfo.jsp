@@ -9,7 +9,7 @@
 </head>
 <body>
 <jsp:include page="adminHeader.jsp" />
-<s:if test="#session.cartInfoDtoList.size()>0">
+<s:if test="#session.userInfoDtoList.size()>0">
 		<table>
 			<thead>
 				<tr>
@@ -29,7 +29,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<s:iterator value="#session.cartInfoDtoList">
+				<s:iterator value="#session.userInfoDtoList">
 					<tr>
 						<td><s:property value="id"/></td>
 						<td><s:property value="userId"/></td>
