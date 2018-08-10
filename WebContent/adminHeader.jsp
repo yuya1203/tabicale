@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="header">
-	<div id="heder-title">
+	<div id="header-title">
 	TABICALE
 	</div>
 	<div class="Logout">
