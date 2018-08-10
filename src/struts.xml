@@ -171,11 +171,11 @@
 	<action name="AdminUserInfoAction" class="com.internousdev.tabicale.action.AdminUserInfoAction" method="execute">
 		<result name="success">adminUserInfo.jsp</result>
 	</action>
-	<!--
+
 	<action name="AdminDestinationInfoAction" class="com.internousdev.tabicale.action.AdminDestinationInfoAction" method="execute">
 		<result name="success">adminDestinationInfo.jsp</result>
 	</action>
-	 -->
+
 
 	<action name="AdminPurchaseHistoryInfoAction" class="com.internousdev.tabicale.action.AdminPurchaseHistoryInfoAction" method="execute">
 		<result name="success">adminPurchaseHistoryInfo.jsp</result>

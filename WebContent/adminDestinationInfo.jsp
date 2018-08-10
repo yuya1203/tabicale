@@ -14,13 +14,13 @@
 			<thead>
 				<tr>
 					<th><s:label value="id"/></th>
-					<th><s:label value="family_name"/></th>
-					<th><s:label value="first_name"/></th>
-					<th><s:label value="family_name_kana"/></th>
-					<th><s:label value="first_name_kana"/></th>
-					<th><s:label value="user_address"/></th>
+					<th><s:label value="familyName"/></th>
+					<th><s:label value="firstName"/></th>
+					<th><s:label value="familyNameKana"/></th>
+					<th><s:label value="firstNameKana"/></th>
+					<th><s:label value="userAddress"/></th>
 					<th><s:label value="email"/></th>
-					<th><s:label value="tel_number"/></th>
+					<th><s:label value="telNumber"/></th>
 				</tr>
 			</thead>
 
@@ -28,13 +28,13 @@
 				<s:iterator value="#session.destinationInfoDtoList">
 					<tr>
 						<td><s:property value="id"/></td>
-						<td><s:property value="family_name"/></td>
-						<td><s:property value="first_name"/></td>
-						<td><s:property value="family_name_kana"/></td>
-						<td><s:property value="first_name_kana"/></td>
-						<td><s:property value="user_address"/></td>
+						<td><s:property value="familyName"/></td>
+						<td><s:property value="firstName"/></td>
+						<td><s:property value="familyNameKana"/></td>
+						<td><s:property value="firstNameKana"/></td>
+						<td><s:property value="userAddress"/></td>
 						<td><s:property value="email"/></td>
-						<td><s:property value="tel_number"/></td>
+						<td><s:property value="telNumber"/></td>
 					</tr>
 				</s:iterator>
 			</tbody>
