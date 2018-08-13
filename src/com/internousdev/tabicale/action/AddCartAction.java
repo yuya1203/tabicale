@@ -80,6 +80,9 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(userId)));
 		session.put("totalPrice", totalPrice);
 
+		//エラーメッセージの初期化
+		session.remove("checkListErrorMessageList");
+
 		return result;
 	}
 
