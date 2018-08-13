@@ -30,7 +30,7 @@ public class UserInfoDAO {
 			preparedStatement.setInt(7, sex);
 			preparedStatement.setString(8, email);
 			preparedStatement.setInt(9, 0);
-			preparedStatement.setInt(10, 0);
+			preparedStatement.setInt(10, 1);
 			count = preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
