@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
 
 <link rel="stylesheet" href="./css/style.css">
 <title>宛先情報完了</title>

@@ -8,8 +8,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
 
 <link rel="stylesheet" href="./css/style.css">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+
+
+
 <title>宛先情報確認</title>
 </head>
 <body>
