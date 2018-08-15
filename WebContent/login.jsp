@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
 <title>ログイン</title>
 <script>
 function goLoginAction(){
@@ -23,8 +24,8 @@ function goResetPasswordAction(){
 <jsp:include page="header.jsp"/>
 
 <div id="contents">
+<div id="contents_sub">
 <h1>ログイン画面</h1>
-
 <s:form id="form" action="LoginAction">
 	<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
 		<div class="error">
@@ -80,10 +81,11 @@ function goResetPasswordAction(){
 	</div>
 
 	<div class="submit_btn_box">
-		<s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();"/>
+		<div id=".contents-btn-set">
+			<s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();"/>
+		</div>
 	</div>
 </s:form>
-
 <br>
 <div class="submit_btn_box">
 	<div id=".contents-btn-set">
@@ -94,10 +96,11 @@ function goResetPasswordAction(){
 </div>
 
 <div class="submit_btn_box">
-<div id=".contents-btn-set">
-<s:form action="ResetPasswordAction">
-	<s:submit value="パスワード再設定" class="submit_btn" />
-</s:form>
+	<div id=".contents-btn-set">
+		<s:form action="ResetPasswordAction">
+			<s:submit value="パスワード再設定" class="submit_btn" />
+		</s:form>
+	</div>
 </div>
 </div>
 </div>
