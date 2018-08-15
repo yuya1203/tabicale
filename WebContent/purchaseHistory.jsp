@@ -5,11 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/purchaseHistory.css">
 <title>商品購入履歴</title>
 </head>
 <body>
+<div id="page">
+<div>
 <jsp:include page="header.jsp" />
+</div>
 <div id="contents">
 <h1>商品購入履歴画面</h1>
 <s:if test="#session.purchaseHistoryInfoDtoList.size()>0">
@@ -28,7 +32,7 @@
 	<tr>
 		<td><s:property value="productName"/></td>
 		<td><s:property value="productNameKana"/></td>
-		<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' width="50px" height="50px"/></td>
+		<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' class="image"/></td>
 		<td><s:property value="price"/>円</td>
 		<td><s:property value="releaseCompany"/></td>
 		<td><s:property value="releaseDate"/></td>
@@ -50,6 +54,9 @@
 </div>
 </s:else>
 </div>
+<div>
 <s:include value="footer.jsp"/>
+</div>
+</div>
 </body>
 </html>
