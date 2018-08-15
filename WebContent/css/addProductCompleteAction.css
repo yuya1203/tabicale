@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+body{
+	 background-image: url("../images/ナポリの海沿い.jpg");
+	 background-repeat:no-repeat;
+	 background-attachment: fixed;
+	 background-size:100% 100%;
+}
+.contents  h1{
+	width:90%;
+	margin-left:5%;
+	border-bottom:1px solid black;
+}
+.success{
+	width:30%;
+	margin:100px 35%;
+	 border-radius: 15px;
+	text-align:center;
+	font-size:20px;
+	background-color:#CECEF6;
+	padding:30px;
+}

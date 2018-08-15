@@ -6,58 +6,70 @@
 <head>
 
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/addProductConfirmAction.css">
 
 <title>商品追加確認画面</title>
+
 </head>
 <body>
+<div id="page">
 	<jsp:include page="adminHeader.jsp"/>
 	<div class="contents">
-		<h1>商品追加確認画面</h1>
+			<h1>商品追加確認画面</h1>
+		<div class="main-contents">
 		<s:form action="AddProductCompleteAction">
 			<table class="addList-confirm">
-				<tr>
-					<th>商品ID</th>
+				<tr class="border">
+					<th class="border">商品ID</th>
 					<td><s:property value="%{#session.productId}"/></td>
 				</tr>
-				<tr>
-					<th>商品名</th>
+				<tr class="border">
+					<th class="border">商品名</th>
 					<td><s:property value="productName"/></td>
 				</tr>
-				<tr>
-					<th>商品名カナ</th>
+				<tr class="border">
+					<th class="border">商品名カナ</th>
 					<td><s:property value="productNameKana"/></td>
 				</tr>
-				<tr>
-					<th>商品詳細</th>
+				<tr class="border">
+					<th class="border">商品詳細</th>
 					<td><s:property value="productDescription"/></td>
 				</tr>
-				<tr>
-					<th>カテゴリID</th>
+				<tr class="border">
+					<th class="border">カテゴリID</th>
 					<td><s:property value="categoryId"/></td>
 				</tr>
-				<tr>
-					<th>価格</th>
+				<tr class="border">
+					<th class="border">価格</th>
 					<td><s:property value="price"/></td>
 				</tr>
-				<tr>
-					<th>発売年月日</th>
+				<tr class="border">
+					<th class="border">発売年月日</th>
 					<td><s:property value="releaseDate"/></td>
 				</tr>
-				<tr>
-					<th>発売会社</th>
+				<tr class="border">
+					<th class="border">発売会社</th>
 					<td><s:property value="releaseCompany"/></td>
 				</tr>
-				<tr>
-					<th>画像</th>
-					<td><s:property value="userImage"/><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>'></td>
-				</tr>
-				<tr>
-					<th>画像2</th>
-					<td><s:property value="userImage2"/><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>'></td>
-				</tr>
-			</table>
+				<tr class="no-image">
+					<th colspan="1" class="left-image">画像</th>
+					<td class="border-none"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class="left-image image"></td>
 
+				</tr>
+				<tr class="no-image">
+					<th colspan="1" class="right-image">画像２</th>
+					<td class="border-none"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class="right-image image"></td>
+				<tr>
+			</table>
+			<div class="left-image">
+				<p>画像</p><br>
+				<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class=" image">
+			</div>
+			<div class="right-image">
+				<p>画像2</p><br>
+				<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class=" image">
+			</div>
 		<s:hidden name="productId" value="%{#session.productId}"/>
 		<s:hidden name="productName" value="%{#session.productName}"/>
 		<s:hidden name="productNameKana" value="%{#session.productNameKana}"/>
@@ -70,14 +82,16 @@
 		<s:hidden name="releaseCompany" value="%{#session.releaseCompany}"/>
 		<s:hidden name="releaseDate" value="%{#session.releaseDate}"/>
 
-			<s:submit value="追加完了"/>
-
+			<div class="button">
+				<s:submit class="submit-button" value="追加完了"/>
+			</div>
 
 		</s:form>
+		</div>
 	</div>
-	<div class="footer">
+	<div id="footer">
 		<s:include value="footer.jsp"/>
 	</div>
-
+</div>
 </body>
 </html>
