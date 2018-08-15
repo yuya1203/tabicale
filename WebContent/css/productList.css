@@ -5,10 +5,14 @@
 	width:360px;
 	height:540px;
 	text-align:center;
-	padding-top:30px;
-	padding-bottom:50px;
+	margin-top:30px;
+	margin-bottom:50px;
 }
-#productList ul li{
+.product-list-box img{
+	width:260px;
+	height:350px;
+}
+.product-list-box ul li{
 	display:block;
 	float:left;
 	list-style-type:none;
