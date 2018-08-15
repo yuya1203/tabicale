@@ -14,9 +14,11 @@
 <title>宛先情報入力</title>
 </head>
 <body>
+<div id="page">
 <jsp:include page="header.jsp"/>
 
 <div id ="contents">
+<div id="contents_sub">
 <h1>宛先情報入力画面</h1>
 
 <s:form action="CreateDestinationConfirmAction">
@@ -172,6 +174,9 @@
 </div>
 </s:form>
 </div>
+</div>
+
 <s:include value="footer.jsp"/>
+</div>
 </body>
 </html>
