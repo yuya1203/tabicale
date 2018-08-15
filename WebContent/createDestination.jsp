@@ -26,7 +26,7 @@
 
 
 <tr>
-	<th scope="row" class="input_form"><s:label value="姓" /></th>
+	<th scope="row" id="input_form"><s:label value="姓" /></th>
 		<td><s:textfield name="familyName" class="txt" placeholder="例）田中" />
 		</td>
 </tr>
@@ -46,7 +46,7 @@
 
 
 <tr>
-	<th scope="row" class="input_form"><s:label value="名"/></th>
+	<th scope="row" id="input_form"><s:label value="名"/></th>
 		<td><s:textfield name="firstName" class="txt" placeholder="例）太郎" />
 		</td>
 </tr>
@@ -66,7 +66,7 @@
 
 
 <tr>
-	<th scope="row" class="input_form"><s:label value="姓かな"/></th>
+	<th scope="row" id="input_form"><s:label value="姓かな"/></th>
 		<td><s:textfield name="familyNameKana" class="txt" placeholder="例）たなか"/>
 		</td>
 </tr>
@@ -85,7 +85,7 @@
 </tr>
 
 <tr>
-	<th scope="row" class="input_form"><s:label value="名かな"/></th>
+	<th scope="row" id="input_form"><s:label value="名かな"/></th>
 		<td><s:textfield name="firstNameKana" class="txt" placeholder="例）たろう"/>
 		</td>
 </tr>
@@ -105,14 +105,14 @@
 
 <tr>
 
-	<th scope="row" class="input_form" id="radio_btn"><s:label value="性別"/></th>
-		<td><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></td>
+	<th scope="row" id="input_form"><s:label value="性別"/></th>
+		<td><div class="radio-inline"><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></div></td>
 
 </tr>
 
 
 <tr>
-	<th scope="row" class="input_form"><s:label value="住所"/></th>
+	<th scope="row" id="input_form"><s:label value="住所"/></th>
 		<td><s:textfield name="userAddress" class="txt" placeholder="例）東京都千代田区１－１－１"/>
 		</td>
 </tr>
@@ -131,7 +131,7 @@
 </tr>
 
 <tr>
-	<th scope="row" class="input_form"><s:label value="電話番号"/></th>
+	<th scope="row" id="input_form"><s:label value="電話番号"/></th>
 		<td><s:textfield name="telNumber" class="txt" placeholder="例）000-0000-0000"/>
 		</td>
 </tr>
@@ -150,7 +150,7 @@
 </tr>
 
 <tr>
-	<th scope="row" class="input_form"><s:label value="メールアドレス"/></th>
+	<th scope="row" id="input_form"><s:label value="メールアドレス"/></th>
 		<td><s:textfield name="email" class="txt" placeholder="例）sample@sample.jp"/>
 		</td>
 </tr>
