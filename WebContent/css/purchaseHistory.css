@@ -20,7 +20,18 @@ table.horizontal-list-table td {
 .image{
 	width:80%;
 }
+
+.info {
+	margin-left : 5%;
+	width : 40%;
+  	padding : 30px;
+	color: black;
+	background-color: skyblue;
+
+}
+
 #footer{
 	position:relative;
 	bottom: 0;
 }
+
