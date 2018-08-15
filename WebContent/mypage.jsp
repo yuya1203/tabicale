@@ -10,16 +10,18 @@
 <head>
 
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
 
 <title>マイページ</title>
 
 </head>
 
 <body>
-
+<div id="page">
 <jsp:include page="header.jsp" />
 <div id="contents">
+<div id="contents_sub">
+
 <h1>マイページ画面</h1>
 
 <s:form action="PurchaseHistoryAction">
@@ -62,11 +64,12 @@
    </s:form>
 
 </div>
+</div>
    <s:include value="footer.jsp"/>
 
 
 
-
+</div>
 </body>
 
 </html>
