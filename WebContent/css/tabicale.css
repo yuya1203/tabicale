@@ -25,8 +25,9 @@ body{
 	background: rgba(255,192,203,0.5);
 }
 
-#contents_sub > h1{
-	margin-left:10%;
+#contents  h1{
+	width:90%;
+	margin-left:5%;
 	border-bottom:1px solid black;
 }
 
@@ -52,6 +53,24 @@ body{
 #contents_sub .vertical-list-table tr td input{
 	width:98%;
 	height:40px;
+}
+
+#contents .horizontal-list-table{
+	width:90%;
+	height:auto;
+	margin:0 auto;
+	margin-bottom:60px;
+}
+
+#contents .horizontal-list-table tr th{
+	width:10%;
+	height:35px;
+	background-color:skyblue;
+}
+
+#contents .horizontal-list-table tr td{
+	width:10%;
+	height:auto;
 }
 
 #contents_sub .box{
