@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/cart.css">
 <title>カート画面</title>
 <script type="text/javascript">
 	function goDeleteCartAction() {
@@ -14,7 +16,8 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
-<!-- テスト用です -->
+<div id="contents">
+<h1>カート画面</h1>
 <s:if test="#session.checkListErrorMessageList != null">
 	<s:iterator value='#session.checkListErrorMessageList'>
 		<s:property />
@@ -23,7 +26,7 @@
 
 <s:if test="#session.cartInfoDtoList.size()>0">
 	<s:form id="form" action="SettlementConfirmAction">
-		<table>
+		<table class="horizontal-list-table">
 			<thead>
 				<tr>
 					<th><s:label value="#"/></th>
@@ -64,14 +67,14 @@
 			</tbody>
 		</table>
 		<h2><s:label value="カート合計金額"/><s:property value="#session.totalPrice"/>円</h2>
-		<div>
-			<div>
-				<s:submit value="決済"/>
+		<div class="submit_btn_box">
+			<div id=".contents-btn-set">
+				<s:submit value="決済" class="submit_btn"/>
 			</div>
 		</div>
-		<div>
-			<div>
-				<s:submit value="削除" onclick="this.form.action='DeleteCartAction'"/>
+		<div class="submit_btn_box">
+			<div id=".contents-btn-set">
+				<s:submit value="削除" class="submit_btn" onclick="this.form.action='DeleteCartAction'"/>
 			</div>
 		</div>
 	</s:form>
@@ -81,6 +84,7 @@
 		カート情報はありません
 	</div>
 </s:else>
+</div>
 <div id="footer">
 	<s:include value="footer.jsp"/>
 </div>
