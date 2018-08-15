@@ -13,11 +13,12 @@ body {
 
 .slider img{
   width: 100%;
-  height: auto;
+  height: 700px;
+  overflow: hidden;
   position: relative;
-  top: -650px;
+  top: 0;
   left: 0;
-  margin-bottom: -650px;
+  margin-bottom: 0;
   z-index: 1;
 }
 
