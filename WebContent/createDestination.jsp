@@ -113,7 +113,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="住所"/></th>
-		<td><s:textfield name="userAddress" class="txt" placeholder="例）東京都千代田区１－１－１"/>
+		<td><s:textfield name="userAddress" class="txt" placeholder="例）千代田区１－１－１"/>
 		</td>
 </tr>
 
