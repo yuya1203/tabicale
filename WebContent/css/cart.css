@@ -1,2 +1,13 @@
 @CHARSET "UTF-8";
 
+#contents .cart_totalPrice{
+	margin:0 auto;
+	margin-bottom:60px;
+	font-size:2rem;
+}
+
+#contents .cart_totalPrice tr td:nth-child(2){
+	width:250px;
+	text-align:right;
+	background: rgba(235,225,255,1);
+}

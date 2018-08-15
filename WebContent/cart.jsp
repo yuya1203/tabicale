@@ -47,7 +47,7 @@
 						<s:hidden name="productId" value="%{productId}"/>
 						<td><s:property value="productName"/></td>
 						<td><s:property value="productNameKana"/></td>
-						<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' width="50px" height="50px" /></td>
+						<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' width="100%" height="140px" /></td>
 						<td><s:property value="price"/>円</td>
 						<td><s:property value="releaseCompany"/></td>
 						<td><s:property value="releaseDate"/></td>
@@ -66,7 +66,13 @@
 				</s:iterator>
 			</tbody>
 		</table>
-		<h2><s:label value="カート合計金額"/><s:property value="#session.totalPrice"/>円</h2>
+		<table class="cart_totalPrice" border="1">
+			<tr>
+				<td>カート合計金額</td>
+				<td><s:property value="#session.totalPrice"/></td>
+				<td>円</td>
+			</tr>
+		</table>
 		<div class="submit_btn_box">
 			<div id=".contents-btn-set">
 				<s:submit value="決済" class="submit_btn"/>

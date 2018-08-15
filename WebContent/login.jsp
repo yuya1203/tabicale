@@ -21,6 +21,7 @@ function goResetPasswordAction(){
 </script>
 </head>
 <body>
+<div id="page">
 <jsp:include page="header.jsp"/>
 
 <div id="contents">
@@ -95,17 +96,16 @@ function goResetPasswordAction(){
 	</div>
 </div>
 
-<div class="submit_btn_box">
-	<div id=".contents-btn-set">
-		<s:form action="ResetPasswordAction">
-			<s:submit value="パスワード再設定" class="submit_btn" />
-		</s:form>
+	<div class="submit_btn_box">
+		<div id=".contents-btn-set">
+			<s:form action="ResetPasswordAction">
+				<s:submit value="パスワード再設定" class="submit_btn" />
+			</s:form>
+		</div>
 	</div>
 </div>
 </div>
-</div>
-
-
 <s:include value="footer.jsp"/>
+</div>
 </body>
 </html>
