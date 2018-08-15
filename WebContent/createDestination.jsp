@@ -104,14 +104,16 @@
 
 
 <tr>
+
 	<th scope="row" id="input_form"><s:label value="性別"/></th>
-		<td><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></td>
+		<td><div class="radio-inline"><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></div></td>
+
 </tr>
 
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="住所"/></th>
-		<td><s:textfield name="userAddress" class="txt" placeholder="例）東京都千代田区１－１－１"/>
+		<td><s:textfield name="userAddress" class="txt" placeholder="例）千代田区１－１－１"/>
 		</td>
 </tr>
 
