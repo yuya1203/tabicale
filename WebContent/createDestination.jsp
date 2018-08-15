@@ -8,52 +8,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
 
-<link rel="stylesheet" href="./css/style.css">
-<style type="text/css">
-
-/* レイアウト */
-
-.vertical-list-table {
-	margin-left: 5%;
-	margin-bottom: 60px;
-	width: 500px;
-}
-
-
-#input_form {
-	background-color:#deebf7;
-	width: 30%;
-	height: 50px;
-}
-
-td {
-	width: 70%;
-}
-
-
-.txt {
-
-	width: 99%;
-	height: 30px;
-	border: 0.5px solid #41719c;
-	font-size: 24px;
-
-}
-
-.error {
-	display: block;
-	text-align: left;
-	width: 100%;
-}
-
-.error-message {
-	background-color: #fce2c4;
-	text-align: left;
-	display: flex;
-	align-items: center;
-	height: 50px;
-}
-</style>
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/createDestination.css">
 
 <title>宛先情報入力</title>
 </head>

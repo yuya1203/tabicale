@@ -8,7 +8,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
 
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/createDestination.css">
+
 <title>宛先情報完了</title>
 <script type="text/javascript">
 	window.onload = function(){
@@ -47,11 +49,3 @@
 </html>
 
 
-<!-- createDestination.jspのStyle.css
-
-.success {
-	margin-bottom: 60px;
-	margin-left: 5%;
-}
-
--->
