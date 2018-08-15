@@ -1,0 +1,17 @@
+/* ¤•iˆê——ƒŠƒXƒgİ’è */
+.product-list-box{
+	display:inline-block;
+	float:left;
+	width:360px;
+	height:540px;
+	text-align:center;
+	padding-top:30px;
+	padding-bottom:50px;
+}
+#productList ul li{
+	display:block;
+	float:left;
+	list-style-type:none;
+	margin-top:25px;
+	text-align:center;
+}
