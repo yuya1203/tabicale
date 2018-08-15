@@ -15,13 +15,16 @@
 </script>
 </head>
 <body>
+<div id="page">
 <jsp:include page="header.jsp" />
 <div id="contents">
 <h1>カート画面</h1>
 <s:if test="#session.checkListErrorMessageList != null">
+	<div  class="error-message">
 	<s:iterator value='#session.checkListErrorMessageList'>
 		<s:property />
 	</s:iterator>
+	</div>
 </s:if>
 
 <s:if test="#session.cartInfoDtoList.size()>0">
@@ -93,6 +96,7 @@
 </div>
 <div id="footer">
 	<s:include value="footer.jsp"/>
+</div>
 </div>
 </body>
 </html>

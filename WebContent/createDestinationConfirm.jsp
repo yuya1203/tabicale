@@ -20,8 +20,10 @@
 <title>宛先情報確認</title>
 </head>
 <body>
+<div id="page">
 <jsp:include page="header.jsp" />
 <div id="contents">
+<div id="contents_sub">
 <h1>宛先情報確認画面</h1>
 <s:form action="CreateDestinationCompleteAction">
 <table class="vertical-list-table">
@@ -75,7 +77,8 @@
 </div>
 </s:form>
 </div>
-
+</div>
 <s:include value="footer.jsp" />
+</div>
 </body>
 </html>
