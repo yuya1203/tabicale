@@ -28,27 +28,8 @@ function goResetPasswordAction(){
 <div id="contents_sub">
 <h1>ログイン画面</h1>
 <s:form id="form" action="LoginAction">
-	<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-		<div class="error">
-			<div class="error-message">
-				<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br></s:iterator>
-			</div>
-		</div>
-	</s:if>
-	<s:if test="!#session.passwordErrorMessageList.isEmpty()">
-		<div class="error">
-			<div class="error-message">
-				<s:iterator value="#session.passwordErrorMessageList"><s:property /><br></s:iterator>
-			</div>
-		</div>
-	</s:if>
-	<s:if test="!#session.passwordIncorrectErrorMessageList.isEmpty()">
-		<div class="error">
-			<div class="error-message">
-					<s:iterator value="#session.passwordIncorrectErrorMessageList"><s:property /><br></s:iterator>
-			</div>
-		</div>
-	</s:if>
+
+
 
 <!--
 	SAVED:<s:property value="%{#session.savedLoginId}"/>
@@ -65,10 +46,46 @@ function goResetPasswordAction(){
 			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" autocomplete="off"/></td>
 			</s:else>
 		</tr>
+
+		<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
+		<tr>
+		<td colspan="2">
+		<div class="error">
+			<div class="error-message">
+				<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br></s:iterator>
+			</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
+
 		<tr>
 			<th scope="row"><s:label value="パスワード:"/></th>
 			<td><s:password name="password" class="txt" placeholder="パスワード" autocomplete="off"/></td>
 		</tr>
+
+		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
+		<tr>
+		<td colspan="2">
+		<div class="error">
+			<div class="error-message">
+				<s:iterator value="#session.passwordErrorMessageList"><s:property /><br></s:iterator>
+			</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
+	<s:if test="!#session.passwordIncorrectErrorMessageList.isEmpty()">
+		<tr>
+		<td colspan="2">
+		<div class="error">
+			<div class="error-message">
+					<s:iterator value="#session.passwordIncorrectErrorMessageList"><s:property /><br></s:iterator>
+			</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
 	</table>
 
 	<div class="box">
