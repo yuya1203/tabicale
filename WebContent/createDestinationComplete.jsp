@@ -46,3 +46,12 @@
 </body>
 </html>
 
+
+<!-- createDestination.jspのStyle.css
+
+.success {
+	margin-bottom: 60px;
+	margin-left: 5%;
+}
+
+-->

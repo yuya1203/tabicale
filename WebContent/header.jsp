@@ -7,7 +7,24 @@
 <head>
 <meta charset="UTF-8">
 <title>ヘッダー</title>
+
+
 <script>
+
+
+jQuery(function($){
+  $(document).ready(function(){
+    $('.abc').bxSlider({
+        auto: true,
+        mode: 'fade',
+        speed: 1000,
+
+    });
+  });
+});
+
+
+
 function goLoginAction(){
 
 	document.getElementById("form").action="GoLoginAction";
@@ -40,6 +57,7 @@ function goSearchItemAction(){
 </head>
 <body>
 <header>
+
 
 <div id="header">
 <div id="header-title">
