@@ -1,11 +1,4 @@
-.vertical-list-table {
-	margin-left: 5%;
-	margin-bottom: 60px;
-	width: 500px;
-}
-
 .txt {
-
 	width: 99%;
 	height: 30px;
 	border: 0.5px solid #41719c;
@@ -29,12 +22,11 @@
 }
 
 .success {
-	margin-left: 5%;
 	margin-bottom: 60px;
 	font-size: 24px;
 }
 
-#input_form {
+.input_form {
 	background-color:#deebf7;
 	height: 50px;
 }
@@ -47,3 +39,8 @@ td {
 	width: 70%;
 	text-align: center;
 }
+
+input[type="radio"]{
+   -webkit-transform: scale(0.5);
+   transform: scale(0.5);
+   margin-right: 0.5em;
