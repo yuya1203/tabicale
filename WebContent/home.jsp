@@ -6,6 +6,42 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
+
+<style type="text/css">
+
+body {
+	margin: 0 auto;
+}
+
+.bx-wrapper {
+  margin: 0 !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+.slider img{
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: -600px;
+  left: 0;
+  margin-bottom: -600px;
+  z-index: 1;
+}
+
+#home_menu {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+</style>
+
 <title>ホーム</title>
 
 
@@ -17,9 +53,12 @@
 
 </head>
 <body>
-<jsp:include page="header.jsp" />
 
-<div class="abc">
+<div id="home_menu">
+<jsp:include page="header.jsp" />
+</div>
+
+<div class="slider">
 
         <div><img src="images/slideshow_01.jpg"></div>
         <div><img src="images/slideshow_02.jpg"></div>
@@ -30,9 +69,6 @@
 
     </div>
 
-<div id="contents">
-	<h1>ホーム画面</h1>
-</div>
 <s:include value="footer.jsp" />
 </body>
 </html>
