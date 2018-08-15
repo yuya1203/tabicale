@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="footer">
-
+Copyright &copy; 2018 TABICALE -旅のカレンダーブランド- | InterNous.inc. All rights reserved.
 </div>
 </body>
 </html>
