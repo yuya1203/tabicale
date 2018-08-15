@@ -17,7 +17,7 @@
 			検索結果がありません。
 			</s:if>
 			<s:else>
-				<div id="product-list">
+				<div id="contents">
 					<s:iterator value="#session.productInfoDtoList">
 						<!-- <div id="contents"> -->
 							<div class="product-list-box">
