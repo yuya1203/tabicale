@@ -9,6 +9,7 @@
 <title>パスワード再設定</title>
 </head>
 <body>
+<div id="page">
 <jsp:include page="header.jsp" />
 <div id="contents">
 <h1>パスワード再設定画面</h1>
@@ -114,6 +115,7 @@
 		</table>
 <s:submit value="パスワード再設定" class="submit_btn" />
 </s:form>
+</div>
 </div>
 <s:include value="footer.jsp"/>
 </body>

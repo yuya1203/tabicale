@@ -5,10 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
 <title>パスワード再設定確認</title>
 </head>
 <body>
+<div id="page">
 <jsp:include page="header.jsp"/>
 <div id="contents">
 <h1>パスワード再設定確認画面</h1>
@@ -17,6 +18,7 @@
 	<s:property value="#session.concealedPassword"/><br>
 	<s:submit value="再設定" class="submit_btn"/>
 </s:form>
+</div>
 </div>
 <s:include value="footer.jsp"/>
 </body>
