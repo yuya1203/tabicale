@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,39 +12,27 @@
 <title>商品追加</title>
 <style type="text/css">
 </style>
-<!--
 <script>
-showImage(false);
+function lengthcheck(){
+	  var value = document.getElementById("result");
+	  var files1 = document.getElementById('userImage').files;
+	  var files2 = document.getElementById('userImage2').files;
+	  var output = [];
+	  var result = true;
 
-$("#loadFile").onchange = function(evt){
-	showImage(false);
-	var files = evt.target.files;
-	if(files.length == 0)
-		return;
-	var file = file[0];
-	if(!file.type.match(/image/)){
-		alert('画像ファイルを選んでください');
-		return;
-	}
-	var reader = new FileReader();
-	reader.onload = function(evt){
-		$("#thumb").src = reader.result;
-		showImage(true);
-	}
-	reader.readAsDateURL(file);
-}
+	  if(files1[0].size+files2[0].size > 4000000){
 
-function showImage(b){
-	var val = b ? "block" : "none" ;
-	$("#up_btn").style.display = val;
-	$("#thumb").style.display = val;
-}
-function $(id){
-	return document.querySelector(id);
-}
-
+		  alert("画像は4mbでお願いします");
+		  //value.innerHTML = "画像は4mbでお願いします";
+		  console.log(files1[0].size);
+		  console.log(files2[0].size);
+		  console.log(files1[0].size+files2[0].size);
+		  value.innerHTML = "<div class='error'><div class='error-message'>画像は4MB以下でお願いします</div></div>";
+		  result = false
+	  }
+	  return result;
+};
 </script>
--->
 </head>
 <body>
 
@@ -54,7 +42,7 @@ function $(id){
 
 			<h1>商品追加画面</h1>
 
-				<s:form method="post" action="AddProductConfirmAction" enctype="multipart/form-data">
+				<s:form method="post" action="AddProductConfirmAction" enctype="multipart/form-data" onsubmit="return lengthcheck()">
 					<table class="vertical-list-table">
 						<tr>
 							<th scope="row" id="input_form"><s:label value="商品名" /></th>
@@ -199,14 +187,14 @@ function $(id){
 
 						<tr>
 							<th scope="row" id="input_form"><s:label value="商品画像 表" /></th>
-							<td class="image"><s:file name="userImage" accept='image/jpg, image/jpeg' /></td>
+							<td class="image"><s:file name="userImage" id="userImage" accept='image/jpg, image/jpeg' /></td>
 						</tr>
 						<tr>
 						<th colspan="2"></th>
 						</tr>
 						<tr>
 							<th scope="row" id="input_form"><s:label value="商品画像 中" /></th>
-							<td class="image"><s:file name="userImage2" accept='image/jpg, image/jpeg' /></td>
+							<td class="image"><s:file name="userImage2" id="userImage2" accept='image/jpg, image/jpeg' /></td>
 						</tr>
 
 						<tr>
@@ -220,7 +208,11 @@ function $(id){
 								</s:if>
 							</th>
 						</tr>
+						<tr>
+							<th colspan="2" id="result">
 
+							</th>
+						</tr>
 					</table>
 					<div class="button">
 						<s:submit class="submit-button" value="商品追加"/>
