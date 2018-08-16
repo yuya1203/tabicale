@@ -89,7 +89,7 @@
 	</s:form>
 </s:if>
 <s:else>
-	<div>
+	<div class="no_info_messeage">
 		カート情報はありません
 	</div>
 </s:else>

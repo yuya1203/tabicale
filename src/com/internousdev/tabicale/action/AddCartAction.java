@@ -25,6 +25,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	private String releaseCompany;
 	private Date releaseDate;
 	private String productDescription;
+	private String checkRandomId;
 
 	private String categoryId;
 
@@ -59,11 +60,18 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		System.out.println(productCount);
 
 		//データベースにカート情報を追加します
+		//更新ボタンを押した場合は無効です
 		CartInfoDAO cartInfoDao = new CartInfoDAO();
-		int count = cartInfoDao.regist(userId, tempUserId, productId, productCount, price);
-		if(count > 0){
+		if(String.valueOf(session.get("checkRandomId")).equals(checkRandomId)){
+			int count = cartInfoDao.regist(userId, tempUserId, productId, productCount, price);
+			if(count > 0){
+				session.remove("checkRandomId");
+				result = SUCCESS;
+			}
+		}else{
 			result = SUCCESS;
 		}
+
 
 		//カート画面に遷移するので現在のカート情報を取得します
 		List<CartInfoDTO> cartInfoDtoList = new ArrayList<CartInfoDTO>();
@@ -159,5 +167,13 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	}
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public String getCheckRandomId(){
+		return checkRandomId;
+	}
+
+	public void setCheckRandomId(String checkRandomId){
+		this.checkRandomId = checkRandomId;
 	}
 }
