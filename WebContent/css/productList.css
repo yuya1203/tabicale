@@ -2,7 +2,7 @@
 .product-list-box{
 	display:inline-block;
 	float:left;
-	width:33.3%;
+	width:360px;
 	height:540px;
 	text-align:center;
 }
@@ -18,5 +18,4 @@
 	height:100%;
 	list-style-type:none;
 	text-align:center;
-	margin-top:25px;
 }
