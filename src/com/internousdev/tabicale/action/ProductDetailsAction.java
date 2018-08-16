@@ -11,10 +11,12 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.tabicale.dao.ProductInfoDAO;
 import com.internousdev.tabicale.dto.MCategoryDTO;
 import com.internousdev.tabicale.dto.ProductInfoDTO;
+import com.internousdev.tabicale.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ProductDetailsAction extends ActionSupport implements SessionAware{
 	private int productId;
+	private String checkRandomId;
 	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 	private List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
 	private String categoryId;
@@ -47,6 +49,12 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 			session.put("productInfoDtoList", productInfoDtoList);
 			result = SUCCESS;
 		}
+
+		//カートの2重追加対策
+		CommonUtility commonUtility = new CommonUtility();
+		checkRandomId =commonUtility.getRandomValue();
+		session.put("checkRandomId", checkRandomId);
+
 		return result;
 	}
 
@@ -81,5 +89,13 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 	}
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public String getCheckRandomId(){
+		return checkRandomId;
+	}
+
+	public void setCheckRandomId(String checkRandomId){
+		this.checkRandomId = checkRandomId;
 	}
 }

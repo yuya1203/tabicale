@@ -7,23 +7,34 @@
 <head>
 
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/productDetails.css">
+<script>
+document.getElementById("ex_out").addEventListener("mouseover", function(){
+	document.getElementById("ex_menu").style.display = 'block';
+}, false);
 
+document.getElementById("ex_out").addEventListener("mouseout", function(){
+	document.getElementById("ex_menu").style.display = 'none';
+}, false);
+</script>
 <title>商品詳細</title>
 </head>
 <body>
-<jsp:include page="header.jsp" />
+<div id="page">
+<div><jsp:include page="header.jsp" /></div>
 <div id= "contents">
 <h1>商品詳細画面</h1>
-     <s:form action= "AddCartAction">
-     <div class="box">
+     <div><s:form action= "AddCartAction">
+     <div class="box1">
          <div class= "2column-container">
             <div class = "right">
-                <img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class= "item-imag-box-320"/><br>
-                <img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class= "item-imag-box-320"/><br>
+                <div class="gazo1"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class= "image_main1"/></div>
+                <div class="gazo2"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class= "image_main2"/><br></div>
             </div>
             <div class="left">
-                <table class="vertical-list-table-mini">
+
+                <table class="vertical-list-table">
                      <tr>
                            <th scope= "row"><s:label value="商品名"/></th>
                            <td><s:property value="%{#session.productName}"/></td>
@@ -46,11 +57,19 @@
                      </tr>
                      <tr>
                           <th scope="row"><s:label value="発売年月日"/></th>
+                          <td><s:property value="%{#session.releaseDate}"/></td>
+                     </tr>
+                     <tr>
+                          <th scope="row"><s:label value="商品詳細"/></th>
                           <td><s:property value="%{#session.productDescription}"/></td>
                      </tr>
+
                  </table>
+
             </div>
+
        </div>
+
      <s:hidden name="productId" value="%{#session.productId}"/>
      <s:hidden name="productName" value="%{#session.productName}"/>
      <s:hidden name="productNameKana" value="%{#session.productNameKana}"/>
@@ -60,31 +79,36 @@
      <s:hidden name="releaseCompany" value="%{#session.releaseCompany}"/>
      <s:hidden name="releaseDate" value="%{#session.releaseDate}"/>
      <s:hidden name="productDescription" vslue="%{#session.productDescription}"/>
+     <s:hidden name="checkRandomId" vslue="checkRandomId"/>
      </div>
      <div class="submit_btn_box">
      <s:submit value="カートに追加" class="submit_btn"/>
      </div>
-     </s:form>
-     <div class="box">
+
+     </s:form></div>
+
+     <div class="box2">
      <div class="product-details-recomment-box">
      <s:iterator value="#session.productInfoDtoList">
-     <!--  <div class="product-list">
-           <div class="product-list-box"> -->>
+
            <div class="recommend-box">
+           <div>
            <a href='<s:url action="ProductDetailsAction">
            <s:param name="productId" value="%{productId}"/>
-           </s:url>'><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' class="item-image-box-100"></a>
-           <s:property value="productName"/><br>
+           </s:url>'><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' class="item-image-box-100"/></a>
            </div>
-<!-- 		</div>
-	</div>
--->
+
+<p class="sub">  <s:property value="productName"/></p>
+           </div>
+
+
      </s:iterator>
 
      </div>
      </div>
 
 </div>
-<s:include value="footer.jsp"/>
+<div id="footer"><s:include value="footer.jsp"/></div>
+</div>
 </body>
 </html>

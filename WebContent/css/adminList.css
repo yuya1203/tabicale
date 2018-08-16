@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+.admin_list{
+	width:90%;
+	height:auto;
+	background-color:white;
+	margin:0 auto;
+}
+
+.admin_list tr th{
+	background-color:skyblue;
+
+}

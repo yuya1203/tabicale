@@ -7,27 +7,28 @@
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="3;URL='admin.jsp'"/>
 
-<link rel="stylesheet" href="./css/style.css">
+
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/addProductCompleteAction.css">
 
 <title>商品追加完了画面</title>
+
 </head>
 <body>
+
 	<jsp:include page="adminHeader.jsp"/>
 	<div class="contents">
-		<div class="top">
 			<h1>商品追加完了画面</h1>
-		</div>
 
 		<div class="success">
-		商品追加が完了しました。
-		</div>
-		<div>
-			<p>3秒後に管理者画面に戻ります</p>
+			<strong>商品追加が完了しました。</strong><br><br><br>
+			<strong>3秒後に管理者画面に戻ります</strong>
 		</div>
 	</div>
 	<div class="footer">
 		<s:include value="footer.jsp"/>
 	</div>
+
 
 </body>
 </html>

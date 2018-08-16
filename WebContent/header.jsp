@@ -6,10 +6,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet"  href="./css/tabicale.css">
 <title>ヘッダー</title>
 
 
 <script>
+
+
+jQuery(function($){
+  $(document).ready(function(){
+    $('.slider').bxSlider({
+    	auto:true,
+    	mode:'fade',
+    	speed:1000,
+    	pause: 3000,
+    	controls: false,
+    	pager: false
+    });
+  });
+});
+
 
 
 function goLoginAction(){
@@ -48,7 +64,7 @@ function goSearchItemAction(){
 
 <div id="header">
 <div id="header-title">
-TABICALE
+<img src="images/gray.jpeg" alt="" width="200%"/>
 </div>
 <div id="header-menu">
 <ul>

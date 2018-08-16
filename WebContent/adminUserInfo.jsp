@@ -5,12 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/adminList.css">
 <title>管理者ユーザー情報画面</title>
 </head>
 <body>
+<div id="page">
 <jsp:include page="adminHeader.jsp" />
 <s:if test="#session.userInfoDtoList.size()>0">
-		<table border="1">
+		<table border="1" class="admin_list">
 			<thead>
 				<tr>
 					<th><s:label value="id"/></th>
@@ -56,6 +59,7 @@
 </s:else>
 <div id="footer">
 	<s:include value="footer.jsp"/>
+</div>
 </div>
 </body>
 </html>
