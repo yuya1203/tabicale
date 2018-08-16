@@ -1358,7 +1358,7 @@ public class PurchaseHistoryInfoDTOTest {
 	public void testSetCategoryId4() {
 		PurchaseHistoryInfoDTO dto =new PurchaseHistoryInfoDTO();
 		try{
-			int expected = Integer.parseInt(exmin);
+			int expected = Integer.parseInt(exmax);
 			dto.setCategoryId(expected);
 
 			int actual = dto.getCategoryId();
