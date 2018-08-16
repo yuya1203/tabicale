@@ -198,14 +198,14 @@ function $(id){
 						</tr>
 
 						<tr>
-							<th scope="row" id="input_form"><s:label value="商品画像" /></th>
+							<th scope="row" id="input_form"><s:label value="商品画像 表" /></th>
 							<td class="image"><s:file name="userImage" accept='image/jpg, image/jpeg' /></td>
 						</tr>
 						<tr>
 						<th colspan="2"></th>
 						</tr>
 						<tr>
-							<th scope="row" id="input_form"><s:label value="商品画像２" /></th>
+							<th scope="row" id="input_form"><s:label value="商品画像 中" /></th>
 							<td class="image"><s:file name="userImage2" accept='image/jpg, image/jpeg' /></td>
 						</tr>
 

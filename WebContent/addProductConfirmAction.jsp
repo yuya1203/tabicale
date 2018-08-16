@@ -54,21 +54,21 @@
 					<td><s:property value="releaseCompany"/></td>
 				</tr>
 				<tr class="no-image">
-					<th colspan="1" class="left-image">画像</th>
+					<th colspan="1" class="left-image">商品画像 表</th>
 					<td class="border-none"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class="left-image image"></td>
 
 				</tr>
 				<tr class="no-image">
-					<th colspan="1" class="right-image">画像２</th>
+					<th colspan="1" class="right-image">商品画像 中</th>
 					<td class="border-none"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class="right-image image"></td>
 				<tr>
 			</table>
 			<div class="left-image">
-				<p>画像</p><br>
+				<p>商品画像 表</p><br>
 				<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class=" image">
 			</div>
 			<div class="right-image">
-				<p>画像2</p><br>
+				<p>商品画像 中</p><br>
 				<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class=" image">
 			</div>
 		<s:hidden name="productId" value="%{#session.productId}"/>

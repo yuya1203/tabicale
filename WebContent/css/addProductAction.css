@@ -60,7 +60,6 @@ td {
 }
 td .categoryId{
 	text-align: left;
-	cursor: pointer;
 }
 .button{
 	clear: both;
@@ -74,11 +73,9 @@ td .categoryId{
 	height:50px;
 	position:relative;
 	left:45%;
-	font-weight: bold;
 	cursor: pointer;
+	font-weight: bold;
 }
-
-
 .submit-button:hover{
 	opacity: 1;
 }

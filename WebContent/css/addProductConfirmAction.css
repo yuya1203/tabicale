@@ -40,8 +40,9 @@ body{
 	margin-left: 25%;
 	margin-right: 27%;
 	background-color: orange;
-	padding: 20px 70px 20px 70px;
+	padding: 20px 50px 20px 50px;
 	border:1px solid #333;
+	font-weight: bold;
 
 }
 .right-image{
@@ -53,8 +54,9 @@ body{
 	margin-left: 25%;
 	margin-right: 27%;
 	background-color: orange;
-	padding: 20px 70px 20px 70px;
+	padding: 20px 50px 20px 50px;
 	border:1px solid #333;
+	font-weight: bold;
 }
 .image {
 	border: 1px solid #c0c0c0;
@@ -76,6 +78,8 @@ body{
 	height:50px;
 	position:relative;
 	left:45%;
+	cursor: pointer;
+	font-weight: bold;
 }
 .submit-button:hover{
 	opacity: 1;
