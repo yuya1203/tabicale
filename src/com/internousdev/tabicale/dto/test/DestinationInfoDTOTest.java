@@ -2,6 +2,10 @@ package com.internousdev.tabicale.dto.test;
 
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.junit.Test;
 
 import com.internousdev.tabicale.dto.DestinationInfoDTO;
@@ -614,7 +618,7 @@ public class DestinationInfoDTOTest {
 		String expected="0";
 
 		dto.setFirstName(expected);
-		String actual = dto.getFamilyName();
+		String actual = dto.getFirstName();
 		assertEquals(expected, actual);
 	}
 
@@ -948,7 +952,7 @@ public class DestinationInfoDTOTest {
 		String expected="abc123あいう１２３";
 
 		dto.setFamilyNameKana(expected);
-		String actual = dto.getFamilyName();
+		String actual = dto.getFamilyNameKana();
 		assertEquals(expected, actual);
 	}
 
@@ -1121,7 +1125,7 @@ public class DestinationInfoDTOTest {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		String expected="-2147483647";
 
-		dto.setFamilyNameKana(expected);
+		dto.setFirstNameKana(expected);
 		String actual = dto.getFirstNameKana();
 		assertEquals(expected, actual);
 	}
@@ -1869,7 +1873,7 @@ public class DestinationInfoDTOTest {
 	public void testGetUserAddress6() {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		String expected=" ";
-		
+
 		dto.setUserAddress(expected);
 		String actual = dto.getUserAddress();
 		assertEquals(expected, actual);
@@ -1879,7 +1883,7 @@ public class DestinationInfoDTOTest {
 	public void testGetUserAddress7() {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		String expected="　";
-		
+
 		dto.setUserAddress(expected);
 		String actual = dto.getUserAddress();
 		assertEquals(expected, actual);
@@ -1889,7 +1893,7 @@ public class DestinationInfoDTOTest {
 	public void testGetUserAddress8() {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		String expected="abc123";
-		
+
 		dto.setUserAddress(expected);
 		String actual = dto.getUserAddress();
 		assertEquals(expected, actual);
@@ -1899,7 +1903,7 @@ public class DestinationInfoDTOTest {
 	public void testGetUserAddress9() {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		String expected="あいう１２３";
-		
+
 		dto.setUserAddress(expected);
 		String actual = dto.getUserAddress();
 		assertEquals(expected, actual);
@@ -1909,7 +1913,7 @@ public class DestinationInfoDTOTest {
 	public void testGetUserAddress10() {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		String expected="abc123あいう１２３";
-		
+
 		dto.setUserAddress(expected);
 		String actual = dto.getUserAddress();
 		assertEquals(expected, actual);
@@ -1919,7 +1923,7 @@ public class DestinationInfoDTOTest {
 	public void testGetUserAddress11() {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		String expected="abc123あいう１２３漢字";
-		
+
 		dto.setUserAddress(expected);
 		String actual = dto.getUserAddress();
 		assertEquals(expected, actual);
@@ -1928,33 +1932,215 @@ public class DestinationInfoDTOTest {
 	@Test
 	public void testGetUserAddress12() {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
-		String expected
+		String expected="ａｂｃあいう１２３漢字";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
 	}
 
-
+	// set UserAddress test
 	@Test
-	public void testSetUserAddress() {
-		fail("まだ実装されていません");
-	}
+	public void testSetUserAddress1() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="0";
 
-	@Test
-	public void testGetRegistDate() {
-		fail("まだ実装されていません");
-	}
-
-	@Test
-	public void testSetRegistDate() {
-		fail("まだ実装されていません");
-	}
-
-	@Test
-	public void testGetUpdateDate() {
-		fail("まだ実装されていません");
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
 	}
 
 	@Test
-	public void testSetUpdateDate() {
-		fail("まだ実装されていません");
+	public void testSetUserAddress2() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="2147483647";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress3() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="-2147483647";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress4() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="null";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress5() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress6() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected=" ";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress7() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="　";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress8() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="abc123";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress9() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="あいう１２３";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress10() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="abc123あいう１２３";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress11() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="abc123あいう１２３漢字";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUserAddress12() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		String expected="ａｂｃあいう１２３漢字";
+
+		dto.setUserAddress(expected);
+		String actual = dto.getUserAddress();
+		assertEquals(expected, actual);
+	}
+
+	// get RegistDate test
+	@Test
+	public void testGetRegistDate1() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		Date expected = null;
+
+		dto.setRegistDate(expected);
+		Date actual = dto.getRegistDate();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testGetRegistDate2() throws ParseException{
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+
+		SimpleDateFormat sdf= new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setRegistDate(expected);
+		assertEquals(expected, dto.getRegistDate());
+	}
+
+	// set RegistDate test
+	@Test
+	public void testSetRegistDate1() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		Date expected = null;
+
+		dto.setRegistDate(expected);
+		Date actual = dto.getRegistDate();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetRegistDate2() throws ParseException {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setRegistDate(expected);
+		assertEquals(expected, dto.getRegistDate());
+	}
+
+	// get UpdateDate test
+	@Test
+	public void testGetUpdateDate1() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		Date expected = null;
+
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testGetUpdateDate2() throws ParseException {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setUpdateDate(expected);
+		assertEquals(expected,dto.getUpdateDate());
+	}
+
+	@Test
+	public void testSetUpdateDate1() {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+		Date expected = null;
+
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetUpdateDate2() throws ParseException {
+		DestinationInfoDTO dto = new DestinationInfoDTO();
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setUpdateDate(expected);
+		assertEquals(expected,dto.getUpdateDate());
 	}
 
 }
