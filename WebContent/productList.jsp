@@ -12,12 +12,15 @@
 	<body>
 		<div id="page">
 			<jsp:include page="header.jsp" />
+			<div id="contents">
 			<h1>商品一覧画面</h1>
-			<s:if test="productInfoDtoList==null">
-			検索結果がありません。
-			</s:if>
-			<s:else>
-				<div id="contents">
+				<s:if test="productInfoDtoList==null">
+				<div class="title">
+					検索結果がありません。
+				</div>
+				</s:if>
+				<s:else>
+				<!-- <div id="contents"> -->
 					<s:iterator value="#session.productInfoDtoList">
 						<!-- <div id="contents"> -->
 							<div class="product-list-box">
@@ -33,16 +36,19 @@
 							</div>
 						<!-- </div> -->
 					</s:iterator>
-				</div>
-				<s:iterator begin="1" end="#session.totalPageSize" status="pageNo">
-					<s:if test="#session.currentPageNo == #pageNo.count">
-						<s:property value="%{#pageNo.count}"/>
-					</s:if>
-					<s:else>
-						<a href="<s:url action='SearchItemAction'><s:param name='pageNo' value='%{#pageNo.count}'/><s:param name='categoryId' value='%{categoryId}'/></s:url>"><s:property value="%{#pageNo.count}"/></a>
-					</s:else>
-				</s:iterator>
-			</s:else>
+					<!-- </div> -->
+					<div id="pageNumber">
+						<s:iterator begin="1" end="#session.totalPageSize" status="pageNo">
+							<s:if test="#session.currentPageNo == #pageNo.count">
+								<s:property value="%{#pageNo.count}"/>
+							</s:if>
+							<s:else>
+								<a href="<s:url action='SearchItemAction'><s:param name='pageNo' value='%{#pageNo.count}'/><s:param name='categoryId' value='%{categoryId}'/></s:url>"><s:property value="%{#pageNo.count}"/></a>
+							</s:else>
+						</s:iterator>
+					</div>
+				</s:else>
+			</div>
 			<s:include value="footer.jsp"/>
 		</div>
 	</body>
