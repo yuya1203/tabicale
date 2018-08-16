@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>管理者商品一覧画面</title>
+<link rel="stylesheet" href="./css/tabicale.css">
+<title>管理者用商品一覧</title>
 <script>
 function alertFunction(){
 
@@ -15,15 +16,18 @@ function alertFunction(){
 
 </script>
 </head>
+
 <body>
+<div id="page">
+
 <jsp:include page="adminHeader.jsp"/>
 
 <div id="contents">
-<h1>管理者商品一覧画面</h1>
+<h1>管理者用商品一覧</h1>
 
 <s:if test="#session.productInfoDtoList.size()>0">
 
-<table class="horizontal-list-table">
+<table class="horizontal-list-table" border="1">
 <thead>
 <tr>
 <th><s:label value="削除"/></th>
@@ -45,8 +49,8 @@ function alertFunction(){
 </s:form></td>
 <td><s:property value="productName"/></td>
 <td><s:property value="productNameKana"/></td>
-<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>'width="50px" height="50px"/></td>
-<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName2"/>'width="50px" height="50px"/></td>
+<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>'width="80px" height="80px"/></td>
+<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName2"/>'width="80px" height="80px"/></td>
 <td><s:property value="price"/>円</td>
 <td><s:property value="releaseCompany"/></td>
 <td><s:property value="releaseDate"/></td>
@@ -75,5 +79,7 @@ function alertFunction(){
 <div id="footer">
 <s:include value="footer.jsp"/>
 </div>
+</div>
 </body>
+
 </html>

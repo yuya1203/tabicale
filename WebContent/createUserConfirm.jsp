@@ -7,14 +7,20 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./css/tabicale.css">
 <title>登録内容確認画面</title>
 </head>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/createUserConfirm.css">
 <body>
+<div id="page">
 <jsp:include page="header.jsp" />
 <div id="contents">
+<div id="contents_sub">
 	<div id="main">
 		<div id="top">
-			<p>ユーザー登録画面</p>
+			<h1>ユーザー登録画面</h1>
 			</div>
 		</div>
 		<div>
@@ -67,6 +73,7 @@
 <s:submit value="登録" class="submit_btn" />
 </div>
 </div>
+
 <s:hidden name="loginId" value="%{loginId}"/>
 <s:hidden name="password" value="%{password}"/>
 <s:hidden name="familyName" value="%{familyName}"/>
@@ -84,6 +91,8 @@
 </s:form>
 </div>
 </div>
+</div>
 	<s:include value="footer.jsp"/>
+	</div>
 </body>
 </html>
