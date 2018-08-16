@@ -108,7 +108,8 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
      </div>
 
 </div>
-<div id="footer"><s:include value="footer.jsp"/></div>
 </div>
+<s:include value="footer.jsp"/>
+
 </body>
 </html>
