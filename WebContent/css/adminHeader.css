@@ -24,12 +24,15 @@ body{
   text-align: center;
   color: white;
   font-size: 14px;
+  font-weight: bold;
   line-height: 2.8;
   background: ;
   text-decoration: none;
   box-sizing: border-box;
-  text-decoration: underline;
+  text-decoration: ;
   background: rgba(0,0,0,0);
+  border-bottom: 1px solid white;
+  display: inline-block;
 }
 
 .nav > li:hover > a {/*layer-1*/
