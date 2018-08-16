@@ -1,0 +1,38 @@
+table{
+	width:1080px;
+	border:solid 1px brack;
+}
+
+thead{
+	height:35px;
+	background-color:blue;
+	color:white;
+}
+
+tbody{
+	background-color:white;
+}
+
+.radio{
+	width:40px;
+}
+
+.name, .kana{
+	width:140px;
+}
+
+.tel{
+	width:150px;
+}
+
+.email{
+	width:250px;
+}
+
+td{
+	text-align: center;
+}
+
+#contents-btn-set{
+	margin-top:25px;
+}

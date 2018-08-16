@@ -16,7 +16,7 @@
 		<h1>決済確認画面</h1>
 		<div class="info">送り先情報を選択してください。</div>
 		<s:form id="form" action="SettlementCompleteAction">
-			<table>
+			<table border="1">
 				<thead>
 					<tr>
 						<th class="radio"><s:label value="#"/></th>
@@ -57,14 +57,14 @@
 			</table>
 
 			<div class="submit_btn_box">
-				<div id=".contents-btn-set">
+				<div id="contents-btn-set">
 					<s:submit value="決済" class="submit_btn"/>
 				</div>
 			</div>
 		</s:form>
 
 		<div class="submit_btn_box">
-			<div id=".contents-btn-set">
+			<div id="contents-btn-set">
 				<s:form action="CreateDestinationAction">
 					<s:submit value="新規登録" class="submit_btn"/>
 				</s:form>
@@ -72,9 +72,7 @@
 		</div>
 
 	</div>
-	<div>]
-		<jsp:include page="footer.jsp"/>
-	</div>
 </div>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
