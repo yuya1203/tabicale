@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="3;URL='admin.jsp'"/>
 
+
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/addProductCompleteAction.css">
 
@@ -14,7 +15,7 @@
 
 </head>
 <body>
-<div id="page">
+
 	<jsp:include page="adminHeader.jsp"/>
 	<div class="contents">
 			<h1>商品追加完了画面</h1>
@@ -27,7 +28,7 @@
 	<div class="footer">
 		<s:include value="footer.jsp"/>
 	</div>
-</div>
+
 
 </body>
 </html>

@@ -5,15 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/adminHeader.css">
 
 <title>管理者画面</title>
+<style type="text/css">
 
+</style>
 </head>
 <body>
-<div class="header">
+<div id="header">
 	<div id="header-title">
-	TABICALE
+		<img src="images/gray.jpeg" alt="" width="200%" height="200%"/>
 	</div>
 	<div class="contents-list">
 		<ul class="nav">

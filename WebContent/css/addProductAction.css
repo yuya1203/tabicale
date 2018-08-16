@@ -4,6 +4,7 @@ body{
 	 background-repeat:no-repeat;
 	background-attachment: fixed;
 	background-size:100% 100%;
+	z-index: 2;
 }
 .contents  h1{
 	width:90%;
@@ -59,12 +60,12 @@ td {
 }
 td .categoryId{
 	text-align: left;
+	cursor: pointer;
 }
 .button{
 	clear: both;
 	padding-top: 30px;
 	padding-buttom: 30px;
-	background-color: ;
 }
 .submit-button{
 	background-color: skyblue;
@@ -72,9 +73,12 @@ td .categoryId{
 	width:150px;
 	height:50px;
 	position:relative;
-	top: px;
 	left:45%;
+	font-weight: bold;
+	cursor: pointer;
 }
+
+
 .submit-button:hover{
 	opacity: 1;
 }

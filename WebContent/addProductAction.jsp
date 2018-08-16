@@ -6,10 +6,12 @@
 <head>
 
 <meta charset="UTF-8">
+
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/addProductAction.css">
 <title>商品追加</title>
-
+<style type="text/css">
+</style>
 <!--
 <script>
 showImage(false);
@@ -45,7 +47,7 @@ function $(id){
 -->
 </head>
 <body>
-<div id="page">
+
 	<jsp:include page="adminHeader.jsp"/>
 
 	<div class="contents">
@@ -227,7 +229,6 @@ function $(id){
 			</div>
 
 		<s:include value="footer.jsp"/>
-	</div>
 
 
 
