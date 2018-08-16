@@ -26,6 +26,11 @@
 	font-size: 24px;
 }
 
+.radio-inline {
+	display:inline-block;
+	width:150px;
+}
+
 #input_form {
 	background-color:#deebf7;
 	height: 50px;
