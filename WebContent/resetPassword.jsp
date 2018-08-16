@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/tabicale.css">
 <title>パスワード再設定</title>
 </head>
 <body>
@@ -13,57 +13,18 @@
 <div id="contents">
 <h1>パスワード再設定画面</h1>
 
-
-	<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-	<div class="error">
-	<div class="error-message">
-		<s:iterator value="#session.loginIdErrorMessageList"><s:property />
-		<br></s:iterator>
-		</div>
-		</div>
-	</s:if>
-
-	<s:if test="!#session.passwordErrorMessageList.isEmpty()">
-	<div class="error">
-	<div class="error-message">
-		<s:iterator value="#session.passwordErrorMessageList"><s:property />
-		<br></s:iterator>
-		</div>
-		</div>
-	</s:if>
-	<s:if test="!#session.passwordIncorrectErrorMessageList.isEmpty()">
-	<div class="error">
-	<div class="error-message">
-		<s:iterator value="#session.passwordIncorrectErrorMessageList"><s:property />
-		<br></s:iterator>
-		</div>
-		</div>
-	</s:if>
-
-	<s:if test="!#session.newPasswordErrorMessageList.isEmpty()">
-	<div class="error">
-	<div class="error-message">
-		<s:iterator value="#session.newPasswordErrorMessageList"><s:property />
-		<br></s:iterator>
-		</div>
-		</div>
-	</s:if>
-
-	<s:if test="!#session.reConfirmPasswordErrorMessageList.isEmpty()">
-	<div class="error">
-	<div class="error-message">
-		<s:iterator value="#session.reConfirmPasswordErrorMessageList"><s:property />
-		<br></s:iterator>
-		</div>
-		</div>
-	</s:if>
 	<s:if test="!#session.newPasswordIncorrectErrorMessageList.isEmpty()">
+	<tr>
+	<td colspan="2">
 	<div class="error">
 		<div class="error-message">
 		<s:iterator value="#session.newPasswordIncorrectErrorMessageErrorMessageList"><s:property />
+
 		<br></s:iterator>
 		</div>
 	</div>
+	</td>
+	</tr>
 	</s:if>
 
 
@@ -75,18 +36,81 @@
 			<th scope="row"><s:label value="ログインID"/></th>
 			<td><s:textfield name="loginId" placeholder="ログインID" class="txt" /></td>
 		</tr>
+			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
+	<tr>
+	<td colspan="2">
+	<div class="error">
+	<div class="error-message">
+		<s:iterator value="#session.loginIdErrorMessageList"><span style="color:red"><s:property /></span>
+		<br></s:iterator>
+		<s:if test="!#session.passwordIncorrectErrorMessageList.Empty()">
+		</s:if>
+		</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
 		<tr>
 			<th scope="row"><s:label value="現在のパスワード"/></th>
 			<td><s:password name="password" placeholder="現在のパスワード" class="txt" /></td>
 		</tr>
-
+<s:if test="!#session.passwordErrorMessageList.isEmpty()">
+	<tr>
+	<td colspan="2">
+	<div class="error">
+	<div class="error-message">
+		<s:iterator value="#session.passwordErrorMessageList"><span style="color:red"><s:property /></span>
+		<br></s:iterator>
+		</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
 		<tr>
 			<th scope="row"><s:label value="新しいパスワード"/></th>
 			<td><s:password name="newPassword" placeholder="新しいパスワード" class="txt" /></td>
+		</tr>
+		<s:if test="!#session.passwordIncorrectErrorMessageList.isEmpty()">
+	<tr>
+	<td colspan="2">
+	<div class="error">
+	<div class="error-message">
+		<s:iterator value="#session.passwordIncorrectErrorMessageList"><span style="color:red"><s:property /></span>
+		<br></s:iterator>
+		</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
 		<tr>
+			<s:if test="!#session.newPasswordErrorMessageList.isEmpty()">
+	<tr>
+	<td colspan="2">
+	<div class="error">
+	<div class="error-message">
+		<s:iterator value="#session.newPasswordErrorMessageList"><span style="color:red"><s:property /></span>
+		<br></s:iterator>
+		</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
 			<th scope="row"><s:label value="（再確認用）"/></th>
 			<td><s:password name="reConfirmationPassword" placeholder="新しいパスワード（再確認用）" class="txt" /></td>
 		</tr>
+		<s:if test="!#session.reConfirmationNewPasswordErrorMessageList.isEmpty()">
+	<tr>
+	<td colspan="2">
+	<div class="error">
+	<div class="error-message">
+		<s:iterator value="#session.reConfirmationNewPasswordErrorMessageList"><span style="color:red"><s:property /></span>
+		<br></s:iterator>
+		</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
+
 		</table>
 <s:submit value="パスワード再設定" class="submit_btn" />
 </s:form>
