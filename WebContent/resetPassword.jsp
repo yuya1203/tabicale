@@ -13,16 +13,6 @@
 <div id="contents">
 <h1>パスワード再設定画面</h1>
 
-
-
-
-
-
-
-
-
-
-
 	<s:if test="!#session.newPasswordIncorrectErrorMessageList.isEmpty()">
 	<tr>
 	<td colspan="2">
@@ -51,8 +41,10 @@
 	<td colspan="2">
 	<div class="error">
 	<div class="error-message">
-		<s:iterator value="#session.loginIdErrorMessageList"><s:property />
+		<s:iterator value="#session.loginIdErrorMessageList"><span style="color:red"><s:property /></span>
 		<br></s:iterator>
+		<s:if test="!#session.passwordIncorrectErrorMessageList.Empty()">
+		</s:if>
 		</div>
 		</div>
 		</td>
@@ -67,7 +59,7 @@
 	<td colspan="2">
 	<div class="error">
 	<div class="error-message">
-		<s:iterator value="#session.passwordErrorMessageList"><s:property />
+		<s:iterator value="#session.passwordErrorMessageList"><span style="color:red"><s:property /></span>
 		<br></s:iterator>
 		</div>
 		</div>
@@ -83,7 +75,7 @@
 	<td colspan="2">
 	<div class="error">
 	<div class="error-message">
-		<s:iterator value="#session.passwordIncorrectErrorMessageList"><s:property />
+		<s:iterator value="#session.passwordIncorrectErrorMessageList"><span style="color:red"><s:property /></span>
 		<br></s:iterator>
 		</div>
 		</div>
@@ -96,7 +88,7 @@
 	<td colspan="2">
 	<div class="error">
 	<div class="error-message">
-		<s:iterator value="#session.newPasswordErrorMessageList"><s:property />
+		<s:iterator value="#session.newPasswordErrorMessageList"><span style="color:red"><s:property /></span>
 		<br></s:iterator>
 		</div>
 		</div>
@@ -111,7 +103,7 @@
 	<td colspan="2">
 	<div class="error">
 	<div class="error-message">
-		<s:iterator value="#session.reConfirmationNewPasswordErrorMessageList"><s:property />
+		<s:iterator value="#session.reConfirmationNewPasswordErrorMessageList"><span style="color:red"><s:property /></span>
 		<br></s:iterator>
 		</div>
 		</div>
