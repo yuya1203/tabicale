@@ -22,25 +22,25 @@ body{
   width: 150px;
   height: 40px;
   text-align: center;
-  color: #333;
+  color: white;
   font-size: 14px;
   line-height: 2.8;
   background: ;
   text-decoration: none;
   box-sizing: border-box;
   text-decoration: underline;
-  background: rgba(255,255,255,0);
+  background: rgba(0,0,0,0);
 }
 
 .nav > li:hover > a {/*layer-1*/
   color: ;
   opacity: ;
-  background: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.5);
 }
 .nav > li li:hover > a {/*layer-2*/
-  color: olive;
+  color: ;
   opacity: ;
-  background: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.5);
 }
 
 .nav li ul {
