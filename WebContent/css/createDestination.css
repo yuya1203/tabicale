@@ -26,11 +26,6 @@
 	font-size: 24px;
 }
 
-.radio-inline {
-	display:inline-block;
-	width:150px;
-}
-
 #input_form {
 	background-color:#deebf7;
 	height: 50px;
@@ -45,7 +40,3 @@ td {
 	text-align: center;
 }
 
-input[type="radio"]{
-   -webkit-transform: scale(0.5);
-   transform: scale(0.5);
-   margin-right: 0.5em;

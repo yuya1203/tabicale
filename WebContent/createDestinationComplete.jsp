@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/createDestination.css">
 
+
 <title>宛先情報完了</title>
 <script type="text/javascript">
 	window.onload = function(){
@@ -23,6 +24,7 @@
 </script>
 </head>
 <body>
+<div id="page">
 <jsp:include page="header.jsp" />
 <div id="contents">
 <h1>宛先情報完了画面</h1>
@@ -42,6 +44,7 @@
 					<s:hidden name="productId" value="%{productId}"/>
 </s:iterator>
 </s:form>
+</div>
 </div>
 </div>
 <s:include value="footer.jsp"/>

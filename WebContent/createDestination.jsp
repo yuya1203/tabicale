@@ -22,7 +22,7 @@
 <h1>宛先情報入力画面</h1>
 
 <s:form action="CreateDestinationConfirmAction">
-<table class="vertical-list-table">
+<table class="createDestination">
 
 
 <tr>
@@ -106,7 +106,7 @@
 <tr>
 
 	<th scope="row" id="input_form"><s:label value="性別"/></th>
-		<td><div class="radio-inline"><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></div></td>
+		<td><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></td>
 
 </tr>
 
@@ -177,8 +177,7 @@
 </s:form>
 </div>
 </div>
-
-<s:include value="footer.jsp"/>
 </div>
+<s:include value="footer.jsp"/>
 </body>
 </html>

@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/createDestination.css">
 
-<meta http-equiv="Content-Style-Type" content="text/css" />
+
 
 
 
@@ -78,7 +78,7 @@
 </s:form>
 </div>
 </div>
-<s:include value="footer.jsp" />
 </div>
+<s:include value="footer.jsp" />
 </body>
 </html>
