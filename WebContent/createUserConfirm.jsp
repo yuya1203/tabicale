@@ -14,9 +14,8 @@
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/createUserConfirm.css">
 <body>
-<div id="page">
+<div id="page2">
 <jsp:include page="header.jsp" />
-<div id="contents">
 <div id="contents_sub">
 	<div id="main">
 		<div id="top">
@@ -93,6 +92,5 @@
 </div>
 </div>
 	<s:include value="footer.jsp"/>
-	</div>
 </body>
 </html>

@@ -20,9 +20,8 @@
 <title>ユーザー情報登録画面</title>
 </head>
 <body>
-<div id="page">
+<div id="page2">
 <jsp:include page="header.jsp" />
-<div id="contents">
 <div id="contents_sub">
 			<h1>ユーザー情報登録画面</h1>
 
@@ -218,6 +217,5 @@
 </div>
 </div>
 <s:include value="footer.jsp"/>
-</div>
 </body>
 </html>

@@ -131,7 +131,7 @@ margin-right: 20px;
 	width:500px;
 	height:auto;
 	margin-left: 5%;
-	margin-bottom: 60px;
+	margin-bottom: 5px;
 }
 
 #contents_sub .vertical-list-table tr td{
@@ -172,6 +172,7 @@ margin-right: 20px;
 
 #contents_sub .box{
 	margin-left:32%;
+	margin-bottom: 10px;
 }
 
 #contents .submit_btn_box,#contents_sub .submit_btn_box{
@@ -181,11 +182,20 @@ margin-right: 20px;
 }
 
 #contents .submit_btn,#contents_sub .submit_btn{
-	width:100%;
-	height:40px;
-	border-radius:10px;
-	background-color:blue;
-	color:white;
+	width:200px;
+	height:50px;
+	padding:10px;
+    color: black;
+    background: #fd9535;/*êF*/
+    border-radius: 4px;/*äpÇÃä€Ç›*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 2px #d27d00;/*ê¸êF*/
+    cursor:pointer;
+}
+
+#contents .submit_btn:hover,#contents_sub .submit_btn:hover{
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
 
 #footer{
