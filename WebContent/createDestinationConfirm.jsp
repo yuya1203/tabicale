@@ -12,6 +12,7 @@
 
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/createDestination.css">
+<link rel="stylesheet" href="./css/createDestinationConfirm.css">
 
 
 
@@ -20,13 +21,12 @@
 <title>宛先情報確認</title>
 </head>
 <body>
-<div id="page">
+<div id="page2">
 <jsp:include page="header.jsp" />
-<div id="contents">
 <div id="contents_sub">
 <h1>宛先情報確認画面</h1>
 <s:form action="CreateDestinationCompleteAction">
-<table class="vertical-list-table">
+<table class="vertical-list-table" border="1">
 <tr>
 	<th scope="row" id="input_form"><s:label value="姓"/></th>
 	<td><s:property value="familyName"/><s:hidden name="familyName" value="%{familyName}"/></td>
@@ -76,7 +76,6 @@
 </div>
 </div>
 </s:form>
-</div>
 </div>
 </div>
 <s:include value="footer.jsp" />

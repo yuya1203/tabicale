@@ -51,7 +51,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
                            <td><s:property value="%{#session.productName}"/></td>
                      </tr>
                      <tr>
-                          <th scope="row"><s:label value="商品目かな"/></th>
+                          <th scope="row"><s:label value="商品名かな"/></th>
                           <td><s:property value="%{#session.productNameKana}"/></td>
                      </tr>
                      <tr>
