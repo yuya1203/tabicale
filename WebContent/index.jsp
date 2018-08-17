@@ -11,10 +11,5 @@
 <title>tabicale</title>
 </head>
 <body>
-<div id="footer">
-<s:include value="footer.jsp"/>
-
-</div>
-
 </body>
 </html>
