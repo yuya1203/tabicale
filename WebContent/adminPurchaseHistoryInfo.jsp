@@ -48,8 +48,6 @@
 	</div>
 </s:else>
 </div>
-<div id="footer">
-	<s:include value="footer.jsp"/>
-</div>
+<s:include value="footer.jsp"/>
 </body>
 </html>
