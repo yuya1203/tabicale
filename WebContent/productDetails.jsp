@@ -9,6 +9,9 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/productDetails.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 <script>
 document.getElementById("ex_out").addEventListener("mouseover", function(){
 	document.getElementById("ex_menu").style.display = 'block';
@@ -29,8 +32,16 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
      <div class="box1">
          <div class= "2column-container">
             <div class = "left">
-                <div class="gazo1"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class= "image_main1"/></div>
-                <div class="gazo2"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class= "image_main2"/><br></div>
+                <div class="gazo1">
+                	<a href='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' data-lightbox="sample" data-title="かれんだー">
+                		<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class= "image_main1"/>
+                	</a>
+                </div>
+                <div class="gazo2">
+                	<a href='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' data-lightbox="sample" data-title="かれんだー">
+                		<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class= "image_main2"/>
+                	</a>
+                <br></div>
             </div>
             <div class="right">
 

@@ -69,7 +69,7 @@
 				</s:iterator>
 			</tbody>
 		</table>
-			<h1>カート合計金額:<s:property value="#session.totalPrice"/></h1>
+			<h1 id="cartTotalPrice">カート合計金額:<s:property value="#session.totalPrice"/>円</h1>
 		<div class="submit_btn_box">
 			<div id=".contents-btn-set">
 				<s:submit value="決済" class="submit_btn"/>

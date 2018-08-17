@@ -14,4 +14,10 @@
 
 .no_info_messeage{
 	height:100%;
+	margin-left:5%;
+}
+
+#cartTotalPrice{
+	text-align:center;
+	border:none;
 }
