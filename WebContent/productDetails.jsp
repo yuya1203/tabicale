@@ -28,11 +28,11 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
      <div><s:form action= "AddCartAction">
      <div class="box1">
          <div class= "2column-container">
-            <div class = "right">
+            <div class = "left">
                 <div class="gazo1"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class= "image_main1"/></div>
                 <div class="gazo2"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class= "image_main2"/><br></div>
             </div>
-            <div class="left">
+            <div class="right">
 
                 <table class="vertical-list-table">
                      <tr>
