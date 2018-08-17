@@ -9,9 +9,9 @@
 <title>パスワード再設定</title>
 </head>
 <body>
-<div id="page">
+<div id="page2">
 <jsp:include page="header.jsp" />
-<div id="contents">
+<div id="contents_sub">
 <h1>パスワード再設定画面</h1>
 
 	<s:if test="!#session.newPasswordIncorrectErrorMessageList.isEmpty()">
@@ -113,7 +113,11 @@
 	</s:if>
 
 		</table>
+<div class="submit_btn_box">
+<div id=".contents-btn-set">
 <s:submit value="パスワード再設定" class="submit_btn" />
+</div>
+</div>
 </s:form>
 </div>
 </div>

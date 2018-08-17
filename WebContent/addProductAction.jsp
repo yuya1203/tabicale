@@ -17,17 +17,13 @@ function lengthcheck(){
 	  var value = document.getElementById("result");
 	  var files1 = document.getElementById('userImage').files;
 	  var files2 = document.getElementById('userImage2').files;
+	  var sumfile = 0;
 	  var output = [];
 	  var result = true;
 
 	  if(files1[0].size+files2[0].size > 4000000){
-
-		  alert("画像は4mbでお願いします");
-		  //value.innerHTML = "画像は4mbでお願いします";
-		  console.log(files1[0].size);
-		  console.log(files2[0].size);
-		  console.log(files1[0].size+files2[0].size);
-		  value.innerHTML = "<div class='error'><div class='error-message'>画像は4MB以下でお願いします</div></div>";
+		  sumfile = (files1[0].size+files2[0].size)/1000000;
+		  value.innerHTML = "<div class='error'><div class='error-message'>画像は4MB以下でお願いします。現在の合計ファイルサイズ["+sumfile+"MB]</div></div>";
 		  result = false
 	  }
 	  return result;
@@ -221,8 +217,5 @@ function lengthcheck(){
 			</div>
 
 		<s:include value="footer.jsp"/>
-
-
-
 </body>
 </html>

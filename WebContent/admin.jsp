@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-<div id="page">
+<div id="page2">
 <jsp:include page="adminHeader.jsp"/>
 <h1>管理者トップ</h1>
 
@@ -25,7 +25,7 @@
 	<a href="<s:url action='AdminCartInfoAction'/>">カート情報一覧</a>
 </div>
 
-<s:include value="footer.jsp"/>
 </div>
+<s:include value="footer.jsp"/>
 </body>
 </html>

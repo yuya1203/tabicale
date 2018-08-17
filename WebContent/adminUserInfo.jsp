@@ -57,9 +57,9 @@
 		ユーザー情報はありません
 	</div>
 </s:else>
+</div>
 <div id="footer">
 	<s:include value="footer.jsp"/>
-</div>
 </div>
 </body>
 </html>
