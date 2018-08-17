@@ -96,6 +96,8 @@ public class DestinationInfoDAO {
 				dto.setUserAddress(resultSet.getString("user_address"));
 				dto.setEmail(resultSet.getString("email"));
 				dto.setTelNumber(resultSet.getString("tel_number"));
+				dto.setRegistDate(resultSet.getDate("regist_date"));
+				dto.setUpdateDate(resultSet.getDate("update_date"));
 				destinationInfoDtoList.add(dto);
 			}
 		}catch(SQLException e){

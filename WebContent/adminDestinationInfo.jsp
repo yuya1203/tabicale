@@ -25,6 +25,8 @@
 					<th><s:label value="userAddress"/></th>
 					<th><s:label value="email"/></th>
 					<th><s:label value="telNumber"/></th>
+					<th><s:label value="regist_date"/></th>
+					<th><s:label value="update_date"/></th>
 				</tr>
 			</thead>
 
@@ -39,6 +41,8 @@
 						<td><s:property value="userAddress"/></td>
 						<td><s:property value="email"/></td>
 						<td><s:property value="telNumber"/></td>
+						<td><s:property value="registDate"/></td>
+						<td><s:property value="updateDate"/></td>
 					</tr>
 				</s:iterator>
 			</tbody>

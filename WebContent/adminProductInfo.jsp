@@ -75,8 +75,8 @@ function alertFunction(){
 商品情報はありません。
 </div>
 </s:else>
-<s:include value="footer.jsp"/>
 </div>
+<s:include value="footer.jsp"/>
 </body>
 
 </html>
