@@ -27,7 +27,7 @@
 										<img
 										src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>'
 										class="item-image-box-200" alt="" />
-								</a><br>
+								</a>
 									<div class="product-list-tag">
 										<s:property value="productName" />
 										<br>
