@@ -21,3 +21,9 @@
 	text-align:center;
 	border:none;
 }
+
+#contents .horizontal-list-table {
+	text-align:center;
+	border-collapse: collapse;
+	background-color:#e9e4d4;
+}
