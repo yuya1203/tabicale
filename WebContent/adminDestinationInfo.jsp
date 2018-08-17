@@ -12,6 +12,7 @@
 <body>
 <div id="page">
 <jsp:include page="adminHeader.jsp"/>
+<h1>宛先情報一覧</h1>
 <s:if test="#session.destinationInfoDtoList.size()>0">
 		<table border="1" class="admin_list">
 			<thead>

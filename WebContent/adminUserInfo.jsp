@@ -12,6 +12,7 @@
 <body>
 <div id="page">
 <jsp:include page="adminHeader.jsp" />
+<h1>ユーザー一覧</h1>
 <s:if test="#session.userInfoDtoList.size()>0">
 		<table border="1" class="admin_list">
 			<thead>
@@ -58,8 +59,6 @@
 	</div>
 </s:else>
 </div>
-<div id="footer">
-	<s:include value="footer.jsp"/>
-</div>
+<s:include value="footer.jsp"/>
 </body>
 </html>
