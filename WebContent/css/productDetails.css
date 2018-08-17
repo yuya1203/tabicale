@@ -5,11 +5,11 @@
 	margin:0 auto;
 }
 .box1{
-	height:465px;
+	height:auto;
 }
 
 
-.box1 .right{
+.box1 .left{
 	float:left;
 	width:55%;
 	padding-top:0.25%;
@@ -28,11 +28,12 @@
 }
 
 
-.box1 .left{
+.box1 .right{
 	float:left;
 	width:40%;
-	height:378px;
+	height:auto;
 	background-color: floralwhite;
+	min-hight:100%
 }
 
 
@@ -65,8 +66,10 @@ table.vertical-list-table th {
 
 
 
-.submit_btn_box .submit_btn{
-	margin:0 auto;
+ .submit_btn_box{
+	padding-top:60px;
+	clear:left;
+
 }
 
 .recommend-box{
