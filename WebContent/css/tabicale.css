@@ -125,7 +125,6 @@ margin-right: 20px;
 #contents  h1,#contents_sub h1{
 	width:100%;
 	border-bottom:3px double black;
-	margin-left:10px;
 }
 
 #contents_sub .vertical-list-table{
@@ -152,6 +151,11 @@ margin-right: 20px;
 #contents_sub .vertical-list-table tr td input{
 	width:100%;
 	height: 30px;
+}
+
+#contents_sub .vertical-list-table tr td input[type=radio]{
+	width:10%;
+	height:15px;
 }
 
 #contents .horizontal-list-table{
@@ -216,4 +220,9 @@ margin-right: 20px;
 .error-message{
 	text-align:left;
 	color:red;
+}
+
+s.radio {
+	width: 20%;
+	height: 20px;
 }

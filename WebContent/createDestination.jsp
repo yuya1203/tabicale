@@ -22,7 +22,7 @@
 <h1>宛先情報入力画面</h1>
 
 <s:form action="CreateDestinationConfirmAction">
-<table class="createDestination">
+<table class="vertical-list-table">
 
 
 <tr>
@@ -33,7 +33,7 @@
 
 
 <tr>
-	<th colspan="2">
+	<td colspan="2">
 			<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 				<div class="error">
 					<div class="error-message">
@@ -41,7 +41,7 @@
 					</div>
 				</div>
 			</s:if>
-	</th>
+	</td>
 <tr>
 
 
@@ -53,7 +53,7 @@
 
 
 <tr>
-	<th colspan="2">
+	<td colspan="2">
 			<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
 				<div class="error">
 					<div class="error-message">
@@ -61,7 +61,7 @@
 					</div>
 				</div>
 			</s:if>
-	</th>
+	</td>
 </tr>
 
 
@@ -73,7 +73,7 @@
 
 
 <tr>
-	<th colspan="2">
+	<td colspan="2">
 			<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
 				<div class="error">
 					<div class="error-message">
@@ -81,7 +81,7 @@
 					</div>
 				</div>
 			</s:if>
-	</th>
+	</td>
 </tr>
 
 <tr>
@@ -91,7 +91,7 @@
 </tr>
 
 <tr>
-	<th colspan="2">
+	<td colspan="2">
 			<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
 				<div class="error">
 					<div class="error-message">
@@ -99,14 +99,16 @@
 					</div>
 				</div>
 			</s:if>
-	</th>
+	</td>
 </tr>
 
 
 <tr>
 
 	<th scope="row" id="input_form"><s:label value="性別"/></th>
-		<td><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></td>
+			<td><s:radio name="sex" list="#{0:'男性',1:'女性' }" value="%{#session.sex}" label="性別" placeholder="性別"/>
+	<s:if test="%{sex != '1'}"></s:if>
+
 
 </tr>
 
@@ -119,7 +121,7 @@
 
 
 <tr>
-	<th colspan="2">
+	<td colspan="2">
 			<s:if test="!#session.userAddressErrorMessageList.isEmpty()">
 				<div class="error">
 					<div class="error-message">
@@ -127,18 +129,18 @@
 					</div>
 				</div>
 			</s:if>
-	</th>
+	</td>
 </tr>
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="電話番号"/></th>
-		<td><s:textfield name="telNumber" class="txt" placeholder="例）000-0000-0000"/>
+		<td><s:textfield name="telNumber" class="txt" placeholder="例）00000000000"/>
 		</td>
 </tr>
 
 
 <tr>
-	<th colspan="2">
+	<td colspan="2">
 			<s:if test="!#session.telNumberErrorMessageList.isEmpty()">
 				<div class="error">
 					<div class="error-message">
@@ -146,7 +148,7 @@
 					</div>
 				</div>
 			</s:if>
-	</th>
+	</td>
 </tr>
 
 <tr>
@@ -156,7 +158,7 @@
 </tr>
 
 <tr>
-	<th colspan="2">
+	<td colspan="2">
 			<s:if test="!#session.emailErrorMessageList.isEmpty()">
 				<div class="error">
 					<div class="error-message">
@@ -164,7 +166,7 @@
 					</div>
 				</div>
 			</s:if>
-	</th>
+	</td>
 </tr>
 
 </table>
