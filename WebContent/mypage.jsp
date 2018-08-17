@@ -11,26 +11,26 @@
 
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/mypage.css">
 
 <title>マイページ</title>
 
 </head>
 
 <body>
-<div id="page">
-<jsp:include page="header.jsp" />
-<div id="contents">
-<div id="contents_sub">
+<div id="page2">
+<jsp:include page="header.jsp" /><div id="contents_sub">
 
 <h1>マイページ画面</h1>
 
 <s:form action="PurchaseHistoryAction">
-<table class="vertical-list-table">
+<div id="mypage">
+<table class="vertical-list-table" border="1">
 <tr>
 
 
 <th scope="row"><s:label value="姓"/></th>
-<td><s:property value="#session.familyName"/></td>
+<td class="mypage-list"><s:property value="#session.familyName"/></td>
 </tr>
 
 
@@ -58,20 +58,15 @@
   </table>
   <div class="submit_btn_box">
   <s:submit value="購入履歴" class="submit_btn" />
-
+</div>
   </div>
 
    </s:form>
 
 </div>
 </div>
-   <s:include value="footer.jsp"/>
-
-
-
-</div>
+<s:include value="footer.jsp"/>
 </body>
-
 </html>
 
 
