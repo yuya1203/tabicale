@@ -1735,7 +1735,7 @@ public class ProductInfoDTOTest {
 	public void testSetReleaseDate2() throws ParseException{
 		ProductInfoDTO dto = new ProductInfoDTO();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
-		Date expected = sdf.parse("2018042012:00:002");
+		Date expected = sdf.parse("20180420 12:00:00");
 		dto.setReleaseDate(expected);
 		assertEquals(expected, dto.getReleaseDate());
 	}

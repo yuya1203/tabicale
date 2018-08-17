@@ -769,7 +769,7 @@ public class MCategoryDTOTest {
 		MCategoryDTO dto = new MCategoryDTO();
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
-		Date expected = sdf.parse("20180420");
+		Date expected = sdf.parse("20180420 12:00:00");
 		dto.setUpdateDate(expected);
 		assertEquals(expected, dto.getUpdateDate());
 	}
