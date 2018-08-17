@@ -16,7 +16,7 @@ public class ProductInfoDTOTest {
 	String exmax = "2147483647";
 	String exmin = "-2147483648";
 
-	//id getter
+	//id get
 	@Test
 	public void testGetId1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -75,7 +75,7 @@ public class ProductInfoDTOTest {
 		}
 	}
 
-	//id setter
+	//id set
 	@Test
 	public void testSetId1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -107,7 +107,7 @@ public class ProductInfoDTOTest {
 	}
 
 	@Test
-	public void testSetId4() {
+	public void testSetId4() throws Exception{
 		ProductInfoDTO dto = new ProductInfoDTO();
 		try{
 			int expected = Integer.parseInt(exmax);
@@ -120,7 +120,7 @@ public class ProductInfoDTOTest {
 	}
 
 	@Test
-	public void testSetId5() {
+	public void testSetId5() throws Exception{
 		ProductInfoDTO dto = new ProductInfoDTO();
 		try{
 			int expected = Integer.parseInt(exmin);
@@ -133,7 +133,7 @@ public class ProductInfoDTOTest {
 	}
 
 
-	//productId getter
+	//productId get
 	@Test
 	public void testGetProductId1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -192,7 +192,7 @@ public class ProductInfoDTOTest {
 		}
 	}
 
-	//productId setter
+	//productId set
 	@Test
 	public void testSetProductId1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -251,7 +251,7 @@ public class ProductInfoDTOTest {
 		}
 	}
 
-	//productName getter
+	//productName get
 	@Test
 	public void testGetProductName1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -355,7 +355,7 @@ public class ProductInfoDTOTest {
 	@Test
 	public void testGetProductName11() {
 		ProductInfoDTO dto = new ProductInfoDTO();
-		String expected = "abc123あいう漢字";
+		String expected = "abc123あいう１２３漢字";
 
 		dto.setProductName(expected);
 		String actual = dto.getProductName();
@@ -372,7 +372,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//productName setter
+	//productName set
 	@Test
 	public void testSetProductName1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -493,7 +493,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//productNameKana getter
+	//productNameKana get
 	@Test
 	public void testGetProductNameKana1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -614,7 +614,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//productNameKana setter
+	//productNameKana set
 	@Test
 	public void testSetProductNameKana1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -735,7 +735,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//productDescription getter
+	//productDescription get
 	@Test
 	public void testGetProductDescription1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -856,7 +856,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//productDescription setter
+	//productDescription set
 	@Test
 	public void testSetProductDescription1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -977,7 +977,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//categoryId getter
+	//categoryId get
 	@Test
 	public void testGetCategoryId1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1037,7 +1037,7 @@ public class ProductInfoDTOTest {
 	}
 
 
-	//CategoryId setter
+	//CategoryId set
 	@Test
 	public void testSetCategoryId1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1096,7 +1096,7 @@ public class ProductInfoDTOTest {
 		}
 	}
 
-	//price getter
+	//price get
 	@Test
 	public void testGetPrice1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1128,7 +1128,7 @@ public class ProductInfoDTOTest {
 	}
 
 	@Test
-	public void testGetPrice4() {
+	public void testGetPrice4() throws Exception{
 		ProductInfoDTO dto = new ProductInfoDTO();
 		try{
 			int expected = Integer.parseInt(exmax);
@@ -1142,7 +1142,7 @@ public class ProductInfoDTOTest {
 	}
 
 	@Test
-	public void testGetPrice5() {
+	public void testGetPrice5() throws Exception{
 		ProductInfoDTO dto = new ProductInfoDTO();
 		try{
 			int expected = Integer.parseInt(exmin);
@@ -1155,7 +1155,7 @@ public class ProductInfoDTOTest {
 		}
 	}
 
-	//price setter
+	//price set
 	@Test
 	public void testSetPrice1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1214,7 +1214,7 @@ public class ProductInfoDTOTest {
 		}
 	}
 
-	//imageFilePath getter
+	//imageFilePath get
 	@Test
 	public void testGetImageFilePath1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1335,7 +1335,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//imageFilePath setter
+	//imageFilePath set
 	@Test
 	public void testSetImageFilePath1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1457,7 +1457,7 @@ public class ProductInfoDTOTest {
 	}
 
 
-	//imageFileName getter
+	//imageFileName get
 	@Test
 	public void testGetImageFileName1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1578,7 +1578,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//ImageFileName setter
+	//ImageFileName set
 	@Test
 	public void testSetImageFileName1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1699,7 +1699,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//releaseDate getter
+	//releaseDate get
 	@Test
 	public void testGetReleaseDate1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1720,7 +1720,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected,dto.getReleaseDate());
 	}
 
-	//releaseDate setter
+	//releaseDate set
 	@Test
 	public void testSetReleaseDate1(){
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1728,7 +1728,7 @@ public class ProductInfoDTOTest {
 
 		dto.setReleaseDate(expected);
 		Date actual = dto.getReleaseDate();
-		assertEquals(expected, dto.getReleaseDate());
+		assertEquals(expected, actual);
 	}
 
 	@Test
@@ -1740,7 +1740,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, dto.getReleaseDate());
 	}
 
-	//releaseCompany getter
+	//releaseCompany get
 	@Test
 	public void testGetReleaseCompany1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1861,7 +1861,7 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//releaseCompany setter
+	//releaseCompany set
 	@Test
 	public void testSetReleaseCompany1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
@@ -1982,38 +1982,211 @@ public class ProductInfoDTOTest {
 		assertEquals(expected, actual);
 	}
 
-	//status getter
+	//status get
 	@Test
-	public void testGetStatus() {
+	public void testGetStatus1() {
 		ProductInfoDTO dto = new ProductInfoDTO();
 		int expected = 0;
 
-		dto.setStatus(expected)
+		dto.setStatus(expected);
+		int actual = dto.getStatus();
+		assertEquals(expected, actual);
 	}
 
 	@Test
-	public void testSetStatus() {
-		fail("まだ実装されていません");
+	public void testGetStatus2() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		int expected = max;
+
+		dto.setStatus(expected);
+		int actual = dto.getStatus();
+		assertEquals(expected, actual);
 	}
 
 	@Test
-	public void testGetRegistDate() {
-		fail("まだ実装されていません");
+	public void testGetStatus3() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		int expected = min;
+
+		dto.setStatus(expected);
+		int actual = dto.getStatus();
+		assertEquals(expected, actual);
 	}
 
 	@Test
-	public void testSetRegistDate() {
-		fail("まだ実装されていません");
+	public void testGetStatus4() throws Exception{
+		ProductInfoDTO dto = new ProductInfoDTO();
+		try{
+			int expected = Integer.parseInt(exmax);
+
+			dto.setStatus(expected);
+//			int actual = dto.getStatus();
+//			assertEquals(expected, actual);
+		} catch (RuntimeException e){
+			assertEquals(e.getMessage(),"For input string:\"2147483647\"");
+		}
 	}
 
 	@Test
-	public void testGetUpdateDate() {
-		fail("まだ実装されていません");
+	public void testGetStatus5() throws Exception{
+		ProductInfoDTO dto = new ProductInfoDTO();
+		try{
+			int expected = Integer.parseInt(exmin);
+
+			dto.setStatus(expected);
+//			int actual = dto.getStatus();
+//			assertEquals(expected, actual);
+		} catch (RuntimeException e){
+			assertEquals(e.getMessage(),"For input string:\"-2147483648\"");
+		}
+	}
+
+
+	//status set
+	@Test
+	public void testSetStatus1() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		int expected = 0;
+
+		dto.setStatus(expected);
+		int actual = dto.getStatus();
+		assertEquals(expected, actual);
 	}
 
 	@Test
-	public void testSetUpdateDate() {
-		fail("まだ実装されていません");
+	public void testSetStatus2() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		int expected = max;
+
+		dto.setStatus(expected);
+		int actual = dto.getStatus();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetStatus3() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		int expected = min;
+
+		dto.setStatus(expected);
+		int actual = dto.getStatus();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetStatus4() throws Exception{
+		ProductInfoDTO dto = new ProductInfoDTO();
+		try{
+			int expected = Integer.parseInt(exmax);
+
+			dto.setStatus(expected);
+//			int actual = dto.getStatus();
+//			assertEquals(expected, actual);
+		} catch (RuntimeException e){
+			assertEquals(e.getMessage(),"For input string:\"2147483647\"");
+		}
+	}
+
+	@Test
+	public void testSetStatus5() throws Exception{
+		ProductInfoDTO dto = new ProductInfoDTO();
+		try{
+			int expected = Integer.parseInt(exmin);
+
+			dto.setStatus(expected);
+//			int actual = dto.getStatus();
+//			assertEquals(expected, actual);
+		} catch (RuntimeException e){
+			assertEquals(e.getMessage(),"For input string:\"-2147483648\"");
+		}
+	}
+
+
+	//registDate get
+	@Test
+	public void testGetRegistDate1() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		Date expected = null;
+
+		dto.setRegistDate(expected);
+		Date actual = dto.getRegistDate();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testGetRegistDate2() throws ParseException {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setRegistDate(expected);
+		Date actual = dto.getRegistDate();
+		assertEquals(expected, actual);
+	}
+
+	//registDate set
+	@Test
+	public void testSetRegistDate1() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		Date expected = null;
+
+		dto.setRegistDate(expected);
+		Date actual = dto.getRegistDate();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testSetRegistDate2() throws ParseException{
+		ProductInfoDTO dto = new ProductInfoDTO();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setRegistDate(expected);
+		Date actual = dto.getRegistDate();
+		assertEquals(expected, actual);
+	}
+
+	//UpdateDate get
+	@Test
+	public void testGetUpdateDate1() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		Date expected = null;
+
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testGetUpdateDate2() throws ParseException{
+		ProductInfoDTO dto = new ProductInfoDTO();
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
+		assertEquals(expected, actual);
+	}
+
+	//updateDate set
+	@Test
+	public void testSetUpdateDate1() {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		Date expected = null;
+
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
+		assertEquals(expected,actual);
+	}
+
+	@Test
+	public void testSetUpdateDate2() throws ParseException{
+		ProductInfoDTO dto = new ProductInfoDTO();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
+		assertEquals(expected,actual);
 	}
 
 }
