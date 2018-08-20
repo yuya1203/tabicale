@@ -21,6 +21,8 @@ body{
 float : right;
 width : 770px;
 margin-right: 20px;
+
+
 }
 
 #header-menu ul{
@@ -71,6 +73,8 @@ margin-right: 20px;
    -moz-appearance: none;
    appearance: none;
    border-bottom: 1px solid white;
+   cursor: pointer;
+
 }
 
 #page{
