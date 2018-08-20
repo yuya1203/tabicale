@@ -20,6 +20,7 @@
 </s:form>
 </div>
 </div>
+<s:token/>
 <s:include value="footer.jsp"/>
 </body>
 </html>

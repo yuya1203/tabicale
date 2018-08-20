@@ -53,6 +53,9 @@
 	</action>
 
 	<action name="ResetPasswordCompleteAction" class="com.internousdev.tabicale.action.ResetPasswordCompleteAction" method="execute">
+		<interceptor-ref name="token"></interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result name="invalid.token">resetPasswordComplete.jsp</result>
 		<result name="success">resetPasswordComplete.jsp</result>
 		<result name="error">resetPassword.jsp</result>
 	</action>
@@ -116,6 +119,9 @@
 	</action>
 
 	<action name="CreateDestinationCompleteAction" class="com.internousdev.tabicale.action.CreateDestinationCompleteAction" method="execute">
+		<interceptor-ref name="token"></interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result name="invalid.token">createDestinationComplete.jsp</result>
 		<result name="success">createDestinationComplete.jsp</result>
 		<result name="error">createDestination.jsp</result>
 	</action>

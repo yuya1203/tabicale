@@ -188,7 +188,17 @@
 			</s:if>
 	</td>
 </tr>
-
+<tr>
+	<td colspan="2">
+			<s:if test="!#session.duplicationErrorMessageList.isEmpty()">
+				<div class="error">
+					<div class="error-message">
+						<s:iterator value="#session.duplicationErrorMessageList"><s:property /><br></s:iterator>
+					</div>
+				</div>
+			</s:if>
+	</td>
+</tr>
 <tr>
 	<th scope="row">パスワード:</th>
 	<td><s:password name="password" value="" label="パスワード" placeholder="パスワード" class="txt" /></td>
