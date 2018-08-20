@@ -10,7 +10,7 @@ body{
 }
 .contents{
 	position: relative;
-    min-height: 56.5%;
+    min-height: 60%;
 }
 .contents  h1{
 	width:90%;
@@ -23,7 +23,7 @@ body{
 }
 .success{
 	width:30%;
-	margin:100px 35%;
+	margin:100px 33%;
 	 border-radius: 15px;
 	text-align:center;
 	font-size:20px;

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content=";URL='admin.jsp'"/>
+<meta http-equiv="refresh" content="3;URL='admin.jsp'"/>
 
 
 <link rel="stylesheet" href="./css/tabicale.css">
