@@ -212,7 +212,8 @@ margin-right: 20px;
 
 #footer{
 	min-width: 1080px;
-	padding:30px;
+	padding-top:20px;
+	padding-bottom:20px;
 	text-align:center;
     background-color: black;
     font-size:1.2rem;
