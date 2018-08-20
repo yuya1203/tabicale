@@ -11,23 +11,6 @@
 
 
 <script>
-
-
-jQuery(function($){
-  $(document).ready(function(){
-    $('.slider').bxSlider({
-    	auto:true,
-    	mode:'fade',
-    	speed:1000,
-    	pause: 3000,
-    	controls: false,
-    	pager: false
-    });
-  });
-});
-
-
-
 function goLoginAction(){
 
 	document.getElementById("form").action="GoLoginAction";
