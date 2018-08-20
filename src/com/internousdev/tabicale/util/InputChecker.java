@@ -77,10 +77,10 @@ public class InputChecker {
 				}
 
 				if(availableHalfWidthSymbols){
-					regularExpression +="@.,;:!#$%&'*+-/=?^_`{|}~";
+					regularExpression +="@.,;:!#$%&'*+-/=?^_`{|}~\\s";
 					characterTypeList.add("半角記号");
 				}else{
-					errorExpression +="@.,;:!#$%&'*+-/=?^_`{|}~";
+					errorExpression +="@.,;:!#$%&'*+-/=?^_`{|}~\\s";
 				}
 
 				if(availableKatakana){

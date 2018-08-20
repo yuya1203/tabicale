@@ -87,6 +87,7 @@
 </s:if>
 
 <s:hidden name="email" value="%{email}"/>
+<s:token/>
 </s:form>
 </div>
 </div>

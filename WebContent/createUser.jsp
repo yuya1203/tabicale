@@ -150,12 +150,12 @@
 <tr>
 	<th scope="row">性別:</th>
 
-	<td><s:radio name="sex" list="#{0:'男性',1:'女性' }" value="%{#session.sex}" label="性別" placeholder="性別"/>
-	<s:if test="%{sex != '1'}"></s:if>
+	<td><%-- <s:radio name="sex" list="#{0:'男性',1:'女性' }" value="%{#session.sex}" label="性別" placeholder="性別"/>
+	<s:if test="%{sex != '1'}"></s:if> --%>
 
 
-	<!-- <input type="radio" name="sex" value="0" checked="checked">a
-	<input type="radio" name="sex" value="1">b</td> -->
+	 <input type="radio" name="sex" value="0" checked="checked">男性
+	<input type="radio" name="sex" value="1">女性</td>
 </tr>
 <tr>
 	<th scope="row">メールアドレス:</th>
@@ -188,7 +188,17 @@
 			</s:if>
 	</td>
 </tr>
-
+<tr>
+	<td colspan="2">
+			<s:if test="!#session.duplicationErrorMessageList.isEmpty()">
+				<div class="error">
+					<div class="error-message">
+						<s:iterator value="#session.duplicationErrorMessageList"><s:property /><br></s:iterator>
+					</div>
+				</div>
+			</s:if>
+	</td>
+</tr>
 <tr>
 	<th scope="row">パスワード:</th>
 	<td><s:password name="password" value="" label="パスワード" placeholder="パスワード" class="txt" /></td>

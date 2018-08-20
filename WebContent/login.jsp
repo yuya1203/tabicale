@@ -5,8 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/tabicale.css">
+<link rel="stylesheet" href="./css/form.css">
+
 <title>ログイン</title>
 <script>
 function goLoginAction(){
