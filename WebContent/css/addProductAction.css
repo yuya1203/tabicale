@@ -1,22 +1,40 @@
+@CHARSET "UTF-8";
+body{
+	background-image: url("../images/admin_addProduct_background.jpg");
+	 background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size:100% 100%;
+	z-index: 2;
+}
+
 .contents{
-	width:600px;
-	height:auto;
-	margin-left: 5%;
-	padding:30px;
-	background-color:skyblue;
-	border-radius:50px;
-	background: rgba(149,192,236,0.5);
+	margin-bottom: 30px;
 }
 .contents  h1{
-	width:100%;
+	width:90%;
+	margin-left:5%;
 	border-bottom:3px double black;
 }
 .vertical-list-table {
 	margin-left: 5%;
-	margin-bottom: 60px;
+	margin-bottom: 5px;
 	width: 500px;
+	height: auto;
 }
-
+.vertical-list-table tr td{
+	height:auto;
+	min-height:50px;
+}
+#contents_sub .vertical-list-table tr th{
+	width:30%;
+}
+.vertical-list-table tr td:nth-child(2){
+	width:70%;
+}
+#contents_sub .vertical-list-table tr td input{
+	width:100%;
+	height: 30px;
+}
 .txt {
 	width: 99%;
 	height: 30px;
@@ -40,27 +58,11 @@
 	font-size:0.9rem;
 }
 
-.success {
-	margin-left: 5%;
-	margin-bottom: 60px;
-	font-size: 24px;
-}
-
 #input_form {
 	background-color: orange;
 	height: 50px;
 }
 
-th {
-	width: 30%;
-}
-
-td {
-	width: 70%;
-	text-align: center;
-}
-td .categoryId{
-	text-align: left;
 }
 .button{
 	clear: both;
@@ -74,11 +76,11 @@ td .categoryId{
 	height:50px;
 	padding:10px;
     color: black;
-    background: #fd9535;/*êF*/
-    border-radius: 4px;/*äpÇÃä€Ç›*/
+    background: #fd9535;/*Ëâ≤*/
+    border-radius: 4px;/*Ëßí„ÅÆ‰∏∏„Åø*/
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
     font-weight: bold;
-    border: solid 2px #d27d00;/*ê¸êF*/
+    border: solid 2px #d27d00;/*Á∑öËâ≤*/
     cursor:pointer;
 }
 .submit-button:hover{
