@@ -19,8 +19,6 @@
 </div>
 </div>
 </div>
-
-
 <%-- <s:submit value="ログアウト" class="submit_btn" onclick="goLogoutAction();"/> --%>
 
 		<%-- <div>
