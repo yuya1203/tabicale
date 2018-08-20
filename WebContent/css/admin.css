@@ -8,7 +8,7 @@ h1{
 	color: black;
 }
 .contents-nav{
-	margin: 40px 0 0px 0;
+	margin: 40px 0 40px 0;
 	text-align: center;
 }
 .contents-nav a{
@@ -23,6 +23,7 @@ h1{
 	 box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
 	text-align:center;
 	margin-left: 30px;
+	margin-bottom: 30px;
 	text-decoration: none;
 
 }
