@@ -32,6 +32,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 		session.remove("firstNameKanaErrorMessageList");
 		session.remove("emailErrorMessageList");
 		session.remove("userIdErrorMessageList");
+		session.remove("loginIdErrorMessageList");
 		session.remove("passwordErrorMessageList");
 
 		session.put("familyName", familyName);
@@ -50,6 +51,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 		session.put("loginId", loginId);
 		session.put("password", password);
 		result = SUCCESS;
+
 		return result;
 	}
 
