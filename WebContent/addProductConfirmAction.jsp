@@ -82,6 +82,7 @@
 		<s:hidden name="imageFileName2" value="%{#session.imageFileName2}"/>
 		<s:hidden name="releaseCompany" value="%{#session.releaseCompany}"/>
 		<s:hidden name="releaseDate" value="%{#session.releaseDate}"/>
+		<s:token/>
 
 			<div class="button">
 				<s:submit class="submit-button" value="追加完了"/>

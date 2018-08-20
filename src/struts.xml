@@ -90,7 +90,7 @@
 	<action name="AddCartAction" class="com.internousdev.tabicale.action.AddCartAction" method="execute">
 		<interceptor-ref name="token"></interceptor-ref>
 		<interceptor-ref name="defaultStack"></interceptor-ref>
-		<result name="invalid.token">home.jsp</result>
+		<result name="invalid.token">cart.jsp</result>
 		<result name="success">cart.jsp</result>
 		<result name="error">home.jsp</result>
 		<result name="input">cart.jsp</result>
@@ -171,6 +171,9 @@
 	</action>
 
 	<action name="AddProductCompleteAction" class="com.internousdev.tabicale.action.AddProductCompleteAction" method="execute">
+		<interceptor-ref name="token"></interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result name="invalid.token">addProductCompleteAction.jsp</result>
 		<result name="success">addProductCompleteAction.jsp</result>
 		<result name="error">addProductConfirmAction.jsp</result>
 	</action>
