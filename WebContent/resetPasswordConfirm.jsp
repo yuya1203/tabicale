@@ -17,10 +17,10 @@
 	<s:property value="#session.loginId"/><br>
 	<s:property value="#session.concealedPassword"/><br>
 	<s:submit value="再設定" class="submit_btn"/>
+	<s:token/>
 </s:form>
 </div>
 </div>
-<s:token/>
 <s:include value="footer.jsp"/>
 </body>
 </html>
