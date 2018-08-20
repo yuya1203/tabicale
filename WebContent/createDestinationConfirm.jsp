@@ -49,9 +49,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="性別"/></th>
-	<td><s:if test="#session.sex==0">男性<s:hidden name="sex" value="%{sex}"/></s:if>
-	<s:else>女性<s:hidden name="sex" value="%{sex}"/></s:else>
-	</td>
+	<td><s:property value="sex"/><s:hidden name="sex" value="%{sex}"/></td>
 </tr>
 
 <tr>

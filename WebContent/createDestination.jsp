@@ -106,8 +106,7 @@
 <tr>
 
 	<th scope="row" id="input_form"><s:label value="性別"/></th>
-			<td><s:radio name="sex" list="#{0:'男性',1:'女性' }" value="%{#session.sex}" label="性別" placeholder="性別"/>
-	<s:if test="%{sex != '1'}"></s:if>
+			<td><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/>
 
 
 </tr>
