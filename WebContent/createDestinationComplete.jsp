@@ -24,9 +24,9 @@
 </script>
 </head>
 <body>
-<div id="page">
+<div id="page2">
 <jsp:include page="header.jsp" />
-<div id="contents">
+<div id="contents_sub">
 <h1>宛先情報完了画面</h1>
 <div class="success">
 宛先情報の登録が完了しました。
