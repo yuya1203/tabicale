@@ -12,7 +12,7 @@
 <body>
 <div id=page>
 <jsp:include page="header.jsp" />
-<div id="contents">
+<div id="contents_sub">
 	<h1>決済完了画面</h1>
 	<div class="success">
 		決済が完了しました。
