@@ -10,12 +10,14 @@
 <title>決済完了</title>
 </head>
 <body>
+<div id=page>
 <jsp:include page="header.jsp" />
 <div id="contents">
 	<h1>決済完了画面</h1>
 	<div class="success">
 		決済が完了しました。
 	</div>
+</div>
 </div>
 <s:include value="footer.jsp" />
 </body>
