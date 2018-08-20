@@ -23,6 +23,9 @@
 	</action>
 
     <action name="CreateUserCompleteAction" class="com.internousdev.tabicale.action.CreateUserCompleteAction" method="execute">
+		<interceptor-ref name="token"></interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result name="invalid.token">resetPasswordComplete.jsp</result>
 		<result name="success">createUserComplete.jsp</result>
 		<result name="error">createUser.jsp</result>
 	</action>

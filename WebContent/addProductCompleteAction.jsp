@@ -25,10 +25,6 @@
 			<strong>3秒後に管理者画面に戻ります</strong>
 		</div>
 	</div>
-	<footer>
-		<s:include value="footer.jsp"/>
-	</footer>
-
-
+	<s:include value="footer.jsp"/>
 </body>
 </html>
