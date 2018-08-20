@@ -19,9 +19,9 @@
 				<tr>
 					<th><s:label value="id"/></th>
 					<th><s:label value="user_id"/></th>
-					<th><s:label value="temp_user_id"/></th>
 					<th><s:label value="product_id"/></th>
 					<th><s:label value="product_count"/></th>
+					<th><s:label value="price"/></th>
 					<th><s:label value="destinationId"/></th>
 					<th><s:label value="regist_date"/></th>
 					<th><s:label value="update_date"/></th>
@@ -34,6 +34,7 @@
 						<td><s:property value="userId"/></td>
 						<td><s:property value="productId"/></td>
 						<td><s:property value="productCount"/></td>
+						<td><s:property value="price"/></td>
 						<td><s:property value="destinationId"/></td>
 						<td><s:property value="registDate"/></td>
 						<td><s:property value="updateDate"/></td>
