@@ -91,6 +91,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
      <s:hidden name="releaseDate" value="%{#session.releaseDate}"/>
      <s:hidden name="productDescription" vslue="%{#session.productDescription}"/>
      <s:hidden name="checkRandomId" vslue="checkRandomId"/>
+     <s:token />
      </div>
      <div class="submit_btn_box">
      <s:submit value="カートに追加" class="submit_btn"/>
