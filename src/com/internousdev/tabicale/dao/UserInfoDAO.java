@@ -251,4 +251,30 @@ public class UserInfoDAO {
 		}
 		return userInfoDtoList;
 	}
+
+	//ユーザーIDの重複がないかチェックします
+	public int duplicationCheck(String loginId){
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		int count = 0;
+		String sql = "select count(*) as count from user_info where user_id=?";
+
+		try{
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, loginId);
+			ResultSet resultSet = ps.executeQuery();
+			if(resultSet.next()){
+				count = resultSet.getInt("count");
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		try{
+			connection.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return count;
+	}
 }
