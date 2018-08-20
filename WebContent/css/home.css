@@ -22,6 +22,9 @@ body {
   z-index: 1;
   background-size: cover;
 }
+.chuo_yose{
+	        text-align:center;
+}
 
 #home_menu {
 	width: 100%;
