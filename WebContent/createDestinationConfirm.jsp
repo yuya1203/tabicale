@@ -75,6 +75,7 @@
 <s:submit value="宛先情報登録" class="submit_btn"/>
 </div>
 </div>
+<s:token/>
 </s:form>
 </div>
 </div>
