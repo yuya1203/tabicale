@@ -5,9 +5,8 @@ body{
 
 .nav {
   float: right;
-  width: ;
-  height: 80px;
-  margin: ;
+  height: 40px;
+  margin-top: 30px;
   padding-right: 40px;
   display: flex;
 }
@@ -15,7 +14,7 @@ body{
   margin-left: 1%;
   position: relative;
   list-style: none;
-  line-height: 80px;
+  line-height: 40px;
 }
 .nav li a {
   display: block;
@@ -61,6 +60,6 @@ body{
 }
 .nav li:hover > ul > li {
   overflow: visible;
-  height: 40px;
+  height: auto;
   clear: both;
 }
