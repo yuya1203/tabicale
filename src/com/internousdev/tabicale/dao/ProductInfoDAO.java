@@ -132,14 +132,14 @@ public class ProductInfoDAO {
 		DBConnector dbConnector=new DBConnector();
 		Connection connection=dbConnector.getConnection();
 		List<ProductInfoDTO> productInfoDtoList=new ArrayList<ProductInfoDTO>();
-		String sql="select * from product_info where";
+		String sql="select * from product_info where ";
 		boolean initializeFlag=true;
 		for(String keyword: keywordsList){
 			if(initializeFlag){
 				sql +="(product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
 				initializeFlag=false;
 			}else{
-				sql += " and (product_name like'%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+				sql += " or (product_name like'%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
 			}
 		}
 		try {
