@@ -17,13 +17,17 @@ body{
 	margin-left:5%;
 	border-bottom:3px double black;
 }
+.contents-sub{
+	min-width: 90%;
+	margin-left: 5%;
+}
 .success{
 	width:30%;
 	margin:100px 35%;
 	 border-radius: 15px;
 	text-align:center;
 	font-size:20px;
-	background-color:#CECEF6;
+	background: rgba(149,192,236,0.9);
 	padding:30px;
 }
 

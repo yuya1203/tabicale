@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="3;URL='admin.jsp'"/>
+<meta http-equiv="refresh" content=";URL='admin.jsp'"/>
 
 
 <link rel="stylesheet" href="./css/tabicale.css">
@@ -18,11 +18,12 @@
 
 	<jsp:include page="adminHeader.jsp"/>
 	<div class="contents">
-			<h1>商品追加完了画面</h1>
-
-		<div class="success">
-			<strong>商品追加が完了しました。</strong><br><br><br>
-			<strong>3秒後に管理者画面に戻ります</strong>
+		<h1>商品追加完了画面</h1>
+		<div class="contents-sub">
+			<div class="success">
+				<strong>商品追加が完了しました。</strong><br><br><br>
+				<strong>3秒後に管理者画面に戻ります</strong>
+			</div>
 		</div>
 	</div>
 	<s:include value="footer.jsp"/>
