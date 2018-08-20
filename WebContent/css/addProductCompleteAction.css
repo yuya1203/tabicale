@@ -1,9 +1,16 @@
 @CHARSET "UTF-8";
 body{
+	 margin: 0;
+     padding: 0;
+     height: 100%;
 	 background-image: url("../images/admin_addProduct_background.jpg");
 	 background-repeat:no-repeat;
 	 background-attachment: fixed;
 	 background-size:100% 100%;
+}
+.contents{
+	position: relative;
+    min-height: 56.5%;
 }
 .contents  h1{
 	width:90%;
@@ -19,3 +26,5 @@ body{
 	background-color:#CECEF6;
 	padding:30px;
 }
+
+
