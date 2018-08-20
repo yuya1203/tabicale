@@ -12,7 +12,6 @@
 <body>
 <div id="page2">
 <jsp:include page="header.jsp" />
-<div id="contents">
 <div id="contents_sub">
 <h1>登録完了画面</h1>
 <div class="success">
@@ -21,12 +20,13 @@
 </div>
 </div>
 
+
 <%-- <s:submit value="ログアウト" class="submit_btn" onclick="goLogoutAction();"/> --%>
 
 		<%-- <div>
 				<p><a href='<s:url action="HomeAction"/>'>ホームへ</a></p>
 			</div> --%>
 <s:include value="footer.jsp"/>
-</div>
+
 </body>
 </html>
