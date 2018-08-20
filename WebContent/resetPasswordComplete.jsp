@@ -10,9 +10,9 @@
 <title>パスワード再設定完了</title>
 </head>
 <body>
-<div id="page">
+<div id="page2">
 <jsp:include page="header.jsp" />
-<div id="contents">
+<div id="contents_sub">
 <h1>パスワード再設定完了画面</h1>
 	パスワード再設定が完了しました。
 	</div>

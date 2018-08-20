@@ -6,9 +6,9 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.UserInfoDAO;
 import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
-
 
 public class CreateUserConfirmAction extends ActionSupport implements SessionAware{
 
@@ -28,6 +28,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 	private List<String> emailErrorMessageList = new ArrayList<String>();
 	private List<String> loginIdErrorMessageList = new ArrayList<String>();
 	private List<String> passwordErrorMessageList = new ArrayList<String>();
+	private List<String> duplicationErrorMessageList = new ArrayList<String>();
 
 	private String categoryId;
 	private List<String> sexList = new ArrayList<String>();
@@ -36,6 +37,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 	public String execute() {
 		String result = ERROR;
 		InputChecker inputChecker = new InputChecker();
+		UserInfoDAO userInfoDao = new UserInfoDAO();
 
 		session.put("familyName", familyName);
 		session.put("firstName", firstName);
@@ -52,6 +54,9 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 14, 32, true, false, false, true, true, false, false);
 		loginIdErrorMessageList = inputChecker.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false);
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false);
+		if(userInfoDao.duplicationCheck(loginId) > 0){
+			duplicationErrorMessageList.add("同一のログインIDが存在してます。");
+		}
 
 		if(familyNameErrorMessageList.size()==0
 		&& firstNameErrorMessageList.size()==0
@@ -59,7 +64,8 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		&& firstNameKanaErrorMessageList.size()==0
 		&& emailErrorMessageList.size()==0
 		&& loginIdErrorMessageList.size()==0
-		&& passwordErrorMessageList.size()==0) {
+		&& passwordErrorMessageList.size()==0
+		&& duplicationErrorMessageList.size()==0) {
 			result = SUCCESS;
 		}else {
 			session.put("familyNameErrorMessageList", familyNameErrorMessageList);
@@ -69,6 +75,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 			session.put("emailErrorMessageList", emailErrorMessageList);
 			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
 			session.put("passwordErrorMessageList", passwordErrorMessageList);
+			session.put("duplicationErrorMessageList", duplicationErrorMessageList);
 			result = ERROR;
 		}
 		return result;
