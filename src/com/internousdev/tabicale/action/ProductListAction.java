@@ -34,17 +34,16 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 		productInfoDtoList = productInfoDao.getProductInfoList();
 		Pagination pagination = new Pagination();
 		PaginationDTO paginationDTO = pagination.initialize(productInfoDtoList, 9);
-		session.put("totalPageSize", paginationDTO.getTotalPageSize());
-		session.put("currentPageNumber", paginationDTO.getCurrentPageNo());
-		session.put("totalRecordSize", paginationDTO.getTotalPageSize());
-		session.put("startRecordNo", paginationDTO.getStartRecordNo());
-		session.put("endRecordNo", paginationDTO.getEndRecordNo());
-		session.put("pageNumberList", paginationDTO.getPageNumberList());
-		session.put("productInfoDtoList", paginationDTO.getCurrentProductInfoPage());
-		session.put("hasNextPage", paginationDTO.hasNextPage());
-		session.put("hasPreviousPage", paginationDTO.hasPreviousPage());
-		session.put("nextPageNo", paginationDTO.getNextPageNo());
-		session.put("previousPageNo", paginationDTO.getPreviousPageNo());
+		session.put("productInfoDtoList",  paginationDTO.getCurrentProductInfoPage());
+		session.put("totalPageSize",  paginationDTO.getTotalPageSize());
+		session.put("currentPageNo",  paginationDTO.getCurrentPageNo());
+		session.put("totalRecordSize",  paginationDTO.getTotalRecordSize());
+		session.put("startRecordNo",  paginationDTO.getStartRecordNo());
+		session.put("endRecordNo",  paginationDTO.getEndRecordNo());
+		session.put("previousPage",  paginationDTO.hasPreviousPage());
+		session.put("previousPageNo",  paginationDTO.getPreviousPageNo());
+		session.put("nextPage",  paginationDTO.hasNextPage());
+		session.put("nextPageNo",  paginationDTO.getNextPageNo());
 
 		if(!session.containsKey("mCategoryList")) {
 			MCategoryDAO mCategoryDao = new MCategoryDAO();

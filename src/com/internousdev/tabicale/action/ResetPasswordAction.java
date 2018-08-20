@@ -11,6 +11,11 @@ public class ResetPasswordAction extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 	public String execute(){
 		String result=ERROR;
+		session.remove("loginIdErrorMessageList");
+		session.remove("passwordErrorMessageList");
+		session.remove("passwordIncorrectErrorMessageList");
+		session.remove("newPasswordErrorMessageList");
+		session.remove("reConfirmationNewPasswordErrorMessageList");
 		result=SUCCESS;
 		return result;
 	}

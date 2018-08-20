@@ -106,6 +106,8 @@
 	<div class="error-message">
 		<s:iterator value="#session.reConfirmationNewPasswordErrorMessageList"><span style="color:red"><s:property /></span>
 		<br></s:iterator>
+		<s:iterator value="#session.newPasswordIncorrectErrorMessageList"><span style="color:red"><s:property /></span>
+		<br></s:iterator>
 		</div>
 		</div>
 		</td>
