@@ -67,10 +67,6 @@
 		</td>
 		</tr>
 	</s:if>
-		<tr>
-			<th scope="row"><s:label value="新しいパスワード"/></th>
-			<td><s:password name="newPassword" placeholder="新しいパスワード" class="txt" /></td>
-		</tr>
 		<s:if test="!#session.passwordIncorrectErrorMessageList.isEmpty()">
 	<tr>
 	<td colspan="2">
@@ -83,6 +79,10 @@
 		</td>
 		</tr>
 	</s:if>
+		<tr>
+			<th scope="row"><s:label value="新しいパスワード"/></th>
+			<td><s:password name="newPassword" placeholder="新しいパスワード" class="txt" /></td>
+		</tr>
 		<tr>
 			<s:if test="!#session.newPasswordErrorMessageList.isEmpty()">
 	<tr>
@@ -106,6 +106,16 @@
 	<div class="error-message">
 		<s:iterator value="#session.reConfirmationNewPasswordErrorMessageList"><span style="color:red"><s:property /></span>
 		<br></s:iterator>
+		</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
+		<s:if test="!#session.newPasswordIncorrectErrorMessageList.isEmpty()">
+	<tr>
+	<td colspan="2">
+	<div class="error">
+	<div class="error-message">
 		<s:iterator value="#session.newPasswordIncorrectErrorMessageList"><span style="color:red"><s:property /></span>
 		<br></s:iterator>
 		</div>

@@ -130,9 +130,9 @@ public class InputChecker {
 
 
 	//一度目のパスワードと二度目のパスワードが同じかを検証します。
-	public List<String> doPasswordCheck(String password,String reConfirmationPassword){
+	public List<String> doPasswordCheck(String newpassword,String reConfirmationPassword){
 		List<String> stringList = new ArrayList<String>();
-		if(!(password.equals(reConfirmationPassword))){
+		if(!(newpassword.equals(reConfirmationPassword))){
 			stringList.add("入力されたパスワードが異なります。");
 		}
 		return stringList;
