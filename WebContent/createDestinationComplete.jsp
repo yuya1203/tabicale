@@ -10,7 +10,6 @@
 
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/createDestination.css">
-<link rel="stylesheet" href="./css/createDestinationComplete.css">
 
 
 <title>宛先情報完了</title>
@@ -25,9 +24,9 @@
 </script>
 </head>
 <body>
-<div id="page2">
+<div id="page">
 <jsp:include page="header.jsp" />
-<div id="contents-sub">
+<div id="contents">
 <h1>宛先情報完了画面</h1>
 <div class="success">
 宛先情報の登録が完了しました。
