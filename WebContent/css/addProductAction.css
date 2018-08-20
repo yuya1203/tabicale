@@ -13,7 +13,7 @@ body{
 .contents  h1{
 	width:90%;
 	margin-left:5%;
-	border-bottom:1px solid black;
+	border-bottom:3px double black;
 }
 .vertical-list-table {
 	margin-left: 5%;
