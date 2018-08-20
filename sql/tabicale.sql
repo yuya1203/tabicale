@@ -37,6 +37,8 @@ insert into user_info values
 (10,"guest10","guest10","インターノウス","ゲストユーザー10","いんたーのうす","げすとゆーざー10",0,"guest10@gmail.com",0,0,now(),now()),
 (11,"guest11","guest11","インターノウス","ゲストユーザー11","いんたーのうす","げすとゆーざー11",0,"guest11@gmail.com",0,0,now(),now()),
 (12,"guest12","guest12","インターノウス","ゲストユーザー12","いんたーのうす","げすとゆーざー12",0,"guest12@gmail.com",0,0,now(),now()),
+(12,"guest13","guest13","インターノウス","ゲストユーザー13","いんたーのうす","げすとゆーざー13",0,"guest13@gmail.com",0,0,now(),now()),
+(12,"guest14","guest14","インターノウス","ゲストユーザー14","いんたーのうす","げすとゆーざー14",0,"guest14@gmail.com",0,0,now(),now()),
 (13,"admin","admin","インターノウス","管理者ユーザー","いんたーのうす","かんりしゃゆーざー",0,"admin@gmail.com",1,0,now(),now()),
 (14,"admin2","admin2","インターノウス","管理者ユーザー2","いんたーのうす","かんりしゃゆーざー2",0,"admin2@gmail.com",1,0,now(),now()),
 (15,"admin3","admin3","インターノウス","管理者ユーザー3","いんたーのうす","かんりしゃゆーざー3",0,"admin3@gmail.com",1,0,now(),now()),
@@ -48,7 +50,9 @@ insert into user_info values
 (21,"admin9","admin9","インターノウス","管理者ユーザー9","いんたーのうす","かんりしゃゆーざー9",0,"admin9@gmail.com",1,0,now(),now()),
 (22,"admin10","admin10","インターノウス","管理者ユーザー10","いんたーのうす","かんりしゃゆーざー10",0,"admin10@gmail.com",1,0,now(),now()),
 (23,"admin11","admin11","インターノウス","管理者ユーザー11","いんたーのうす","かんりしゃゆーざー11",0,"admin11@gmail.com",1,0,now(),now()),
-(24,"admin12","admin12","インターノウス","管理者ユーザー12","いんたーのうす","かんりしゃゆーざー12",0,"admin12@gmail.com",1,0,now(),now());
+(24,"admin12","admin12","インターノウス","管理者ユーザー12","いんたーのうす","かんりしゃゆーざー12",0,"admin12@gmail.com",1,0,now(),now()),
+(23,"admin13","admin13","インターノウス","管理者ユーザー13","いんたーのうす","かんりしゃゆーざー13",0,"admin13@gmail.com",1,0,now(),now()),
+(23,"admin14","admin14","インターノウス","管理者ユーザー14","いんたーのうす","かんりしゃゆーざー14",0,"admin14@gmail.com",1,0,now(),now());
 
 create table product_info(
 id int primary key not  null auto_increment comment "ID",
