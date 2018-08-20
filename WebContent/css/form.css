@@ -12,3 +12,20 @@
 	min-height: 50px;
 	color: red;
 }
+
+th {
+	width: 30%;
+}
+
+td {
+	width: 70%;
+	text-align: center;
+}
+
+.txt {
+	width: 99%;
+	height: 30px;
+	border: 0.5px solid #41719c;
+	font-size: 15px;
+
+}

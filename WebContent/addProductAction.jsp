@@ -31,6 +31,7 @@ function lengthcheck(){
 </script>
 </head>
 <body>
+<div id="page2">
 
 	<jsp:include page="adminHeader.jsp"/>
 
@@ -215,6 +216,8 @@ function lengthcheck(){
 					</div>
 				</s:form>
 			</div>
+			</div>
+
 
 		<s:include value="footer.jsp"/>
 </body>
