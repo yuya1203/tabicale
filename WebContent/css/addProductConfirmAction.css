@@ -14,12 +14,10 @@ body{
 	border-bottom:3px double black;
 }
 .addList-confirm{
-	position: relative;
 	width: 50%;
 	border-collapse: collapse;
 	margin:60px 25% 60px 25%;
 	padding:0 auto;
-	margin-bottom: px;
 }
 .addList-confirm th.border{
 	height:50px;
@@ -76,7 +74,7 @@ body{
 }
 .submit-button{
 	position: relative;
-	left: 45%;
+	left: 44%;
 	width:200px;
 	height:50px;
 	padding:10px;
