@@ -10,7 +10,22 @@
 <script>
 function alertFunction(){
 
-	alert("本当に削除しますか？");
+	// 「OK」時の処理開始 ＋ 確認ダイアログの表示
+	if(window.confirm('本当に削除しますか？')){
+
+		return true; // 「OK」時は送信を実行
+
+	}
+	// 「OK」時の処理終了
+
+	// 「キャンセル」時の処理開始
+	else{
+
+		return false; // 送信を中止
+
+	}
+	// 「キャンセル」時の処理終了
+
 }
 
 
@@ -45,7 +60,7 @@ function alertFunction(){
 <tr>
 <td><s:form action="DeleteProductAction">
 <s:hidden name="productId" value="%{productId}"/>
-<input type ="submit" class="submit_btn" value="削除" onclick="alertFunction()"  />
+<input type ="submit" class="submit_btn" value="削除" onclick="return alertFunction()"  />
 </s:form></td>
 <td><s:property value="productName"/></td>
 <td><s:property value="productNameKana"/></td>
