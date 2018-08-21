@@ -22,7 +22,7 @@
 					<th><s:label value="product_id"/></th>
 					<th><s:label value="product_count"/></th>
 					<th><s:label value="price"/></th>
-					<th><s:label value="destination_id"/></th>
+					<th><s:label value="destinationId"/></th>
 					<th><s:label value="regist_date"/></th>
 					<th><s:label value="update_date"/></th>
 				</tr>
