@@ -88,6 +88,9 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		session.put("purchaseHistoryInfoDtoList", dtoList);
 
 		if (!session.containsKey("loginId")) {
+			session.put("loginIdErrorMessageList", "");
+			session.put("passwordErrorMessageList", "");
+			session.put("passwordIncorrectErrorMessageList", "");
 			result = ERROR;
 		} else {
 			result = SUCCESS;
