@@ -42,6 +42,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		String result = ERROR;
+		String userId = null;
 
 		//チェックリストの値を検証し処理を分岐させます
 		//チェックリストの値は配列[cartId,cartId,cartId]のような形式です
@@ -50,6 +51,13 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 		int count = 0;
 		List<String> checkListErrorMessageList = new ArrayList<String>();
 
+		//削除した後のカート情報を取得します
+		if(session.containsKey("loginId")){
+			userId = String.valueOf(session.get("loginId"));
+		}else if(session.containsKey("tempUserId")){
+			userId = String.valueOf(session.get("tempUserId"));
+		}
+
 		//チェックがされていない場合にエラーでカート画面に遷移します
 		if(checkList==null){
 			checkListErrorMessageList.add("チェックされていません");
@@ -57,8 +65,8 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 			return ERROR;
 		}
 
-		for(String id:checkList){
-			count += cartInfoDao.delete(id);
+		for(String productId:checkList){
+			count += cartInfoDao.delete(productId,userId);
 		}
 
 		//カートの商品情報のデリートが実行されているか確認します
@@ -69,15 +77,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 			return ERROR;
 		}else{
 			//1件以上実行あり
-			String userId = null;
 			List<CartInfoDTO> cartInfoDtoList = new ArrayList<CartInfoDTO>();
-
-			//削除した後のカート情報を取得します
-			if(session.containsKey("loginId")){
-				userId = String.valueOf(session.get("loginId"));
-			}else if(session.containsKey("tempUserId")){
-				userId = String.valueOf(session.get("tempUserId"));
-			}
 
 			cartInfoDtoList = cartInfoDao.getCartInfoDtoList(userId);
 			Iterator<CartInfoDTO> iterator = cartInfoDtoList.iterator();
