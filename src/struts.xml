@@ -165,8 +165,6 @@
 
 	<action name="AddProductConfirmAction" class="com.internousdev.tabicale.action.AddProductConfirmAction" method="execute">
 		<interceptor-ref name="fileUpload">
-			<param name="maximumSize">4000000</param>
-			<param name="allowedTypes">image/jpg,image/jpeg</param>
 		</interceptor-ref>
 		<interceptor-ref name="defaultStack"></interceptor-ref>
 		<result name="success">addProductConfirmAction.jsp</result>
