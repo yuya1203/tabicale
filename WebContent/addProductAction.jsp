@@ -38,7 +38,7 @@ function lengthcheck(){
 	<div class="contents">
 
 			<h1>商品追加画面</h1>
-
+				<div class="main-contents">
 				<s:form method="post" action="AddProductConfirmAction" enctype="multipart/form-data" onsubmit="return lengthcheck()">
 					<table class="vertical-list-table">
 						<tr>
@@ -215,6 +215,7 @@ function lengthcheck(){
 						<s:submit class="submit-button" value="商品追加"/>
 					</div>
 				</s:form>
+			</div>
 			</div>
 			</div>
 
