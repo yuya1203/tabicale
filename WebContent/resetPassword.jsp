@@ -16,22 +16,6 @@
 <div id="contents_sub">
 <h1>パスワード再設定画面</h1>
 
-	<s:if test="!#session.newPasswordIncorrectErrorMessageList.isEmpty()">
-	<tr>
-	<td colspan="2">
-	<div class="error">
-		<div class="error-message">
-		<s:iterator value="#session.newPasswordIncorrectErrorMessageErrorMessageList"><s:property />
-
-		<br></s:iterator>
-		</div>
-	</div>
-	</td>
-	</tr>
-	</s:if>
-
-
-
 
 <s:form action="ResetPasswordConfirmAction">
 	<table class="vertical-list-table">
