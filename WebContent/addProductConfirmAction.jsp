@@ -38,7 +38,7 @@
 					<td><s:property value="productDescription"/></td>
 				</tr>
 				<tr class="border">
-					<th class="border">カテゴリID</th>
+					<th class="border">カテゴリ名</th>
 					<td><s:property value="categoryId"/></td>
 				</tr>
 				<tr class="border">

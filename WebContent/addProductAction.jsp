@@ -114,7 +114,7 @@ function lengthcheck(){
 						</tr>
 
 						<tr>
-							<th scope="row" id="input_form"><s:label value="カテゴリID" /></th>
+							<th scope="row" id="input_form"><s:label value="カテゴリ名" /></th>
 							<td class="categoryId"><s:select name="categoryId" list="#session.mCategoryDtoList" listValue="categoryName"
 							listKey="categoryId" class="cs-div" id="categoryId"/></td>
 						</tr>
