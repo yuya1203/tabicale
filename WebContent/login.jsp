@@ -47,7 +47,7 @@ function goResetPasswordAction(){
 			</s:else>
 		</tr>
 
-		<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
+	<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
 		<tr>
 		<td colspan="2">
 		<div class="error">
@@ -64,7 +64,7 @@ function goResetPasswordAction(){
 			<td><s:password name="password" class="txt" placeholder="パスワード" autocomplete="off"/></td>
 		</tr>
 
-		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
+	<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 		<tr>
 		<td colspan="2">
 		<div class="error">
@@ -75,7 +75,8 @@ function goResetPasswordAction(){
 		</td>
 		</tr>
 	</s:if>
-	<s:if test="!#session.passwordIncorrectErrorMessageList.isEmpty()">
+
+	<s:elseif test="!#session.passwordIncorrectErrorMessageList.isEmpty()">
 		<tr>
 		<td colspan="2">
 		<div class="error">
@@ -85,7 +86,8 @@ function goResetPasswordAction(){
 		</div>
 		</td>
 		</tr>
-	</s:if>
+	</s:elseif>
+
 	</table>
 
 	<div class="box">
