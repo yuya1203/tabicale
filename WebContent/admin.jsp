@@ -8,6 +8,18 @@
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/admin.css">
 <title>管理者画面</title>
+
+<!-- URLの直打ち対策 -->
+<script language="JavaScript">
+	var refinfo=document.referrer;
+
+	if (refinfo){
+
+	}else{
+		window.location.href="login.jsp";
+}
+</script>
+
 <style type="text/css">
 
 </style>

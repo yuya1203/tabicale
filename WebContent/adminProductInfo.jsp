@@ -7,29 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
 <title>管理者用商品一覧</title>
-<script>
-function alertFunction(){
 
-	// 「OK」時の処理開始 ＋ 確認ダイアログの表示
-	if(window.confirm('本当に削除しますか？')){
+<!-- URLの直打ち対策 -->
+<script language="JavaScript">
+	var refinfo=document.referrer;
 
-		return true; // 「OK」時は送信を実行
+	if (refinfo){
 
-	}
-	// 「OK」時の処理終了
-
-	// 「キャンセル」時の処理開始
-	else{
-
-		return false; // 送信を中止
-
-	}
-	// 「キャンセル」時の処理終了
-
+	}else{
+		window.location.href="login.jsp";
 }
-
-
 </script>
+
 </head>
 
 <body>

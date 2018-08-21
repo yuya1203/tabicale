@@ -12,6 +12,17 @@
 
 <title>商品追加確認画面</title>
 
+<!-- URLの直打ち対策 -->
+<script language="JavaScript">
+	var refinfo=document.referrer;
+
+	if (refinfo){
+
+	}else{
+		window.location.href="login.jsp";
+}
+</script>
+
 </head>
 <body>
 

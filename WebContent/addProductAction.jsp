@@ -10,6 +10,18 @@
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/addProductAction.css">
 <title>商品追加</title>
+
+<!-- URLの直打ち対策 -->
+<script language="JavaScript">
+	var refinfo=document.referrer;
+
+	if (refinfo){
+
+	}else{
+		window.location.href="login.jsp";
+}
+</script>
+
 <style type="text/css">
 </style>
 <script>
