@@ -16,12 +16,16 @@
 <div id="contents_sub">
 <h1>パスワード再設定画面</h1>
 
-
 <s:form action="ResetPasswordConfirmAction">
 	<table class="vertical-list-table">
 		<tr>
 			<th scope="row"><s:label value="ログインID"/></th>
-			<td><s:textfield name="loginId" placeholder="ログインID" class="txt" /></td>
+			<s:if test="#session.savedLoginId==true">
+			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" value='%{#session.saveId}' autocomplete="off"/></td>
+			</s:if>
+			<s:else>
+			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" autocomplete="off"/></td>
+			</s:else>
 		</tr>
 			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
 	<tr>
