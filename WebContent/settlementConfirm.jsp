@@ -62,6 +62,7 @@
 						<s:submit value="決済" class="submit_btn"/>
 					</div>
 				</div>
+				<s:token/>
 			</s:form>
 		</s:if>
 		<s:else><div class="info">送り先情報を登録してください。</div></s:else>

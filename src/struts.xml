@@ -5,7 +5,7 @@
 <!-- Strutsの詳細設定 -->
 <struts>
 	<constant name="struts.ui.theme" value="simple"/>
-	<constant name="struts.devMode" value="true" />
+	<constant name="struts.devMode" value="false" />
 	<package name="com.internousdev.tabicale.action" extends="struts-default">
 
 	<!-- 1.ユーザー登録機能 -->
@@ -131,6 +131,9 @@
 
 	<!-- 9.決済完了画面 -->
 	<action name="SettlementCompleteAction" class="com.internousdev.tabicale.action.SettlementCompleteAction" method="execute">
+		<interceptor-ref name="token"></interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result name="invalid.token">settlementComplete.jsp</result>
 		<result name="success">settlementComplete.jsp</result>
 		<result name="error">settlementConfirm.jsp</result>
 	</action>
@@ -165,8 +168,6 @@
 
 	<action name="AddProductConfirmAction" class="com.internousdev.tabicale.action.AddProductConfirmAction" method="execute">
 		<interceptor-ref name="fileUpload">
-			<param name="maximumSize">4000000</param>
-			<param name="allowedTypes">image/jpg,image/jpeg</param>
 		</interceptor-ref>
 		<interceptor-ref name="defaultStack"></interceptor-ref>
 		<result name="success">addProductConfirmAction.jsp</result>

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.CartInfoDAO;
 import com.internousdev.tabicale.dao.ProductInfoDAO;
 import com.internousdev.tabicale.dto.ProductInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
@@ -19,7 +20,9 @@ private Map<String, Object> session;
 public String execute(){
 	String result = ERROR;
 	ProductInfoDAO dao = new ProductInfoDAO();
+	CartInfoDAO cartInfoDao = new CartInfoDAO();
 	int count = dao.delete(productId);
+	count += cartInfoDao.deleteByProductId(String.valueOf(productId));
 	if(count > 0){
 		productInfoDtoList = dao.getProductInfoList();
 		session.put("productInfoDtoList", productInfoDtoList);

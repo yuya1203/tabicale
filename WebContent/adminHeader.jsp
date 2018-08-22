@@ -21,7 +21,7 @@
 	<div class="contents-list">
 		<ul class="nav">
 			<li><a href='<s:url action="LogoutAction"/>'>ログアウト</a></li>
-			<li><a>管理者機能一覧</a>
+			<li><a>管理者機能一覧▼</a>
 			<ul>
 				<li><a href='<s:url action="AdminProductInfoAction"/>'>商品情報一覧</a></li>
 				<li><a href='<s:url action="AdminUserInfoAction"/>'>ユーザー情報一覧</a></li>
