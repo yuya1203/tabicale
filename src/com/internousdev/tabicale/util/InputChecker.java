@@ -155,7 +155,7 @@ public class InputChecker {
 		List<String> stringList = new ArrayList<String>();
 		for(int i=0;i<productInfoDtoList.size();i++){
 			if(productInfoDtoList.get(i).getProductNameKana().equals(productNameKana)){
-				stringList.add("同一の商品名カナが存在してます。");
+				stringList.add("同一の商品名かなが存在してます。");
 			}
 			System.out.println("i"+i);
 		}
