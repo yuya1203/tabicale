@@ -47,7 +47,7 @@ function goSearchItemAction(){
 
 <div id="header">
 <div id="header-title">
-<img src="images/gray.jpeg" alt="" width="200%"/>
+<a href="HomeAction"><img src="images/gray.jpeg" alt="" width="200%"/></a>
 </div>
 <div id="header-menu">
 <ul>
