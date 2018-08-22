@@ -52,7 +52,7 @@
 						</s:if>
 						<s:else>
 							<a class="pageNo"
-								href="<s:url action='SearchItemAction'><s:param name='pageNo' value='%{#pageNo.count}'/><s:param name='categoryId' value='%{categoryId}'/></s:url>"><s:property
+								href="<s:url action='SearchItemAction'><s:param name='pageNo' value='%{#pageNo.count}'/><s:param name='categoryId' value='%{categoryId}'/><s:param name='keywords' value='%{keywords}'/></s:url>"><s:property
 									value="%{#pageNo.count}" /></a>
 									</>
 						</s:else>
