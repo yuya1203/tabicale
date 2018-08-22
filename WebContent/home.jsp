@@ -50,7 +50,7 @@
 
     </div>
 
-    <div id="contents">
+    <div id="contents_home">
 
     <div class="chuo_yose">
 
