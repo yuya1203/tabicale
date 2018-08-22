@@ -19,6 +19,7 @@ body {
   overflow: hidden;
   z-index: 1;
   background-size: cover;
+  border-radius:0 0 420px 420px / 0 0 84px 84px;
 }
 .chuo_yose{
 	        text-align:center;
