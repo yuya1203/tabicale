@@ -45,8 +45,7 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		session.remove("categoryIdErrorMessageList");
 		session.remove("priceErrorMessageList");
 
-		session.remove("userImageErrorMessageList");
-		session.remove("userImageErrorMessageList");
+		session.remove("imageFilePathErrorMessageList");
 
 		session.remove("releaseDateErrorMessageList");
 		session.remove("releaseCompanyErrorMessageList");
