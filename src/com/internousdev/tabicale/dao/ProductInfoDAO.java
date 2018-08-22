@@ -16,7 +16,7 @@ public class ProductInfoDAO {
 		DBConnector dbConnector=new DBConnector();
 		Connection connection=dbConnector.getConnection();
 		List<ProductInfoDTO> productInfoDtoList=new ArrayList<ProductInfoDTO>();
-		String sql="select * from product_info";
+		String sql="select * from product_info where status=0";
 
 		try{
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
@@ -55,7 +55,7 @@ public class ProductInfoDAO {
 		DBConnector dbConnector=new DBConnector();
 		Connection connection=dbConnector.getConnection();
 		ProductInfoDTO productInfoDTO=new ProductInfoDTO();
-		String sql="select * from product_info where product_id=?";
+		String sql="select * from product_info where product_id=? and status=0";
 		try{
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
 			preparedStatement.setInt(1,productId);
@@ -91,7 +91,7 @@ public class ProductInfoDAO {
 		DBConnector dbConnector=new DBConnector();
 		Connection connection=dbConnector.getConnection();
 		List<ProductInfoDTO> productInfoDtoList=new ArrayList<ProductInfoDTO>();
-		String sql="select * from product_info where category_id=? and product_id not in(?) order by rand() limit ?,?";
+		String sql="select * from product_info where category_id=? and product_id not in(?) and status=0 order by rand() limit ?,?";
 		try{
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
 			preparedStatement.setInt(1, categoryId);
@@ -141,6 +141,7 @@ public class ProductInfoDAO {
 			}else{
 				sql += " or (product_name like'%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
 			}
+			sql += " and status=0";
 		}
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -187,6 +188,7 @@ public class ProductInfoDAO {
 			} else {
 				sql += " and (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
 			}
+			sql += " and status=0";
 		}
 
 		try{
@@ -260,7 +262,7 @@ public class ProductInfoDAO {
 			DBConnector dbConnector = new DBConnector();
 			Connection connection = dbConnector.getConnection();
 			int count =0;
-			String sql = "delete from product_info where product_id=?";
+			String sql = "update product_info set status=1 where product_id=?";
 
 			try{
 				PreparedStatement preparedStatement = connection.prepareStatement(sql);

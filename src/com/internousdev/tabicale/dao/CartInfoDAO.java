@@ -40,7 +40,7 @@ public class CartInfoDAO {
 		+ " FROM cart_info as ci"
 		+ " LEFT JOIN product_info as pi"
 		+ " ON ci.product_id = pi.product_id"
-		+ " WHERE ci.user_id = ?"
+		+ " WHERE ci.user_id = ? and pi.status=0"
 		+ " group by product_id";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -235,5 +235,27 @@ public class CartInfoDAO {
 			e.printStackTrace();
 		}
 		return cartInfoDtoList;
+	}
+
+	//商品削除を行った場合カート内の情報も同時に削除します
+	public int deleteByProductId(String productId) {
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		int count = 0;
+		String sql = "delete from cart_info where product_id=?";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, productId);
+			count = preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
 	}
 }
