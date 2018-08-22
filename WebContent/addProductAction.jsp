@@ -195,14 +195,14 @@ function lengthcheck(){
 						</tr>
 
 						<tr>
-							<th scope="row" id="input_form"><s:label value="商品画像 表" /></th>
+							<th scope="row" id="input_form"><s:label value="商品画像" /></th>
 							<td class="image"><s:file name="userImage" id="userImage" accept='image/jpg, image/jpeg' /></td>
 						</tr>
 						<tr>
 						<th colspan="2"></th>
 						</tr>
 						<tr>
-							<th scope="row" id="input_form"><s:label value="商品画像 中" /></th>
+							<th scope="row" id="input_form"><s:label value="商品画像2" /></th>
 							<td class="image"><s:file name="userImage2" id="userImage2" accept='image/jpg, image/jpeg' /></td>
 						</tr>
 

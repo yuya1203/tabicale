@@ -65,12 +65,12 @@
 					<td><s:property value="releaseCompany"/></td>
 				</tr>
 				<tr class="no-image">
-					<th colspan="1" class="left-image">商品画像 表</th>
+					<th colspan="1" class="left-image">商品画像</th>
 					<td class="border-none"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class="left-image image"></td>
 
 				</tr>
 				<tr class="no-image">
-					<th colspan="1" class="right-image">商品画像 中</th>
+					<th colspan="1" class="right-image">商品画像2</th>
 					<td class="border-none"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class="right-image image"></td>
 				<tr>
 			</table>
