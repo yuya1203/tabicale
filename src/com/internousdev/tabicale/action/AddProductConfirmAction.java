@@ -51,6 +51,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 	private Map<String,Object>session;
 
+	private String priceError;
 	private String imageFilePathError;
 
 	private List<String> productNameErrorMessageList = new ArrayList<String>();
@@ -78,13 +79,18 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		productNameKanaErrorMessageList = inputChecker.doCheck("商品名かな", productNameKana, 1, 100, false, false, true, false, false, false, false);
 		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false);
 		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false);
-		priceErrorMessageList = inputChecker.doCheck("価格", price, 1, 16, false, false, false, true, false, false, false);
+		priceErrorMessageList = inputChecker.doPriceCheck("価格", price, 0, 8, false, false, false, true, false, false, false);
 
 		releaseDateErrorMessageList = checkDate("発売年月", releaseDate);
 		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
 		identical_productNameErrorMessageList = inputChecker.doIdentical_productNameCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productName);
 		identical_productNameKanaErrorMessageList = inputChecker.doIdentical_productNameKanaCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productNameKana);
 
+		if(price.length() <16){
+			setPriceError(null);
+		}else{
+			priceErrorMessageList.add("16桁以内でおなしゃす");
+		}
 
 		//画像ファイルが選択されているか確認する
 		if(userImage != null){
@@ -210,7 +216,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 					session.put("productNameKanaErrorMessageList", productNameKanaErrorMessageList);
 					session.put("productDescriptionErrorMessageList", productDescriptionErrorMessageList);
 					session.put("categoryIdErrorMessageList", categoryIdErrorMessageList);
-					session.put("priceErrormessageList", priceErrorMessageList);
+					session.put("priceErrorMessageList", priceErrorMessageList);
 					session.put("releaseDateErrorMessageList", releaseDateErrorMessageList);
 					session.put("releaseCompanyErrorMessageList", releaseCompanyErrorMessageList);
 					session.put("imageFilePathErrorMessageList", imageFilePathErrorMessageList);
@@ -378,6 +384,14 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	}
 	public void setSession(Map<String,Object>session){
 		this.session = session;
+	}
+
+	public String getPriceError() {
+		return priceError;
+	}
+
+	public void setPriceError(String priceError) {
+		this.priceError = priceError;
 	}
 
 }
