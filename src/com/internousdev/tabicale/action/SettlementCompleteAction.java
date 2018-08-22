@@ -10,6 +10,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.tabicale.dao.CartInfoDAO;
 import com.internousdev.tabicale.dao.PurchaseHistoryInfoDAO;
 import com.internousdev.tabicale.dto.CartInfoDTO;
+import com.internousdev.tabicale.dto.DestinationInfoDTO;
 import com.internousdev.tabicale.dto.PurchaseHistoryInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -25,12 +26,12 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 		@SuppressWarnings("unchecked")
 		ArrayList<PurchaseHistoryInfoDTO> purchaseHistoryInfoDtoList =
 			(ArrayList<PurchaseHistoryInfoDTO>)session.get("purchaseHistoryInfoDtoList");
-		/*@SuppressWarnings("unchecked")
+		@SuppressWarnings("unchecked")
 		ArrayList<DestinationInfoDTO> destinationInfoDtoList =
 			(ArrayList<DestinationInfoDTO>)session.get("destinationInfoDtoList");
 		for(int i=0;i<purchaseHistoryInfoDtoList.size();i++) {
 			purchaseHistoryInfoDtoList.get(i).setDestinationId(destinationInfoDtoList.get(0).getId());
-		}*/
+		}
 
 		PurchaseHistoryInfoDAO purchaseHistoryInfoDAO = new PurchaseHistoryInfoDAO();
 		int count = 0;
