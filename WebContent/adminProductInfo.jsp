@@ -15,7 +15,7 @@
 	if (refinfo){
 
 	}else{
-		window.location.href="login.jsp";
+		window.location.href="home.jsp";
 }
 
 	function alertFunction(){
