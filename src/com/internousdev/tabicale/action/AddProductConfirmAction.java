@@ -63,7 +63,8 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	private List<String> releaseCompanyErrorMessageList = new ArrayList<String>();
 
 	private List<String> imageFilePathErrorMessageList = new ArrayList<String>();
-	private List<String> identicalErrorMessageList = new ArrayList<String>();
+	private List<String> identical_productNameErrorMessageList = new ArrayList<String>();
+	private List<String> identical_productNameKanaErrorMessageList = new ArrayList<String>();
 
 
 
@@ -81,7 +82,8 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 		releaseDateErrorMessageList = checkDate("発売年月", releaseDate);
 		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
-		identicalErrorMessageList = inputChecker.doIdenticalCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productName, productNameKana);
+		identical_productNameErrorMessageList = inputChecker.doIdentical_productNameCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productName);
+		identical_productNameKanaErrorMessageList = inputChecker.doIdentical_productNameKanaCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productNameKana);
 
 
 		//画像ファイルが選択されているか確認する
@@ -154,7 +156,8 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 				&& releaseDateErrorMessageList.size()==0
 				&& releaseCompanyErrorMessageList.size()==0
 				&& imageFilePathErrorMessageList.size()==0
-				&& identicalErrorMessageList.size()==0) {
+				&& identical_productNameErrorMessageList.size()==0
+				&& identical_productNameKanaErrorMessageList.size()==0) {
 
 					//選択した画像ファイル名をコンソールに表示する
 					System.out.println(userImageFileName);
@@ -211,7 +214,8 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 					session.put("releaseDateErrorMessageList", releaseDateErrorMessageList);
 					session.put("releaseCompanyErrorMessageList", releaseCompanyErrorMessageList);
 					session.put("imageFilePathErrorMessageList", imageFilePathErrorMessageList);
-					session.put("identicalErrorMessageList",identicalErrorMessageList);
+					session.put("identical_productNameErrorMessageList",identical_productNameErrorMessageList);
+					session.put("identical_productNameKanaErrorMessageList",identical_productNameKanaErrorMessageList);
 					result = ERROR;
 				}
 
@@ -225,10 +229,10 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 			errorList.add(propertyName + "を入力してください。");
 		}else{
 			try{
-				DateUtils.parseDateStrictly(value, new String[] { "yyyy-MM-dd"});
+				DateUtils.parseDateStrictly(value, new String[] { "yyyy-MM-dd","yyyy年MM月dd日"});
 			}catch(ParseException e){
 				e.printStackTrace();
-				errorList.add("yyyy-MM-dd で入力してください");
+				errorList.add("yyyy-MM-dd または yyyy年MM月dd日 で入力してください");
 			}
 		}
 		return errorList;
