@@ -48,5 +48,6 @@ body {
 
 #contents_home  h1{
 	width: 100%;
+	border-bottom: 1px solid black;
 
 }
