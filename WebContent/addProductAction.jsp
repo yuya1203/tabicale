@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="./css/addProductAction.css">
 <title>商品追加</title>
 
-<!-- URLの直打ち対策 -->
+<!-- URLの直打対策 -->
 <script language="JavaScript">
 	var refinfo=document.referrer;
 

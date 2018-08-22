@@ -12,7 +12,7 @@
 
 <title>商品追加確認画面</title>
 
-<!-- URLの直打ち対策 -->
+<!-- URLの直打対策 -->
 <script language="JavaScript">
 	var refinfo=document.referrer;
 

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="./css/tabicale.css">
 <title>管理者用商品一覧</title>
 
-<!-- URLの直打ち対策 -->
+<!-- URLの直打対策 -->
 <script language="JavaScript">
 	var refinfo=document.referrer;
 
