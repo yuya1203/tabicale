@@ -42,7 +42,7 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 				break;
 
 			default:
-				productInfoDtoList = productInfoDAO.getProductInfoListByKeywords(keywords.replaceAll("　"," ").replaceAll(" {2,}", "").split(" "), categoryId);
+				productInfoDtoList = productInfoDAO.getProductInfoListByKeywords(keywords.replaceAll("　"," ").replaceAll(" {2,}", "").split(" "),categoryId);
 				result = SUCCESS;
 				break;
 		}
