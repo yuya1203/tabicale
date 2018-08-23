@@ -43,10 +43,11 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 		productInfoDtoList = productInfoDAO.getProductInfoListByCategoryId(productInfoDTO.getCategoryId(), productInfoDTO.getProductId(), 0, 3);
 		Iterator<ProductInfoDTO> iterator = productInfoDtoList.iterator();
 		if(!(iterator.hasNext())) {
-			productCountList = null;
+			productInfoDtoList = null;
 		}
-		if(!productInfoDtoList.isEmpty() || productCountList==null) {
-			session.put("productInfoDtoList", productInfoDtoList);
+		session.put("productInfoDtoList", productInfoDtoList);
+
+		if(productInfoDtoList!=null) {
 			result = SUCCESS;
 		}
 
