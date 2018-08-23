@@ -86,11 +86,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		identical_productNameErrorMessageList = inputChecker.doIdentical_productNameCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productName);
 		identical_productNameKanaErrorMessageList = inputChecker.doIdentical_productNameKanaCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productNameKana);
 
-		if(price.length() <16){
-			setPriceError(null);
-		}else{
-			priceErrorMessageList.add("16桁以内でおなしゃす");
-		}
 
 		//画像ファイルが選択されているか確認する
 		if(userImage != null){
