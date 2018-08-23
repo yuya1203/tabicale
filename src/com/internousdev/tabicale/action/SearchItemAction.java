@@ -37,12 +37,12 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 		switch(categoryId){
 			case "1":
-				productInfoDtoList = productInfoDAO.getProductInfoListAll(keywords.replaceAll("　", " ").replaceAll(" {2,}", "").split(" "));
+				productInfoDtoList = productInfoDAO.getProductInfoListAll(keywords.replaceAll("　", " ").replaceAll(" {2,}", " ").trim().split(" "));
 				result = SUCCESS;
 				break;
 
 			default:
-				productInfoDtoList = productInfoDAO.getProductInfoListByKeywords(keywords.replaceAll("　"," ").replaceAll(" {2,}", "").split(" "),categoryId);
+				productInfoDtoList = productInfoDAO.getProductInfoListByKeywords(keywords.replaceAll("　"," ").replaceAll(" {2,}", " ").trim().split(" "),categoryId);
 				result = SUCCESS;
 				break;
 		}
