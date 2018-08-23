@@ -33,8 +33,8 @@ function lengthcheck(){
 	  var output = [];
 	  var result = true;
 
-	  if(files1[0].size+files2[0].size > 2000000){
-		  sumfile = (files1[0].size+files2[0].size)/1000000;
+	  if(files1[0].size+files2[0].size > 2097152){
+		  sumfile = (files1[0].size+files2[0].size)/1048576;
 		  value.innerHTML = "<div class='error'><div class='error-message'>画像の合計は2MB以下でお願いします。現在の合計ファイルサイズ["+sumfile+"MB]</div></div>";
 		  result = false
 	  }
