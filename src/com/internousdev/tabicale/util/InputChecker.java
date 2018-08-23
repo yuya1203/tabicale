@@ -200,10 +200,10 @@ public class InputChecker {
 				}
 
 				if(availableFullWidthSymbols){
-					regularExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～";
+					regularExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～ー、。　";
 					characterTypeList.add("全角記号");
 				}else{
-					errorExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～";
+					errorExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～ー、。　";
 				}
 
 				if(!StringUtils.isEmpty(regularExpression)){
