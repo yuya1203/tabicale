@@ -1,6 +1,6 @@
 var refinfo=document.referrer;
 /*許可するファイルのみ記載します*/
-var permission = new Array('dmin','ddProduct');
+var permission = new Array('dmin','ddProduct','LoginAction');
 var total = 0;
 console.log('refinfo:'+refinfo);
 if (refinfo){
