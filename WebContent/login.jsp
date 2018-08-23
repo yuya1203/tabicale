@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/form.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
 
 <title>ログイン</title>
 <script>
@@ -19,6 +20,14 @@ function goCreateUserAction(){
 function goResetPasswordAction(){
 	document.getElementById("form").action="ResetPasswordAction";
 }
+function reloadCheck(){
+	if (window.name != "xyz"){
+		alert("リロードしました");
+		location.reload();
+		window.name = "xyz";
+	}
+}
+
 </script>
 </head>
 <body>
@@ -28,7 +37,7 @@ function goResetPasswordAction(){
 <div id="contents_sub">
 <h1>ログイン画面</h1>
 <s:form id="form" action="LoginAction">
-
+<s:hidden name="settlementFlag" value="%{settlementFlag}"/>
 
 
 <!--

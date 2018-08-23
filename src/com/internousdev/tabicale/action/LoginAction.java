@@ -8,7 +8,6 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.tabicale.dao.CartInfoDAO;
 import com.internousdev.tabicale.dao.DestinationInfoDAO;
 import com.internousdev.tabicale.dao.MCategoryDAO;
 import com.internousdev.tabicale.dao.ProductInfoDAO;
@@ -25,6 +24,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private String categoryId;
 	private String loginId;
 	private String password;
+	private int settlementFlag;
 	private boolean savedLoginId;
 
 	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
@@ -95,11 +95,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				}
 
 				session.put("loginId", userInfoDTO.getUserId());
-				int count = 0;
-				CartInfoDAO cartInfoDao = new CartInfoDAO();
-
-				count = cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")), loginId);
-				if(count > 0){
+				if(settlementFlag==1){
 					DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 					try{
 						List<DestinationInfoDTO> destinationInfoDtoList =new ArrayList<DestinationInfoDTO>();
@@ -196,5 +192,13 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	public void setSession(Map<String, Object> session){
 		this.session = session;
+	}
+
+	public int getSettlementFlag() {
+		return settlementFlag;
+	}
+
+	public void setSettlementFlag(int settlementFlag) {
+		this.settlementFlag = settlementFlag;
 	}
 }

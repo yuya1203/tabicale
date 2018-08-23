@@ -32,6 +32,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	private String productCount;
 	private String subtotal;
 	private Map<String, Object> session;
+	private int settlementFlag = 1;
 
 	public String execute() {
 		String result = ERROR;
