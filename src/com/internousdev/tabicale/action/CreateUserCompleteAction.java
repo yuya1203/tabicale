@@ -22,7 +22,11 @@ public class CreateUserCompleteAction extends ActionSupport implements SessionAw
 	public String execute() {
 		String result = ERROR;
 		UserInfoDAO UserInfoDao = new UserInfoDAO();
-		int count = UserInfoDao.createUser(familyName,firstName,familyNameKana,firstNameKana,sex,email,loginId,password);
+		int count = 0;
+		if(sex == 0 && sex == 1){
+			count = UserInfoDao.createUser(familyName,firstName,familyNameKana,firstNameKana,sex,email,loginId,password);
+		}
+
 		if(count > 0) {
 			session.put("loginId",loginId);
 			session.put("logined", 1);
