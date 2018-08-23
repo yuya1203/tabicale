@@ -18,6 +18,8 @@ if (refinfo){
 	}else{
 	window.location.href="home.jsp";
 }
+
+history.replaceState('','','admin.jsp');
 </script>
 
 <style type="text/css">
