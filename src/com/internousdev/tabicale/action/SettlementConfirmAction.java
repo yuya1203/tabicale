@@ -202,4 +202,12 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
+	public int getSettlementFlag() {
+		return settlementFlag;
+	}
+
+	public void setSettlementFlag(int settlementFlag) {
+		this.settlementFlag = settlementFlag;
+	}
 }
