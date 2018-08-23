@@ -10,7 +10,15 @@
 <title>管理者画面</title>
 
 <!-- URLの直打対策 -->
-<script type="text/JavaScript" src="./js/transitionControl.js"></script>
+<script type="text/JavaScript">
+var refinfo=document.referrer;
+
+if (refinfo){
+
+	}else{
+	window.location.href="home.jsp";
+}
+</script>
 
 <style type="text/css">
 
