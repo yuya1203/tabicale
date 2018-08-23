@@ -12,10 +12,7 @@
 	function goDeleteCartAction() {
 		document.getElementById("form").action='DeleteCartAction';
 	}
-
-
 	history.forward();
-
 </script>
 </head>
 <body>
