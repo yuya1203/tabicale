@@ -95,6 +95,25 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		} else {
 			result = SUCCESS;
 		}
+
+		//ブラウザバックへの暫定的な対策
+
+//		String userId = null;
+//		CartInfoDAO cartInfoDao = new CartInfoDAO();
+//		List<CartInfoDTO> cartInfoDtoList = new ArrayList<CartInfoDTO>();
+//		if(session.containsKey("loginId")){
+//			userId = String.valueOf(session.get("loginId"));
+//				}
+//
+//				//ユーザーIDよりカート情報を全て取得します
+//				cartInfoDtoList = cartInfoDao.getCartInfoDtoList(userId);
+//
+//				//カートが空だったのか判断します
+//				Iterator<CartInfoDTO> iterator = cartInfoDtoList.iterator();
+//				if(!(iterator.hasNext())){
+//					result="cartnull";
+//				}
+
 		return result;
 	}
 
