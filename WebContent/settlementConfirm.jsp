@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/settlementConfirm.css">
 <title>決済確認</title>
+<script>
+history.forward();
+</script>
 </head>
 <body>
 <div id="page">
