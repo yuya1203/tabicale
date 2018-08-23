@@ -303,4 +303,53 @@ public class ProductInfoDAO {
 			return count+1;
 		}
 
+		//同じ商品名が存在してるか検索
+		public int identicalProductName(String productName){
+			DBConnector dbConnector = new DBConnector();
+			Connection connection = dbConnector.getConnection();
+			int count =0;
+			String sql = "select count(*) as count from product_info where product_name=?";
+
+			try{
+				PreparedStatement preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setString(1, productName);
+				ResultSet rs = preparedStatement.executeQuery();
+				if(rs.next()){
+					count = rs.getInt("count");
+				}
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			try{
+				connection.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			return count;
+		}
+
+		//同じ商品名かなが存在してるか検索
+		public int identicalProductNameKana(String productNameKana){
+			DBConnector dbConnector = new DBConnector();
+			Connection connection = dbConnector.getConnection();
+			int count =0;
+			String sql = "select count(*) as count from product_info where product_name_kana=?";
+
+			try{
+				PreparedStatement preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setString(1, productNameKana);
+				ResultSet rs = preparedStatement.executeQuery();
+				if(rs.next()){
+					count = rs.getInt("count");
+				}
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			try{
+				connection.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			return count;
+		}
 }

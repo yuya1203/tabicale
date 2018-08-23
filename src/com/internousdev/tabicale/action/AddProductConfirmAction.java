@@ -14,7 +14,6 @@ import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.ProductInfoDAO;
-import com.internousdev.tabicale.dto.ProductInfoDTO;
 import com.internousdev.tabicale.util.CommonUtility;
 import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
@@ -69,7 +68,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 
 
-	@SuppressWarnings("unchecked")
 	public String execute(){
 		String result = ERROR;
 		InputChecker inputChecker = new InputChecker();
@@ -83,9 +81,15 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 		releaseDateErrorMessageList = checkDate("発売年月", releaseDate);
 		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
-		identical_productNameErrorMessageList = inputChecker.doIdentical_productNameCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productName);
-		identical_productNameKanaErrorMessageList = inputChecker.doIdentical_productNameKanaCheck((List<ProductInfoDTO>) session.get("productInfoDtoList"), productNameKana);
 
+		//同一の商品名が存在してるか判断
+		ProductInfoDAO productInfoDao = new ProductInfoDAO();
+		if(productInfoDao.identicalProductName(productName) > 0){
+			identical_productNameErrorMessageList.add("同一の商品名が存在してます。");
+		}
+		if(productInfoDao.identicalProductNameKana(productNameKana) > 0){
+			identical_productNameKanaErrorMessageList.add("同一の商品名かなが存在してます。");
+		}
 
 		//画像ファイルが選択されているか確認する
 		if(userImage != null){
