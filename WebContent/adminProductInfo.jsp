@@ -10,7 +10,7 @@
 
 <!-- URLの直打対策 -->
 <script type="text/JavaScript" src="./js/transitionControl.js"></script>
-<script language="JavaScript">
+<script type="text/javascript">
 	function alertFunction(){
 
 		if(window.confirm('本当に削除しますか？')){ // 確認ダイアログを表示
