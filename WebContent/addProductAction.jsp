@@ -12,15 +12,7 @@
 <title>商品追加</title>
 
 <!-- URLの直打対策 -->
-<script language="JavaScript">
-	var refinfo=document.referrer;
-
-	if (refinfo){
-
-	}else{
-		window.location.href="home.jsp";
-}
-</script>
+<script type="text/JavaScript" src="./js/transitionControl.js"></script>
 
 <style type="text/css">
 </style>

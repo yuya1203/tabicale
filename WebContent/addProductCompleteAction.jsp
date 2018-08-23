@@ -14,15 +14,7 @@
 <title>商品追加完了画面</title>
 
 <!-- URLの直打対策 -->
-<script language="JavaScript">
-	var refinfo=document.referrer;
-
-	if (refinfo){
-
-	}else{
-		window.location.href="home.jsp";
-}
-</script>
+<script type="text/JavaScript" src="./js/transitionControl.js"></script>
 
 </head>
 <body>

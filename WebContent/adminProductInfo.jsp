@@ -9,15 +9,8 @@
 <title>管理者用商品一覧</title>
 
 <!-- URLの直打対策 -->
+<script type="text/JavaScript" src="./js/transitionControl.js"></script>
 <script language="JavaScript">
-	var refinfo=document.referrer;
-
-	if (refinfo){
-
-	}else{
-		window.location.href="home.jsp";
-}
-
 	function alertFunction(){
 
 		if(window.confirm('本当に削除しますか？')){ // 確認ダイアログを表示
