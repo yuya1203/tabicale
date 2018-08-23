@@ -140,10 +140,9 @@ public class InputChecker {
 				}
 
 				//入力欄が最小文字数以上、最大文字数以下かどうかを検証します
-				if(value.length() < minLength || value.length() > maxLength){
-					stringList.add("価格は1000万単位以内でお願いします");
+				if((value.length() < minLength || value.length() > maxLength)){
+					stringList.add("価格は1円以上1億円未満でお願いします");
 				}
-
 
 				///////////入力された文字のタイプから何を判別するか決めます//////////
 				String regularExpression = "";
