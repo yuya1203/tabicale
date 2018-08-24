@@ -75,14 +75,14 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		InputChecker inputChecker = new InputChecker();
 
 
-		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false);
-		productNameKanaErrorMessageList = inputChecker.doCheck("商品名かな", productNameKana, 1, 100, false, false, true, false, false, false, false);
-		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false);
-		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false);
+		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false, true);
+		productNameKanaErrorMessageList = inputChecker.doCheck("商品名かな", productNameKana, 1, 100, false, false, true, false, false, false, false, true);
+		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false, true);
+		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false, false);
 		priceErrorMessageList = inputChecker.doPriceCheck("価格", price, 0, 8, false, false, false, true, false, false, false);
 
 		releaseDateErrorMessageList = checkDate("発売年月", releaseDate);
-		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false);
+		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false, true);
 
 		//同一の商品名が存在してるか判断
 		ProductInfoDAO productInfoDao = new ProductInfoDAO();
