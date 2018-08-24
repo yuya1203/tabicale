@@ -94,7 +94,7 @@ public class InputChecker {
 					regularExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～、。　";
 					characterTypeList.add("全角記号");
 				}else{
-					errorExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～ー、。　";
+					errorExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～、。　";
 				}
 
 				if(stretchedBar){
