@@ -16,7 +16,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 	private int sex;
 	private List<String> sexList = new ArrayList<String>();
 	private String email;
-	private String loginId;
+	private String userId;
 	private String password;
 	private static final String MALE = "男性";
 	private static final String FEMALE = "女性";
@@ -48,7 +48,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 		sexList.add(FEMALE);
 		session.put("sexList", sexList);
 		session.put("email", email);
-		session.put("loginId", loginId);
+		session.put("userId", userId);
 		session.put("password", password);
 		result = SUCCESS;
 
@@ -105,11 +105,11 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getLoginId() {
-		return loginId;
+	public String getUserId() {
+		return userId;
 	}
-	public void setLoginId(String loginId) {
-		this.loginId = loginId;
+	public void setUserId(String UserId) {
+		this.userId = UserId;
 	}
 	public String getPassword() {
 		return password;

@@ -60,7 +60,7 @@
 </tr>
 <tr>
 	<th scope="row"><s:label value="ログインID:"/>
-	<td><s:property value="loginId"/>
+	<td><s:property value="userId"/>
 </tr>
 <tr>
 	<th scope="row"><s:label value="パスワード:"/>
@@ -73,7 +73,7 @@
 </div>
 </div>
 
-<s:hidden name="loginId" value="%{loginId}"/>
+<s:hidden name="userId" value="%{userId}"/>
 <s:hidden name="password" value="%{password}"/>
 <s:hidden name="familyName" value="%{familyName}"/>
 <s:hidden name="firstName" value="%{firstName}"/>

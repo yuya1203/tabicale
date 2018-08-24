@@ -18,7 +18,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 	private String firstNameKana;
 	private int sex;
 	private String email;
-	private String loginId;
+	private String userId;
 	private String password;
 
 	private List<String> familyNameErrorMessageList = new ArrayList<String>();
@@ -45,16 +45,16 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		session.put("firstNameKana", firstNameKana);
 		session.put("sex", sex);
 		session.put("email", email);
-		session.put("loginId", loginId);
+		session.put("userId", userId);
 
 		familyNameErrorMessageList = inputChecker.doCheck("姓", familyName, 1, 16, true, true, true, false, false, false, false);
 		firstNameErrorMessageList = inputChecker.doCheck("名", firstName, 1, 16, true, true, true, false, false, false, false);
 		familyNameKanaErrorMessageList = inputChecker.doCheck("姓ふりがな", familyNameKana, 1, 16, false, false, true, false, false, false, false);
 		firstNameKanaErrorMessageList = inputChecker.doCheck("名ふりがな", firstNameKana, 1, 16, false, false, true, false, false, false, false);
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 14, 32, true, false, false, true, true, false, false);
-		loginIdErrorMessageList = inputChecker.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false);
+		loginIdErrorMessageList = inputChecker.doCheck("ログインID", userId, 1, 8, true, false, false, true, false, false, false);
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false);
-		if(userInfoDao.duplicationCheck(loginId) > 0){
+		if(userInfoDao.duplicationCheck(userId) > 0){
 			duplicationErrorMessageList.add("同一のログインIDが存在してます。");
 		}
 
@@ -153,12 +153,12 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		this.email = email;
 	}
 
-	public String getLoginId() {
-		return loginId;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setLoginId(String loginId) {
-		this.loginId = loginId;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getPassword() {

@@ -175,7 +175,7 @@
 
 <tr>
 	<th scope="row">ログインID:</th>
-	<td><s:textfield name="loginId" value="%{#session.loginId}" label="ログインID" placeholder="ログインID" class="txt" /></td>
+	<td><s:textfield name="userId" value="%{#session.userId}" label="ログインID" placeholder="ログインID" class="txt" /></td>
 </tr>
 <tr>
 	<td colspan="2">

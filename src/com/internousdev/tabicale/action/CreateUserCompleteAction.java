@@ -15,7 +15,7 @@ public class CreateUserCompleteAction extends ActionSupport implements SessionAw
 	private String firstNameKana;
 	private int sex;
 	private String email;
-	private String loginId;
+	private String userId;
 	private String password;
 	private String categoryId;
 	private Map<String, Object> session;
@@ -24,11 +24,11 @@ public class CreateUserCompleteAction extends ActionSupport implements SessionAw
 		UserInfoDAO UserInfoDao = new UserInfoDAO();
 		int count = 0;
 		if(sex==0 || sex==1){
-			count = UserInfoDao.createUser(familyName,firstName,familyNameKana,firstNameKana,sex,email,loginId,password);
+			count = UserInfoDao.createUser(familyName,firstName,familyNameKana,firstNameKana,sex,email,userId,password);
 		}
 
 		if(count > 0) {
-			session.put("loginId",loginId);
+			session.put("loginId",userId);
 			session.put("logined", 1);
 			result = SUCCESS;
 		}
@@ -79,11 +79,11 @@ public class CreateUserCompleteAction extends ActionSupport implements SessionAw
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getLoginId() {
-		return loginId;
+	public String getUserId() {
+		return userId;
 	}
-	public void setLoginId(String loginId) {
-		this.loginId = loginId;
+	public void setUserId(String loginId) {
+		this.userId = loginId;
 	}
 	public String getPassword() {
 		return password;
