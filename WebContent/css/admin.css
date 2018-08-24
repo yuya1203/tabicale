@@ -7,11 +7,11 @@ h1{
 	border-bottom:3px double black;
 	color: black;
 }
-.contents-nav{
+.contents-nav1{
 	margin: 40px 0 40px 0;
 	text-align: center;
 }
-.contents-nav a{
+.contents-nav1 a{
 	color: white;
 	display: inline-block;
 	cursor: pointer;
@@ -22,12 +22,32 @@ h1{
 	background-color: orange;
 	 box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
 	text-align:center;
-	margin-left: 30px;
-	margin-bottom: 30px;
+	margin: 0 30px 30px 30px;
 	text-decoration: none;
-
+}
+.contents-nav2{
+	margin: 40px 0 40px 0;
+	text-align: center;
+}
+.contents-nav2 a{
+	color: white;
+	display: inline-block;
+	cursor: pointer;
+	padding: 50px 50px;
+	font-weight: bold;
+	border-radius: 10px;
+	font-size: 25px;
+	background-color: orange;
+	 box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+	text-align:center;
+	margin: 50px;
+	text-decoration: none;
 }
 
-.contents-nav a:hover{
+
+.contents-nav1 a:hover{
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+.contents-nav2 a:hover{
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
