@@ -31,10 +31,12 @@ history.replaceState('','','admin.jsp');
 <jsp:include page="adminHeader.jsp"/>
 <h1>管理者トップ</h1>
 
-<div class="contents-nav">
+<div class="contents-nav1">
 	<a href="<s:url action='AdminProductInfoAction'/>">商品情報一覧</a>
 	<a href="<s:url action='AdminUserInfoAction'/>">ユーザー情報一覧</a>
 	<a href="<s:url action='AdminDestinationInfoAction'/>">宛先情報一覧</a>
+</div>
+<div class="contents-nav2">
 	<a href="<s:url action='AdminPurchaseHistoryInfoAction'/>">購入履歴情報一覧</a>
 	<a href="<s:url action='AdminCartInfoAction'/>">カート情報一覧</a>
 </div>

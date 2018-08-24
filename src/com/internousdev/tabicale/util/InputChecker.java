@@ -19,7 +19,7 @@ public class InputChecker {
 	 * 結果はList形式で渡されることに気を付けてください。
 	 *
 	 */
-	public List<String> doCheck(String propertyName,String value,int minLength,int maxLength,boolean availableAlphabeticCharacters,boolean availableKanji,boolean availableHiragana,boolean availableHalfWidthDigit,boolean availableHalfWidthSymbols,boolean availableKatakana,boolean availableFullWidthSymbols){
+	public List<String> doCheck(String propertyName,String value,int minLength,int maxLength,boolean availableAlphabeticCharacters,boolean availableKanji,boolean availableHiragana,boolean availableHalfWidthDigit,boolean availableHalfWidthSymbols,boolean availableKatakana,boolean availableFullWidthSymbols,boolean stretchedBar){
 
 		//検証した結果を入れるList
 				List<String> stringList = new ArrayList<String>();
@@ -41,10 +41,10 @@ public class InputChecker {
 				String errorExpression = "";
 
 
-				if(availableAlphabeticCharacters || availableKanji || availableHiragana || availableHalfWidthDigit || availableHalfWidthSymbols||availableKatakana||availableFullWidthSymbols){
+				if(availableAlphabeticCharacters || availableKanji || availableHiragana || availableHalfWidthDigit || availableHalfWidthSymbols||availableKatakana||availableFullWidthSymbols||stretchedBar){
 					regularExpression = "[^";
 				}
-				if(!(availableAlphabeticCharacters) || !(availableKanji) || !(availableHiragana) || !(availableHalfWidthDigit) || !(availableHalfWidthSymbols)|| !(availableKatakana)|| !(availableFullWidthSymbols)){
+				if(!(availableAlphabeticCharacters) || !(availableKanji) || !(availableHiragana) || !(availableHalfWidthDigit) || !(availableHalfWidthSymbols)|| !(availableKatakana)|| !(availableFullWidthSymbols)|| !(stretchedBar)){
 					errorExpression = "[^";
 				}
 
@@ -91,12 +91,18 @@ public class InputChecker {
 				}
 
 				if(availableFullWidthSymbols){
-					regularExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～ー、。　";
+					regularExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～、。　";
 					characterTypeList.add("全角記号");
 				}else{
 					errorExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～ー、。　";
 				}
 
+				if(stretchedBar){
+					regularExpression +="ー";
+					characterTypeList.add("");
+				}else{
+					errorExpression +="ー";
+				}
 				if(!StringUtils.isEmpty(regularExpression)){
 					regularExpression +="]+";
 				}
