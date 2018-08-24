@@ -13,6 +13,7 @@ import com.internousdev.tabicale.dao.DestinationInfoDAO;
 import com.internousdev.tabicale.dao.MCategoryDAO;
 import com.internousdev.tabicale.dao.ProductInfoDAO;
 import com.internousdev.tabicale.dao.UserInfoDAO;
+import com.internousdev.tabicale.dto.CartInfoDTO;
 import com.internousdev.tabicale.dto.DestinationInfoDTO;
 import com.internousdev.tabicale.dto.MCategoryDTO;
 import com.internousdev.tabicale.dto.ProductInfoDTO;
@@ -39,6 +40,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		String result = ERROR;
+		String userId= null;
 
 		session.remove("loginIdErrorMessageList");
 		session.remove("passwordErrorMessageList");
@@ -55,15 +57,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		InputChecker inputChecker = new InputChecker();
 		loginIdErrorMessageList = inputChecker.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false);
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false);
-
-
-
-		/*if(loginIdErrorMessageList.size()!=0
-		&& passwordErrorMessageList.size()!=0){
-			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
-			session.put("passwordErrorMessageList", passwordErrorMessageList);
-			session.put("logined", 0);
-		}*/
 
 		if(loginIdErrorMessageList.size()!=0){
 			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
@@ -97,9 +90,25 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 				session.put("loginId", userInfoDTO.getUserId());
 				int count = 0;
+
+
 				CartInfoDAO cartInfoDao = new CartInfoDAO();
 
 				count = cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")), loginId);
+
+				List<CartInfoDTO> cartInfoDtoList = new ArrayList<CartInfoDTO>();
+				userId = loginId;
+				cartInfoDtoList = cartInfoDao.getCartInfoDtoList(userId);
+
+				Iterator<CartInfoDTO> iteratorCart = cartInfoDtoList.iterator();
+				if(!(iteratorCart.hasNext())){
+					cartInfoDtoList = null;
+				}
+				session.put("cartInfoDtoList", cartInfoDtoList);
+
+				int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(userId)));
+				session.put("totalPrice", totalPrice);
+
 				if(count > 0 && settlementFlag==1){
 					DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 					try{
@@ -110,6 +119,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 							destinationInfoDtoList = null;
 						}
 						session.put("destinationInfoDtoList", destinationInfoDtoList);
+
 					} catch(SQLException e){
 						e.printStackTrace();
 					}
