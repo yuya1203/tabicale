@@ -1,8 +1,6 @@
 package com.internousdev.tabicale.action;
 
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -13,8 +11,6 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.DestinationInfoDAO;
 import com.internousdev.tabicale.dto.DestinationInfoDTO;
-import com.internousdev.tabicale.dto.PurchaseHistoryInfoDTO;
-import com.internousdev.tabicale.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SettlementConfirmAction extends ActionSupport implements SessionAware {
@@ -50,50 +46,51 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}
+			//SettlementCompleteで一括処理に変更
+//		}
 
-		List<PurchaseHistoryInfoDTO> dtoList = new ArrayList<PurchaseHistoryInfoDTO>();
-
-		CommonUtility util = new CommonUtility();
-		String[] productIdList = util.parseArrayList(productId);
-		String[] productNameList = util.parseArrayList(productName);
-		String[] productNameKanaList = util.parseArrayList(productNameKana);
-		String[] imageFilePathList = util.parseArrayList(imageFilePath);
-		String[] imageFileNameList = util.parseArrayList(imageFileName);
-		String[] priceList = util.parseArrayList(price);
-		String[] releaseDateList = util.parseArrayList(releaseDate);
-		String[] releaseCompanyList = util.parseArrayList(releaseCompany);
-		String[] productCountList = util.parseArrayList(productCount);
-		String[] subtotalList = util.parseArrayList(subtotal);
-
-		for (int i = 0; i < productIdList.length; i++) {
-			PurchaseHistoryInfoDTO dto = new PurchaseHistoryInfoDTO();
-			dto.setUserId(String.valueOf(session.get("loginId")));
-			dto.setProductId(Integer.parseInt(String.valueOf(productIdList[i])));
-			dto.setProductName(String.valueOf(productNameList[i]));
-			dto.setProductNameKana(String.valueOf(productNameKanaList[i]));
-			dto.setImageFilePath(String.valueOf(imageFilePathList[i]));
-			dto.setImageFileName(String.valueOf(imageFileNameList[i]));
-			dto.setPrice(Integer.parseInt(String.valueOf(priceList[i])));
-			dto.setReleaseCompany(String.valueOf(releaseCompanyList[i]));
-			try {
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-				dto.setReleaseDate(sdf.parse(String.valueOf(releaseDateList[i])));
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-			dto.setProductCount(Integer.parseInt(String.valueOf(productCountList[i])));
-			dto.setSubtotal(Integer.parseInt(String.valueOf(subtotalList[i])));
-			dtoList.add(dto);
-		}
-		session.put("purchaseHistoryInfoDtoList", dtoList);
-
-		if (!session.containsKey("loginId")) {
-			session.put("loginIdErrorMessageList", "");
-			session.put("passwordErrorMessageList", "");
-			session.put("passwordIncorrectErrorMessageList", "");
-			result = ERROR;
-		} else {
+//		List<PurchaseHistoryInfoDTO> dtoList = new ArrayList<PurchaseHistoryInfoDTO>();
+//
+//		CommonUtility util = new CommonUtility();
+//		String[] productIdList = util.parseArrayList(productId);
+//		String[] productNameList = util.parseArrayList(productName);
+//		String[] productNameKanaList = util.parseArrayList(productNameKana);
+//		String[] imageFilePathList = util.parseArrayList(imageFilePath);
+//		String[] imageFileNameList = util.parseArrayList(imageFileName);
+//		String[] priceList = util.parseArrayList(price);
+//		String[] releaseDateList = util.parseArrayList(releaseDate);
+//		String[] releaseCompanyList = util.parseArrayList(releaseCompany);
+//		String[] productCountList = util.parseArrayList(productCount);
+//		String[] subtotalList = util.parseArrayList(subtotal);
+//
+//		for (int i = 0; i < productIdList.length; i++) {
+//			PurchaseHistoryInfoDTO dto = new PurchaseHistoryInfoDTO();
+//			dto.setUserId(String.valueOf(session.get("loginId")));
+//			dto.setProductId(Integer.parseInt(String.valueOf(productIdList[i])));
+//			dto.setProductName(String.valueOf(productNameList[i]));
+//			dto.setProductNameKana(String.valueOf(productNameKanaList[i]));
+//			dto.setImageFilePath(String.valueOf(imageFilePathList[i]));
+//			dto.setImageFileName(String.valueOf(imageFileNameList[i]));
+//			dto.setPrice(Integer.parseInt(String.valueOf(priceList[i])));
+//			dto.setReleaseCompany(String.valueOf(releaseCompanyList[i]));
+//			try {
+//				SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+//				dto.setReleaseDate(sdf.parse(String.valueOf(releaseDateList[i])));
+//			} catch (ParseException e) {
+//				e.printStackTrace();
+//			}
+//			dto.setProductCount(Integer.parseInt(String.valueOf(productCountList[i])));
+//			dto.setSubtotal(Integer.parseInt(String.valueOf(subtotalList[i])));
+//			dtoList.add(dto);
+//		}
+//		session.put("purchaseHistoryInfoDtoList", dtoList);
+//
+//		if (!session.containsKey("loginId")) {
+//			session.put("loginIdErrorMessageList", "");
+//			session.put("passwordErrorMessageList", "");
+//			session.put("passwordIncorrectErrorMessageList", "");
+//			result = ERROR;
+//		} else {
 			result = SUCCESS;
 		}
 		return result;
