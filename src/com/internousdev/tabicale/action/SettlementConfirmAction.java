@@ -33,6 +33,10 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	public String execute() {
 		String result = ERROR;
 
+		session.remove("loginIdErrorMessageList");
+		session.remove("passwordErrorMessageList");
+		session.remove("passwordIncorrectErrorMessageList");
+
 		if (session.containsKey("loginId")) {
 			DestinationInfoDAO dao = new DestinationInfoDAO();
 			List<DestinationInfoDTO> dtoList = new ArrayList<>();
@@ -46,8 +50,8 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			//SettlementCompleteで一括処理に変更
 //		}
+//		 SettlementCompleteで一括処理に変更
 
 //		List<PurchaseHistoryInfoDTO> dtoList = new ArrayList<PurchaseHistoryInfoDTO>();
 //
@@ -84,14 +88,12 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 //			dtoList.add(dto);
 //		}
 //		session.put("purchaseHistoryInfoDtoList", dtoList);
-//
-//		if (!session.containsKey("loginId")) {
-//			session.put("loginIdErrorMessageList", "");
-//			session.put("passwordErrorMessageList", "");
-//			session.put("passwordIncorrectErrorMessageList", "");
-//			result = ERROR;
-//		} else {
-			result = SUCCESS;
+
+			if (!session.containsKey("loginId")) {
+				result = ERROR;
+			} else {
+				result = SUCCESS;
+			}
 		}
 		return result;
 	}
