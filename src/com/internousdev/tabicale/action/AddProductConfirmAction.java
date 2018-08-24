@@ -13,7 +13,9 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.tabicale.dao.MCategoryDAO;
 import com.internousdev.tabicale.dao.ProductInfoDAO;
+import com.internousdev.tabicale.dto.MCategoryDTO;
 import com.internousdev.tabicale.util.CommonUtility;
 import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
@@ -151,6 +153,11 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 		session.put("releaseDate", releaseDate);
 		session.put("releaseCompany", releaseCompany);
+
+		MCategoryDAO mCategoryDAO = new MCategoryDAO();
+		MCategoryDTO mCategoryDTO = mCategoryDAO.getMCategory(categoryId);
+
+		session.put("categoryName", mCategoryDTO.getCategoryName());
 
 
 		if(productNameErrorMessageList.size()==0

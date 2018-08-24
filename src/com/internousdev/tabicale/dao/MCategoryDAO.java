@@ -47,4 +47,41 @@ public class MCategoryDAO {
 		}
 		return mCategoryDtoList;
 	}
-}
+
+	  public MCategoryDTO getMCategory(String categoryId){
+			DBConnector db = new DBConnector();
+			Connection con = db.getConnection();
+			MCategoryDTO MCategoryDTO = new MCategoryDTO();
+
+			/**
+			 * ユーザーIDとパスワードを元に
+			 * SELECT文を用いて
+			 * データをすべてDTOに格納する
+			 */
+
+			String sql = "SELECT * FROM m_category WHERE category_id = ? ";
+
+			try{
+				PreparedStatement ps = con.prepareStatement(sql);
+				ps.setString(1, categoryId);
+				ResultSet rs = ps.executeQuery();
+
+				while(rs.next()){
+					MCategoryDTO.setCategoryName(rs.getString("category_name"));
+					MCategoryDTO.setCategoryId(rs.getInt("category_id"));
+				}
+			}catch(SQLException e ){
+				e.printStackTrace();
+			}
+			try{
+				con.close();
+			}catch(SQLException e ){
+				e.printStackTrace();
+			}
+			return MCategoryDTO;
+		}
+
+
+		}
+
+
