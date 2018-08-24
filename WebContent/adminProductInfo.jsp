@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
-<title>管理者用商品一覧</title>
+<title>管理者商品情報一覧画面</title>
 
 <!-- URLの直打対策 -->
 <script type="text/JavaScript" src="./js/transitionControl.js"></script>
@@ -35,7 +35,7 @@
 <jsp:include page="adminHeader.jsp"/>
 
 <div id="contents">
-<h1>管理者用商品一覧</h1>
+<h1>商品情報一覧</h1>
 
 <s:if test="#session.productInfoDtoList.size()>0">
 

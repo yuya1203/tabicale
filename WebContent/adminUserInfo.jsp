@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/adminList.css">
-<title>管理者ユーザー情報画面</title>
+<title>管理者ユーザー情報一覧画面</title>
 
 <!-- URLの直打対策 -->
 <script type="text/JavaScript" src="./js/transitionControl.js"></script>
@@ -16,7 +16,7 @@
 <body>
 <div id="page">
 <jsp:include page="adminHeader.jsp" />
-<h1>ユーザー一覧</h1>
+<h1>ユーザー情報一覧</h1>
 <s:if test="#session.userInfoDtoList.size()>0">
 		<table border="1" class="admin_list">
 			<thead>

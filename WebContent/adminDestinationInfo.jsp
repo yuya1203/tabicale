@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
 <link rel="stylesheet" href="./css/adminList.css">
-<title>管理者宛先情報画面</title>
+<title>管理者宛先情報一覧画面</title>
 
 <!-- URLの直打対策 -->
 <script type="text/JavaScript" src="./js/transitionControl.js"></script>
