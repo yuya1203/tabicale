@@ -35,7 +35,7 @@
 </head>
 <body>
 
-<div id="home_menu">
+<div id="home_menu" style=z-index:1000;>
 <jsp:include page="header.jsp" />
 </div>
 
