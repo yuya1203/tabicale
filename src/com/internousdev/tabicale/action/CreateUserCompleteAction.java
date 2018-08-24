@@ -23,7 +23,7 @@ public class CreateUserCompleteAction extends ActionSupport implements SessionAw
 		String result = ERROR;
 		UserInfoDAO UserInfoDao = new UserInfoDAO();
 		int count = 0;
-		if(sex == 0 && sex == 1){
+		if(sex==0 || sex==1){
 			count = UserInfoDao.createUser(familyName,firstName,familyNameKana,firstNameKana,sex,email,loginId,password);
 		}
 
