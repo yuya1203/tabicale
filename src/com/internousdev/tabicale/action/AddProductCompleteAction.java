@@ -38,7 +38,7 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 			result = SUCCESS;
 
 			ProductInfoDAO productInfoDao = new ProductInfoDAO();
-			productInfoDtoList = productInfoDao.getProductInfoList();
+			productInfoDtoList = productInfoDao.getProductInfoListAll();
 			session.put("productInfoDtoList", productInfoDtoList);
 
 			session.remove("mCategoryDtoList");

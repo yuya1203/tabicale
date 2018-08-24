@@ -18,7 +18,7 @@ public class AdminProductInfoAction extends ActionSupport implements SessionAwar
 
 		//全カート情報を取得します
 		ProductInfoDAO productInfoDao = new ProductInfoDAO();
-		productInfoDtoList = productInfoDao.getProductInfoList();
+		productInfoDtoList = productInfoDao.getProductInfoListAll();
 
 		Iterator<ProductInfoDTO> iterator = productInfoDtoList.iterator();
 		if(!(iterator.hasNext())){
