@@ -352,4 +352,44 @@ public class ProductInfoDAO {
 			}
 			return count;
 		}
+
+		//商品情報を全て取り出します(status関係なし)
+		public List<ProductInfoDTO> getProductInfoListAll(){
+			DBConnector dbConnector=new DBConnector();
+			Connection connection=dbConnector.getConnection();
+			List<ProductInfoDTO> productInfoDtoList=new ArrayList<ProductInfoDTO>();
+			String sql="select * from product_info";
+
+			try{
+				PreparedStatement preparedStatement=connection.prepareStatement(sql);
+				ResultSet resultSet=preparedStatement.executeQuery();
+				while(resultSet.next()){
+					ProductInfoDTO productInfoDto=new ProductInfoDTO();
+					productInfoDto.setId(resultSet.getInt("id"));
+					productInfoDto.setProductId(resultSet.getInt("product_id"));
+					productInfoDto.setProductName(resultSet.getString("product_name"));
+					productInfoDto.setProductNameKana(resultSet.getString("product_name_kana"));
+					productInfoDto.setProductDescription(resultSet.getString("product_description"));
+					productInfoDto.setCategoryId(resultSet.getInt("category_id"));
+					productInfoDto.setPrice(resultSet.getInt("price"));
+					productInfoDto.setImageFilePath(resultSet.getString("image_file_path"));
+					productInfoDto.setImageFileName(resultSet.getString("image_file_name"));
+					productInfoDto.setImageFileName2(resultSet.getString("image_file_name_2"));
+					productInfoDto.setReleaseDate(resultSet.getDate("release_date"));
+					productInfoDto.setReleaseCompany(resultSet.getString("release_company"));
+					productInfoDto.setStatus(resultSet.getInt("status"));
+					productInfoDto.setUpdateDate(resultSet.getDate("regist_date"));
+					productInfoDto.setUpdateDate(resultSet.getDate("update_date"));
+					productInfoDtoList.add(productInfoDto);
+				}
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			try{
+				connection.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			return productInfoDtoList;
+		}
 }

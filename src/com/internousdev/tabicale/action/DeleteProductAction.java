@@ -24,7 +24,7 @@ public String execute(){
 	int count = dao.delete(productId);
 	count += cartInfoDao.deleteByProductId(String.valueOf(productId));
 	if(count > 0){
-		productInfoDtoList = dao.getProductInfoList();
+		productInfoDtoList = dao.getProductInfoListAll();
 		session.put("productInfoDtoList", productInfoDtoList);
 		result = SUCCESS;
 	}
