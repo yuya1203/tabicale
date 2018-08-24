@@ -25,10 +25,6 @@
 		<s:form action="AddProductCompleteAction">
 			<table class="addList-confirm">
 				<tr class="border">
-					<th class="border">商品ID</th>
-					<td><s:property value="%{#session.productId}"/></td>
-				</tr>
-				<tr class="border">
 					<th class="border">商品名</th>
 					<td><s:property value="productName"/></td>
 				</tr>
@@ -42,7 +38,7 @@
 				</tr>
 				<tr class="border">
 					<th class="border">カテゴリ名</th>
-					<td><s:property value="categoryId"/></td>
+					<td><s:property value="#session.categoryName"/></td>
 				</tr>
 				<tr class="border">
 					<th class="border">価格</th>
