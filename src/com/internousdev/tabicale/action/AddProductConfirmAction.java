@@ -75,7 +75,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		InputChecker inputChecker = new InputChecker();
 
 
-		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false, true);
+		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, false, true, false, true);
 		productNameKanaErrorMessageList = inputChecker.doCheck("商品名かな", productNameKana, 1, 100, false, false, true, false, false, false, false, true);
 		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false, true);
 		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false, false);
