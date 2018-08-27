@@ -68,6 +68,10 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 	private List<String> identical_productNameErrorMessageList = new ArrayList<String>();
 	private List<String> identical_productNameKanaErrorMessageList = new ArrayList<String>();
 
+	private List<String> imageFileNameErrorMessageList1 = new ArrayList<String>();
+	private List<String> imageFileNameErrorMessageList2 = new ArrayList<String>();
+
+
 
 
 	public String execute(){
@@ -75,11 +79,15 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		InputChecker inputChecker = new InputChecker();
 
 
-		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, false, true, false, true);
+		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false, true);
 		productNameKanaErrorMessageList = inputChecker.doCheck("商品名かな", productNameKana, 1, 100, false, false, true, false, false, false, false, true);
 		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false, true);
 		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false, false);
 		priceErrorMessageList = inputChecker.doPriceCheck("価格", price, 0, 8, false, false, false, true, false, false, false);
+		imageFileNameErrorMessageList1 = inputChecker.doCheck("ファイル名", userImageFileName, 1, 50, true, true, true, true, true, true, true, true);
+		imageFileNameErrorMessageList2 = inputChecker.doCheck("ファイル名", userImage2FileName, 1, 50, true, true, true, true, true, true, true, true);
+
+		System.out.println("ファイル名:"+userImageFileName);
 
 		releaseDateErrorMessageList = checkDate("発売年月", releaseDate);
 		releaseCompanyErrorMessageList = inputChecker.doCheck("発売会社",releaseCompany, 1, 50, true, true, true, true, true, true, false, true);
@@ -169,7 +177,9 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 				&& releaseCompanyErrorMessageList.size()==0
 				&& imageFilePathErrorMessageList.size()==0
 				&& identical_productNameErrorMessageList.size()==0
-				&& identical_productNameKanaErrorMessageList.size()==0) {
+				&& identical_productNameKanaErrorMessageList.size()==0
+				&& imageFileNameErrorMessageList1.size()==0
+				&& imageFileNameErrorMessageList2.size()==0){
 
 					//選択した画像ファイル名をコンソールに表示する
 					System.out.println(userImageFileName);
@@ -226,6 +236,8 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 					session.put("releaseDateErrorMessageList", releaseDateErrorMessageList);
 					session.put("releaseCompanyErrorMessageList", releaseCompanyErrorMessageList);
 					session.put("imageFilePathErrorMessageList", imageFilePathErrorMessageList);
+					session.put("imageFileNameErrorMessageList1", imageFileNameErrorMessageList1);
+					session.put("imageFileNameErrorMessageList2", imageFileNameErrorMessageList2);
 					session.put("identical_productNameErrorMessageList",identical_productNameErrorMessageList);
 					session.put("identical_productNameKanaErrorMessageList",identical_productNameKanaErrorMessageList);
 					result = ERROR;
