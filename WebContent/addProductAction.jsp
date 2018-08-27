@@ -191,8 +191,27 @@ function lengthcheck(){
 							<td class="image"><s:file name="userImage" id="userImage" accept='image/jpg, image/jpeg' /></td>
 						</tr>
 						<tr>
-						<th colspan="2"></th>
+
+						<tr>
+							<th colspan="2">
+								<s:if test="!session.imageFilePathErrorMessageList1.isEmpty()">
+									<div class="error">
+									<div class="error-message">
+										<s:iterator value="#session.imageFilePathErrorMessageList1"><s:property /><br></s:iterator>
+									</div>
+									</div>
+								</s:if>
+								<s:if test="!session.imageFileNameErrorMessageList1.isEmpty()">
+									<div class="error">
+									<div class="error-message">
+										<s:iterator value="#session.imageFileNameErrorMessageList1"><s:property /><br></s:iterator>
+									</div>
+									</div>
+								</s:if>
+							</th>
 						</tr>
+
+						<th colspan="2"></th>
 						<tr>
 							<th scope="row" id="input_form"><s:label value="商品画像2" /></th>
 							<td class="image"><s:file name="userImage2" id="userImage2" accept='image/jpg, image/jpeg' /></td>
@@ -204,6 +223,13 @@ function lengthcheck(){
 									<div class="error">
 									<div class="error-message">
 										<s:iterator value="#session.imageFilePathErrorMessageList"><s:property /><br></s:iterator>
+									</div>
+									</div>
+								</s:if>
+								<s:if test="!session.imageFileNameErrorMessageList2.isEmpty()">
+									<div class="error">
+									<div class="error-message">
+										<s:iterator value="#session.imageFileNameErrorMessageList2"><s:property /><br></s:iterator>
 									</div>
 									</div>
 								</s:if>
