@@ -7,6 +7,24 @@
 
 	<display-name>tabicale</display-name>
 
+	<security-constraint>
+    <web-resource-collection>
+      <web-resource-name>admin</web-resource-name>
+      <url-pattern>/admin.jsp/*</url-pattern>
+      <url-pattern>/addProductAction.jsp.jsp/*</url-pattern>
+      <url-pattern>/addProductCompleteActio.jsp/*</url-pattern>
+      <url-pattern>/addProductConfirm.jsp/*</url-pattern>
+      <url-pattern>/adminCartInfo.jsp.jsp/*</url-pattern>
+      <url-pattern>/adminDestinationInfo.jsp.jsp/*</url-pattern>
+      <url-pattern>/adminProductInfo.jsp/*</url-pattern>
+      <url-pattern>/adminPurchaseHistory.jsp/*</url-pattern>
+      <url-pattern>/adminUserInfo.jsp/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+    </auth-constraint>
+  	</security-constraint>
+
+
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
@@ -21,6 +39,11 @@
 
 	<error-page>
 		<error-code>404</error-code>
+		<location>/error.html</location>
+	</error-page>
+
+	<error-page>
+		<error-code>403</error-code>
 		<location>/error.html</location>
 	</error-page>
 
