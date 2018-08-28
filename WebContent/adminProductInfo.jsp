@@ -58,10 +58,10 @@
 <td><s:form action="DeleteProductAction">
 <s:if test='status==0'>
 <s:hidden name="productId" value="%{productId}"/>
-<input type ="submit" class="submit_btn" value="削除" onclick="return alertFunction()"  />
+<input type ="submit" class="submit_btn" value="非表示にする" onclick="return alertFunction()"  />
 </s:if>
 <s:else>
-<p style="text-align:center">削除済</p>
+<p style="text-align:center">非表示</p>
 </s:else>
 </s:form></td>
 <s:if test='status==0'>
