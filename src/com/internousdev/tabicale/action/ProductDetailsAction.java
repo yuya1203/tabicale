@@ -47,7 +47,8 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 		}
 		session.put("productInfoDtoList", productInfoDtoList);
 
-		if(productInfoDtoList!=null) {
+
+		if(productInfoDTO.getProductId() == productId) {
 			result = SUCCESS;
 		}
 
