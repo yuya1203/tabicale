@@ -41,7 +41,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
                 	<a href='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' data-lightbox="sample" data-title="かれんだー">
                 		<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class= "image_main2"/>
                 	</a>
-                <br></div>
+               </div>
             </div>
             <div class="right">
 
@@ -101,6 +101,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
 
      <div class="box2">
      <div class="product-details-recomment-box">
+     <s:if test="#session.productInfoDtoList.size()!=0">
      <s:iterator value="#session.productInfoDtoList">
 
            <div class="recommend-box">
@@ -115,6 +116,10 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
 
 
      </s:iterator>
+     </s:if>
+     <s:else>
+     <div class="recommend-box">関連商品はありません</div>
+     </s:else>
 
      </div>
      </div>
