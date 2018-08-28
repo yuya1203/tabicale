@@ -1,7 +1,5 @@
 package com.internousdev.tabicale.action;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -15,7 +13,6 @@ import com.internousdev.tabicale.dao.PurchaseHistoryInfoDAO;
 import com.internousdev.tabicale.dto.CartInfoDTO;
 import com.internousdev.tabicale.dto.DestinationInfoDTO;
 import com.internousdev.tabicale.dto.PurchaseHistoryInfoDTO;
-import com.internousdev.tabicale.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SettlementCompleteAction extends ActionSupport implements SessionAware {
@@ -37,43 +34,6 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 	public String execute() {
 		String result = ERROR;
-
-		List<PurchaseHistoryInfoDTO> dtoList = new ArrayList<PurchaseHistoryInfoDTO>();
-
-		CommonUtility util = new CommonUtility();
-		String[] productIdList = util.parseArrayList(productId);
-		String[] productNameList = util.parseArrayList(productName);
-		String[] productNameKanaList = util.parseArrayList(productNameKana);
-		String[] imageFilePathList = util.parseArrayList(imageFilePath);
-		String[] imageFileNameList = util.parseArrayList(imageFileName);
-		String[] priceList = util.parseArrayList(price);
-		String[] releaseDateList = util.parseArrayList(releaseDate);
-		String[] releaseCompanyList = util.parseArrayList(releaseCompany);
-		String[] productCountList = util.parseArrayList(productCount);
-		String[] subtotalList = util.parseArrayList(subtotal);
-
-		for (int i = 0; i < productIdList.length; i++) {
-			PurchaseHistoryInfoDTO dto = new PurchaseHistoryInfoDTO();
-			dto.setUserId(String.valueOf(session.get("loginId")));
-			dto.setProductId(Integer.parseInt(String.valueOf(productIdList[i])));
-			dto.setProductName(String.valueOf(productNameList[i]));
-			dto.setProductNameKana(String.valueOf(productNameKanaList[i]));
-			dto.setImageFilePath(String.valueOf(imageFilePathList[i]));
-			dto.setImageFileName(String.valueOf(imageFileNameList[i]));
-			dto.setPrice(Integer.parseInt(String.valueOf(priceList[i])));
-			dto.setReleaseCompany(String.valueOf(releaseCompanyList[i]));
-			try {
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-				dto.setReleaseDate(sdf.parse(String.valueOf(releaseDateList[i])));
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-			dto.setProductCount(Integer.parseInt(String.valueOf(productCountList[i])));
-			dto.setSubtotal(Integer.parseInt(String.valueOf(subtotalList[i])));
-			dtoList.add(dto);
-		}
-		session.put("purchaseHistoryInfoDtoList", dtoList);
-
 
 		@SuppressWarnings("unchecked")
 		ArrayList<PurchaseHistoryInfoDTO> purchaseHistoryInfoDtoList =
