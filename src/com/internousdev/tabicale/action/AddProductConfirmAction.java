@@ -260,10 +260,10 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 			errorList.add(propertyName + "を入力してください。");
 		}else{
 			try{
-				DateUtils.parseDateStrictly(value, new String[] { "yyyy-MM-dd","yyyy年MM月dd日"});
+				DateUtils.parseDateStrictly(value, new String[] { "yyyy-MM-dd"});
 			}catch(ParseException e){
 				e.printStackTrace();
-				errorList.add("yyyy-MM-dd または yyyy年MM月dd日 で入力してください");
+				errorList.add("yyyy-MM-ddで入力してください");
 			}
 		}
 		return errorList;
