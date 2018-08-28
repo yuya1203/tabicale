@@ -76,10 +76,16 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 	public String execute(){
 		String result = ERROR;
+
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
 		InputChecker inputChecker = new InputChecker();
 
 
-		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, true, true, false, true);
+		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, false, true, false, true);
 		productNameKanaErrorMessageList = inputChecker.doCheck("商品名かな", productNameKana, 1, 100, false, false, true, false, false, false, false, true);
 		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false, true);
 		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false, false);
@@ -254,10 +260,10 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 			errorList.add(propertyName + "を入力してください。");
 		}else{
 			try{
-				DateUtils.parseDateStrictly(value, new String[] { "yyyy-MM-dd","yyyy年MM月dd日"});
+				DateUtils.parseDateStrictly(value, new String[] { "yyyy-MM-dd"});
 			}catch(ParseException e){
 				e.printStackTrace();
-				errorList.add("yyyy-MM-dd または yyyy年MM月dd日 で入力してください");
+				errorList.add("yyyy-MM-ddで入力してください");
 			}
 		}
 		return errorList;

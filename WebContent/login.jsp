@@ -130,18 +130,6 @@
 							onclick="goLoginAction();" />
 					</div>
 				</div>
-				<s:iterator value="#session.cartInfoDtoList">
-					<s:hidden name="productId" value="%{productId}" />
-					<s:hidden name="productName" value="%{productName}" />
-					<s:hidden name="productNameKana" value="%{productNameKana}" />
-					<s:hidden name="imageFilePath" value="%{imageFilePath}" />
-					<s:hidden name="imageFileName" value="%{imageFileName}" />
-					<s:hidden name="price" value="%{price}" />
-					<s:hidden name="releaseCompany" value="%{releaseCompany}" />
-					<s:hidden name="releaseDate" value="%{releaseDate}" />
-					<s:hidden name="productCount" value="%{productCount}" />
-					<s:hidden name="subtotal" value="%{subtotal}" />
-				</s:iterator>
 			</s:form>
 			<br>
 			<div class="submit_btn_box">

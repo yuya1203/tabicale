@@ -16,6 +16,12 @@ public class AdminPurchaseHistoryInfoAction extends ActionSupport implements Ses
 	public String execute(){
 
 
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
+
 		//全カート情報を取得します
 		PurchaseHistoryInfoDAO purchaseHistoryInfoDao = new PurchaseHistoryInfoDAO();
 		purchaseHistoryInfoDtoList = purchaseHistoryInfoDao.getPurchaseHistoryInfoDtoListByAdmin();

@@ -36,6 +36,11 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		String userId = null;
 		String tempUserId = null;
 
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
 		//ログインせず、仮ユーザーIDも発行されていない場合に仮ユーザIDを発行します
 		if(!(session.containsKey("loginId")) && !(session.containsKey("tempUserId"))){
 			CommonUtility commonUtility = new CommonUtility();

@@ -23,6 +23,10 @@ public class LogoutAction extends ActionSupport implements SessionAware{
 			session.put("saveId", loginId);
 			result = SUCCESS;
 		}
+
+		//管理者ログインフラグ
+		session.put("adminFlag","0");
+
 		return result;
 	}
 
