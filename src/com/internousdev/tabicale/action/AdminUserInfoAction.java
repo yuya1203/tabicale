@@ -16,6 +16,11 @@ public class AdminUserInfoAction extends ActionSupport implements SessionAware{
 	public String execute(){
 
 
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
 		//全カート情報を取得します
 		UserInfoDAO userInfoDao = new UserInfoDAO();
 		userInfoDtoList = userInfoDao.getUserInfoDtoListByAdmin();

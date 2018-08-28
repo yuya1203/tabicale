@@ -76,6 +76,12 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 	public String execute(){
 		String result = ERROR;
+
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
 		InputChecker inputChecker = new InputChecker();
 
 

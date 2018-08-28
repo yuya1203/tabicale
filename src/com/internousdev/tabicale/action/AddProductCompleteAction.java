@@ -32,6 +32,12 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 
 	public String execute(){
 		String result = ERROR;
+
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 		int count = productInfoDAO.createProduct(productId,productName,productNameKana,productDescription,categoryId,price,imageFilePath,imageFileName,imageFileName2,releaseDate,releaseCompany);
 		if(count > 0){

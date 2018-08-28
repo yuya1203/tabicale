@@ -38,6 +38,11 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 	public String execute(){
 		String result = ERROR;
 
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
 		session.remove("productIdErrorMessageList");
 		session.remove("productNameErrorMessageList");
 		session.remove("productNameKanaErrorMessageList");

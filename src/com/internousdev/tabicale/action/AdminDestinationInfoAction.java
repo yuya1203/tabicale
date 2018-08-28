@@ -17,6 +17,11 @@ public class AdminDestinationInfoAction extends ActionSupport implements Session
 	private List<DestinationInfoDTO> destinationInfoDtoList = new ArrayList<DestinationInfoDTO>();
 	public String execute() {
 
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
 		//全宛先情報を取得します
 		DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 		destinationInfoDtoList = destinationInfoDao.getDestinationInfoDtoListByAdmin();

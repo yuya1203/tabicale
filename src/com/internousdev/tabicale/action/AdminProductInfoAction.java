@@ -16,6 +16,11 @@ public class AdminProductInfoAction extends ActionSupport implements SessionAwar
 	public String execute(){
 
 
+		//管理者ログインフラグの判定
+		if(!(session.get("adminFlag").equals("1"))){
+			return ERROR;
+		}
+
 		//全カート情報を取得します
 		ProductInfoDAO productInfoDao = new ProductInfoDAO();
 		productInfoDtoList = productInfoDao.getProductInfoListAll();

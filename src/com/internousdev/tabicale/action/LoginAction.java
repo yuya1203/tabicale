@@ -85,7 +85,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 					productInfoDtoList = productInfoDao.getProductInfoList();
 					session.put("productInfoDtoList", productInfoDtoList);
 					session.put("logined", 0);
-					session.put("adminFlag", 1);
+					session.put("adminFlag", "1");
 					return "admin";
 				}
 
