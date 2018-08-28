@@ -45,6 +45,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		session.remove("loginIdErrorMessageList");
 		session.remove("passwordErrorMessageList");
 		session.remove("passwordIncorrectErrorMessageList");
+		session.remove("checkListErrorMessageList");
 
 		if(savedLoginId==true) {
 			session.put("savedLoginId", true);
