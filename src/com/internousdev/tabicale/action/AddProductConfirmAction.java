@@ -85,9 +85,9 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		InputChecker inputChecker = new InputChecker();
 
 
-		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 50, true, true, true, true, false, true, false, true);
-		productNameKanaErrorMessageList = inputChecker.doCheck("商品名かな", productNameKana, 1, 50, false, false, true, false, false, false, false, true);
-		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 250, true, true, true, true, true, true, false, true);
+		productNameErrorMessageList = inputChecker.doCheck("商品名", productName,1, 100, true, true, true, true, false, true, false, true);
+		productNameKanaErrorMessageList = inputChecker.doCheck("商品名かな", productNameKana, 1, 100, false, false, true, false, false, false, false, true);
+		productDescriptionErrorMessageList = inputChecker.doCheck("商品詳細",productDescription, 1, 100, true, true, true, true, true, true, false, true);
 		categoryIdErrorMessageList = inputChecker.doCheck("カテゴリID", categoryId, 1, 8, false, false, false, true, false, false, false, false);
 		priceErrorMessageList = inputChecker.doPriceCheck("価格", price, 0, 8, false, false, false, true, false, false, false);
 
@@ -106,7 +106,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 		//画像ファイルが選択されているか確認する
 		if(userImage != null){
 			imageFilePathError = null;
-			imageFileNameErrorMessageList1 = inputChecker.doCheck("ファイル名", userImageFileName, 1, 50, true, true, true, true, true, true, true, true);
+			imageFileNameErrorMessageList1 = inputChecker.doCheck("ファイル名", userImageFileName, 1, 30, true, true, true, true, true, true, true, true);
 			System.out.println("ファイル名:"+userImageFileName);
 		}else{
 			imageFilePathErrorMessageList.add("画像ファイルを選んでください");
@@ -130,7 +130,7 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 
 		if(userImage2 !=null){
 			imageFilePathError = null;
-			imageFileNameErrorMessageList2 = inputChecker.doCheck("ファイル名", userImage2FileName, 1, 50, true, true, true, true, true, true, true, true);
+			imageFileNameErrorMessageList2 = inputChecker.doCheck("ファイル名", userImage2FileName, 1, 30, true, true, true, true, true, true, true, true);
 			System.out.println("ファイル名2:"+userImage2FileName);
 
 		}else{
