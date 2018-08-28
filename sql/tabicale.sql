@@ -57,8 +57,8 @@ insert into user_info values
 create table product_info(
 id int primary key not  null auto_increment comment "ID",
 product_id int unique not null comment "商品ID",
-product_name varchar(100) unique not null comment "商品名",
-product_name_kana varchar(100) unique not null comment "商品名かな",
+product_name varchar(50) unique not null comment "商品名",
+product_name_kana varchar(50) unique not null comment "商品名かな",
 product_description varchar(255) not null comment "商品詳細",
 category_id int not null comment "カテゴリID",
 price int comment "価格",
