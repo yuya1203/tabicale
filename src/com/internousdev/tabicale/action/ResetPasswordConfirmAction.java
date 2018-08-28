@@ -36,6 +36,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 		session.remove("reConfirmationNewPasswordErrorMessageList");
 		session.remove("newPasswordIncorrectErrorMessageList");
         session.remove("adminPasswordErrorMessageList");
+		session.remove("concealedPassword");
 
 		InputChecker inputChecker = new InputChecker();
 

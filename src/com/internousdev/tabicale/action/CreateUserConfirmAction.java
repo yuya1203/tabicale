@@ -46,6 +46,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		session.put("sex", sex);
 		session.put("email", email);
 		session.put("userId", userId);
+		session.remove("concealedPassword");
 
 		familyNameErrorMessageList = inputChecker.doCheck("姓", familyName, 1, 16, true, true, true, false, false, false, false, true);
 		firstNameErrorMessageList = inputChecker.doCheck("名", firstName, 1, 16, true, true, true, false, false, false, false, true);
@@ -66,6 +67,8 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		&& loginIdErrorMessageList.size()==0
 		&& passwordErrorMessageList.size()==0
 		&& duplicationErrorMessageList.size()==0) {
+			String concealedPassword = userInfoDao.concealPassword(password);
+			session.put("concealedPassword", concealedPassword);
 			result = SUCCESS;
 		}else {
 			session.put("familyNameErrorMessageList", familyNameErrorMessageList);

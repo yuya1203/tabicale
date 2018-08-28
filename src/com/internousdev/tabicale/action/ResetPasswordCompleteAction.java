@@ -19,6 +19,7 @@ public class ResetPasswordCompleteAction extends ActionSupport implements Sessio
 		int count = userInfoDAO.resetPassword(String.valueOf(session.get("userId")), String.valueOf(session.get("newPassword")));
 		if (count > 0) {
 			result = SUCCESS;
+			session.remove("concealedPassword");
 		} else {
 			result = ERROR;
 		}

@@ -30,6 +30,7 @@ public class CreateUserCompleteAction extends ActionSupport implements SessionAw
 		if(count > 0) {
 			session.put("loginId",userId);
 			session.put("logined", 1);
+			session.remove("concealedPassword");
 			result = SUCCESS;
 		}
 		return result;

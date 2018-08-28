@@ -64,7 +64,7 @@
 </tr>
 <tr>
 	<th scope="row"><s:label value="パスワード:"/>
-	<td><s:property value="password"/>
+	<td><s:property value="#session.concealedPassword"/>
 </tr>
 </table>
 <div class="submit_btn_box">
