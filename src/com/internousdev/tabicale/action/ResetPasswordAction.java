@@ -17,6 +17,7 @@ public class ResetPasswordAction extends ActionSupport implements SessionAware{
 		session.remove("newPasswordErrorMessageList");
 		session.remove("reConfirmationNewPasswordErrorMessageList");
 		session.remove("userId");
+		session.remove("adminPasswordErrorMessageList");
 		result=SUCCESS;
 		return result;
 	}

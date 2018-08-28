@@ -39,6 +39,19 @@
 		</td>
 		</tr>
 	</s:if>
+			<s:if test="!#session.adminPasswordErrorMessageList.isEmpty()">
+	<tr>
+	<td colspan="2">
+	<div class="error">
+	<div class="error-message">
+		<s:iterator value="#session.adminPasswordErrorMessageList"><s:property />
+		<br></s:iterator>
+		</div>
+		</div>
+		</td>
+		</tr>
+	</s:if>
+
 		<tr>
 			<th scope="row"><s:label value="現在のパスワード"/></th>
 			<td><s:password name="password" placeholder="現在のパスワード" class="txt" /></td>

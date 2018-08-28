@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.tabicale.dao.UserInfoDAO;
+import com.internousdev.tabicale.dto.UserInfoDTO;
 import com.internousdev.tabicale.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -23,7 +24,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 	private List<String> newPasswordErrorMessageList = new ArrayList<String>();
 	private List<String> reConfirmationNewPasswordErrorMessageList = new ArrayList<String>();
 	private List<String> newPasswordIncorrectErrorMessageList = new ArrayList<String>();
-
+    private List<String> adminPasswordErrorMessageList = new ArrayList<String>();
 	private Map<String, Object> session;
 
 	public String execute() {
@@ -34,6 +35,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 		session.remove("newPasswordErrorMessageList");
 		session.remove("reConfirmationNewPasswordErrorMessageList");
 		session.remove("newPasswordIncorrectErrorMessageList");
+        session.remove("adminPasswordErrorMessageList");
 
 		InputChecker inputChecker = new InputChecker();
 
@@ -51,12 +53,20 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 
 			UserInfoDAO userInfoDAO = new UserInfoDAO();
 			if(userInfoDAO.isExistsUserInfo(loginId, password)) {
+				UserInfoDTO userInfoDTO = userInfoDAO.getUserInfo(loginId, password);
+				if(userInfoDTO.getStatus().equals("1")){
+					adminPasswordErrorMessageList.add("管理者ユーザーのパスワードは変更できません");
+					session.put("adminPasswordErrorMessageList", adminPasswordErrorMessageList);
+
+				}else{
+
 				String concealedPassword = userInfoDAO.concealPassword(newPassword);
 				session.put("userId", loginId);
 				session.put("newPassword", newPassword);
 				session.put("concealedPassword", concealedPassword);
 				session.remove("passwordIncorrectErrorMessageList");
 				result = SUCCESS;
+				}
 			} else {
 				passwordIncorrectErrorMessageList.add("入力されたパスワードが異なります。");
 				session.put("passwordIncorrectErrorMessageList", passwordIncorrectErrorMessageList);
