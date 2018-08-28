@@ -24,7 +24,7 @@
 			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" value='%{#session.saveId}' autocomplete="off"/></td>
 			</s:if>
 			<s:else>
-			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" autocomplete="off"/></td>
+			<td><s:textfield name="loginId" class="txt" value="" placeholder="ログインID" autocomplete="off"/></td>
 			</s:else>
 		</tr>
 			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
@@ -54,7 +54,7 @@
 
 		<tr>
 			<th scope="row"><s:label value="現在のパスワード"/></th>
-			<td><s:password name="password" placeholder="現在のパスワード" class="txt" /></td>
+			<td><s:password name="password" value="" placeholder="現在のパスワード" class="txt" /></td>
 		</tr>
 <s:if test="!#session.passwordErrorMessageList.isEmpty()">
 	<tr>
@@ -82,7 +82,7 @@
 	</s:if>
 		<tr>
 			<th scope="row"><s:label value="新しいパスワード"/></th>
-			<td><s:password name="newPassword" placeholder="新しいパスワード" class="txt" /></td>
+			<td><s:password name="newPassword" value="" placeholder="新しいパスワード" class="txt" /></td>
 		</tr>
 		<tr>
 			<s:if test="!#session.newPasswordErrorMessageList.isEmpty()">
@@ -98,7 +98,7 @@
 		</tr>
 	</s:if>
 			<th scope="row"><s:label value="（再確認用）"/></th>
-			<td><s:password name="reConfirmationPassword" placeholder="新しいパスワード（再確認用）" class="txt" /></td>
+			<td><s:password name="reConfirmationPassword" value="" placeholder="新しいパスワード（再確認用）" class="txt" /></td>
 		</tr>
 		<s:if test="!#session.reConfirmationNewPasswordErrorMessageList.isEmpty()">
 	<tr>

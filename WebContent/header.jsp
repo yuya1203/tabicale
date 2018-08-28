@@ -63,7 +63,7 @@ class="cs-div" id="categoryId"/>
 </li>
 </s:if>
 <li>
-<s:textfield name="keywords" class="txt-keywords" placeholder="検索ワード"/>
+<s:textfield name="keywords" class="txt-keywords" value="" placeholder="検索ワード"/>
 </li>
 <li>
 <s:submit value="商品検索" class="submit_btn"

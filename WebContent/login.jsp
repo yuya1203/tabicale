@@ -55,7 +55,7 @@
 						</s:if>
 						<s:else>
 							<td><s:textfield name="loginId" class="txt"
-									placeholder="ログインID" autocomplete="off" /></td>
+									value="" placeholder="ログインID" autocomplete="off" /></td>
 						</s:else>
 					</tr>
 
@@ -77,7 +77,7 @@
 					<tr>
 						<th scope="row"><s:label value="パスワード:" /></th>
 						<td><s:password name="password" class="txt"
-								placeholder="パスワード" autocomplete="off" /></td>
+								value="" placeholder="パスワード" autocomplete="off" /></td>
 					</tr>
 
 					<s:if test="!#session.passwordErrorMessageList.isEmpty()">

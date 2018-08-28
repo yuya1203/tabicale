@@ -27,7 +27,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="姓" /></th>
-		<td><s:textfield name="familyName" class="txt" placeholder="姓" />
+		<td><s:textfield name="familyName" class="txt" value="" placeholder="姓" />
 		</td>
 </tr>
 
@@ -47,7 +47,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="名"/></th>
-		<td><s:textfield name="firstName" class="txt" placeholder="名" />
+		<td><s:textfield name="firstName" class="txt" value="" placeholder="名" />
 		</td>
 </tr>
 
@@ -67,7 +67,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="姓かな"/></th>
-		<td><s:textfield name="familyNameKana" class="txt" placeholder="姓かな"/>
+		<td><s:textfield name="familyNameKana" class="txt" value="" placeholder="姓かな"/>
 		</td>
 </tr>
 
@@ -86,7 +86,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="名かな"/></th>
-		<td><s:textfield name="firstNameKana" class="txt" placeholder="名かな"/>
+		<td><s:textfield name="firstNameKana" class="txt"value="" placeholder="名かな"/>
 		</td>
 </tr>
 
@@ -114,7 +114,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="住所"/></th>
-		<td><s:textfield name="userAddress" class="txt" placeholder="住所"/>
+		<td><s:textfield name="userAddress" class="txt"value="" placeholder="住所"/>
 		</td>
 </tr>
 
@@ -133,7 +133,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="電話番号"/></th>
-		<td><s:textfield name="telNumber" class="txt" placeholder="電話番号"/>
+		<td><s:textfield name="telNumber" class="txt"value="" placeholder="電話番号"/>
 		</td>
 </tr>
 
@@ -152,7 +152,7 @@
 
 <tr>
 	<th scope="row" id="input_form"><s:label value="メールアドレス"/></th>
-		<td><s:textfield name="email" class="txt" placeholder="メールアドレス"/>
+		<td><s:textfield name="email" class="txt" value="" placeholder="メールアドレス"/>
 		</td>
 </tr>
 
