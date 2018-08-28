@@ -180,6 +180,7 @@
 		<result name="invalid.token">addProductCompleteAction.jsp</result>
 		<result name="success">addProductCompleteAction.jsp</result>
 		<result name="error">addProductConfirmAction.jsp</result>
+		<result name="noadmin">home.jsp</result>
 	</action>
 	<action name="DeleteProductAction" class="com.internousdev.tabicale.action.DeleteProductAction" method="execute">
 		<result name="success">adminProductInfo.jsp</result>

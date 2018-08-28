@@ -35,7 +35,7 @@ public class AddProductCompleteAction extends ActionSupport implements SessionAw
 
 		//管理者ログインフラグの判定
 		if(!(session.get("adminFlag").equals("1"))){
-			return ERROR;
+			return "noadmin";
 		}
 
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
