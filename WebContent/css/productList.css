@@ -35,8 +35,13 @@
 	height:auto;
 }
 .product-list-tag{
+	margin:auto;
 	padding-top:11px;
 	font-family:Meiryo UI;
+	width:260px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .pageNo{
 	padding:5px;
