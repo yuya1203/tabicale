@@ -48,11 +48,11 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
                 <table style="table-layout: fixed;" class="vertical-list-table">
                      <tr>
                            <th scope= "row"><s:label value="商品名"/></th>
-                           <td><s:property value="%{#session.productName}"/></td>
+                           <td><div class="productdetails"><s:property value="%{#session.productName}"/></div></td>
                      </tr>
                      <tr>
                           <th scope="row"><s:label value="商品名かな"/></th>
-                          <td><s:property value="%{#session.productNameKana}"/></td>
+                          <td><div class="productdetails"><s:property value="%{#session.productNameKana}"/></div></td>
                      </tr>
                      <tr>
                           <th scope="row"><s:label value= "値段"/></th>
@@ -64,7 +64,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
                      </tr>
                      <tr>
                           <th scope= "row"><s:label value= "発売会社名"/></th>
-                          <td><s:property value= "%{#session.releaseCompany}"/></td>
+                          <td><div class="productdetails"><s:property value= "%{#session.releaseCompany}"/></div></td>
                      </tr>
                      <tr>
                           <th scope="row"><s:label value="発売年月日"/></th>
@@ -72,7 +72,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
                      </tr>
                      <tr>
                           <th scope="row"><s:label value="商品詳細"/></th>
-                          <td><div id="details"><s:property value="%{#session.productDescription}"/></div></td>
+                          <td><div class="productdetails"><s:property value="%{#session.productDescription}"/></div></td>
                      </tr>
 
                  </table>

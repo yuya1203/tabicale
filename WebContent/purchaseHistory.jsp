@@ -17,7 +17,7 @@
 <div id="contents">
 <h1>商品購入履歴画面</h1>
 <s:if test="#session.purchaseHistoryInfoDtoList.size()>0">
-<table class="horizontal-list-table">
+<table style="table-layout: fixed;" class="horizontal-list-table">
 	<thead>
 		<tr>
 			<th><s:label value="商品名"/></th>
@@ -31,12 +31,12 @@
 	<tbody>
 <s:iterator value="#session.purchaseHistoryInfoDtoList">
 	<tr>
-		<td><s:property value="productName"/></td>
-		<td><s:property value="productNameKana"/></td>
+		<td><div class="historydetails"><s:property value="productName"/></div></td>
+		<td><div class="historydetails"><s:property value="productNameKana"/></div></td>
 		<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' class="image"/></td>
 		<td><s:property value="productCount"/>個</td>
 		<td><s:property value="price*productCount"/>円</td>
-		<td><s:property value="releaseCompany"/></td>
+		<td><div class="historydetails"><s:property value="releaseCompany"/></div></td>
 		<td><s:property value="releaseDate"/></td>
 	</tr>
 </s:iterator>

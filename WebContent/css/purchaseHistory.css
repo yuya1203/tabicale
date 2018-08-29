@@ -30,3 +30,7 @@ table.horizontal-list-table td {
 
 }
 
+.historydetails{
+	max-width:108px;
+	word-wrap: break-word;
+}

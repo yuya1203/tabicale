@@ -20,7 +20,7 @@
 			<s:if test="#session.destinationInfoDtoList != null">
 				<div class="info">送り先情報を選択してください。</div>
 				<s:form id="form" action="SettlementCompleteAction">
-					<table border="1">
+					<table style="table-layout: fixed;">
 						<thead>
 							<tr>
 								<th class="radio"><s:label value="#" /></th>

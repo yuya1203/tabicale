@@ -30,7 +30,7 @@
 
 <s:if test="#session.cartInfoDtoList.size()>0">
 	<s:form id="form" action="SettlementConfirmAction">
-		<table class="horizontal-list-table" border="1">
+		<table style="table-layout: fixed;" class="horizontal-list-table" border="1">
 			<thead>
 				<tr>
 					<th><s:label value="#"/></th>
@@ -49,11 +49,11 @@
 					<tr>
 						<td><s:checkbox name="checkList" value="checked" fieldValue="%{productId}"/></td>
 						<s:hidden name="productId" value="%{productId}"/>
-						<td><s:property value="productName"/></td>
-						<td><s:property value="productNameKana"/></td>
+						<td><div class="cartdetails"><s:property value="productName"/></div></td>
+						<td><div class="cartdetails"><s:property value="productNameKana"/></div></td>
 						<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' width="100%" height="140px" /></td>
 						<td><s:property value="price"/>円</td>
-						<td><s:property value="releaseCompany"/></td>
+						<td><div class="cartdetails"><s:property value="releaseCompany"/></div></td>
 						<td><s:property value="releaseDate"/></td>
 						<td><s:property value="productCount"/></td>
 						<td><s:property value="subtotal"/>円</td>
