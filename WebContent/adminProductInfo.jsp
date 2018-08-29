@@ -42,7 +42,7 @@
 <table style="table-layout: fixed;" class="horizontal-list-table" border="1">
 <thead>
 <tr>
-<th style="width:180px;"><s:label value="削除"/></th>
+<th style="width:180px;"><s:label value="非表示化"/></th>
 <th><s:label value="商品名"/></th>
 <th><s:label value="ふりがな"/></th>
 <th><s:label value="商品画像"/></th>
