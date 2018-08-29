@@ -62,9 +62,12 @@ table.vertical-list-table th {
 	color:#ffffff;
 }
 
-
-
-
+.box2{
+	height:auto;
+	width:1080px;
+	padding-top:50px;
+	text-align:center;
+}
 
  .submit_btn_box{
 	padding-top:60px;
@@ -73,20 +76,29 @@ table.vertical-list-table th {
 }
 
 .recommend-box{
-	float : left;
-	width : 33.3%;
+	display: inline-block;
+	width : 30%;
 	text-align:center;
 }
 
-.product-details-recomment-box{
-	height:330px;
-	width:1080px;
-	padding-top:50px;
 
-}
 .item-image-box-100{
-	width:45%;
+	width:170px;
 }
 
+.no-item{
+	font-size:20px;
+	text-align: center;
+	width:300px;
+	margin:auto;
+	background-color: skyblue;
+	padding-top:5px;
+	padding-bottom:5px;
+}
 
-
+.sub{
+	margin-top:20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

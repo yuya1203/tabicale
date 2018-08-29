@@ -100,7 +100,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
      </s:form></div>
 
      <div class="box2">
-     <div class="product-details-recomment-box">
+<!--      <div class="product-details-recomment-box"> -->
      <s:if test="#session.productInfoDtoList.size()!=0">
      <s:iterator value="#session.productInfoDtoList">
 
@@ -110,18 +110,18 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
            <s:param name="productId" value="%{productId}"/>
            </s:url>'><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' class="item-image-box-100"/></a>
            </div>
-
-<p class="sub">  <s:property value="productName"/></p>
+           <div class="sub">
+           <s:property value="productName"/></div>
            </div>
 
 
      </s:iterator>
      </s:if>
      <s:else>
-     <div class="recommend-box">関連商品はありません</div>
+     <div class="no-item">関連商品はありません</div>
      </s:else>
 
-     </div>
+<!--      </div> -->
      </div>
 
 </div>
