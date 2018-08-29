@@ -109,7 +109,6 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 				priceErrorMessageList.add("金額は1円以上に設定してください");
 				session.put("priceErrorMessageList", priceErrorMessageList);
 				System.out.println(session.get("priceErrorMessageList"));
-				result = ERROR;
 			}
 		}
 
