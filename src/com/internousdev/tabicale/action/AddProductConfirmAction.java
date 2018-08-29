@@ -103,6 +103,16 @@ public class AddProductConfirmAction extends ActionSupport implements SessionAwa
 			identical_productNameKanaErrorMessageList.add("同一の商品名かなが存在してます。");
 		}
 
+		//0円以下で登録できないようにする。
+		if(priceErrorMessageList.isEmpty()){
+			if(Integer.parseInt(price) <= 0){
+				priceErrorMessageList.add("金額は1円以上に設定してください");
+				session.put("priceErrorMessageList", priceErrorMessageList);
+				System.out.println(session.get("priceErrorMessageList"));
+				result = ERROR;
+			}
+		}
+
 		//画像ファイルが選択されているか確認する
 		if(userImage != null){
 			imageFilePathError = null;
