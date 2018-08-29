@@ -58,6 +58,9 @@ public class AddProductAction extends ActionSupport implements SessionAware{
 		session.remove("identical_productNameErrorMessageList");
 		session.remove("identical_productNameKanaErrorMessageList");
 
+		session.remove("imageFileNameErrorMessageList1");
+		session.remove("imageFileNameErrorMessageList2");
+
 
 		//入力された値を保存する
 		session.put("productId", productId);
