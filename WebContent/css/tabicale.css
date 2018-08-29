@@ -232,3 +232,13 @@ s.radio {
 	width: 20%;
 	height: 20px;
 }
+
+.details{
+	max-width:140px;
+	word-wrap: break-word;
+
+}
+
+#delete_btn{
+	text-align: center;
+}

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="./css/tabicale.css">
 <title>管理者商品情報一覧画面</title>
 
@@ -39,10 +39,10 @@
 
 <s:if test="#session.productInfoDtoList.size()>0">
 
-<table class="horizontal-list-table" border="1">
+<table style="table-layout: fixed;" class="horizontal-list-table" border="1">
 <thead>
 <tr>
-<th><s:label value="削除"/></th>
+<th style="width:180px;"><s:label value="削除"/></th>
 <th><s:label value="商品名"/></th>
 <th><s:label value="ふりがな"/></th>
 <th><s:label value="商品画像"/></th>
@@ -55,7 +55,7 @@
 <tbody>
 <s:iterator value="#session.productInfoDtoList">
 <tr>
-<td><s:form action="DeleteProductAction">
+<td id="delete_btn"><s:form action="DeleteProductAction">
 <s:if test='status==0'>
 <s:hidden name="productId" value="%{productId}"/>
 <input type ="submit" class="submit_btn" value="非表示にする" onclick="return alertFunction()"  />
@@ -65,21 +65,21 @@
 </s:else>
 </s:form></td>
 <s:if test='status==0'>
-<td><s:property value="productName"/></td>
-<td><s:property value="productNameKana"/></td>
+<td class="details"><s:property value="productName"/></td>
+<td class="details"><s:property value="productNameKana"/></td>
 <td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>'width="80px" height="80px"/></td>
 <td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName2"/>'width="80px" height="80px"/></td>
 <td><s:property value="price"/>円</td>
-<td><s:property value="releaseCompany"/></td>
+<td class="details"><s:property value="releaseCompany"/></td>
 <td><s:property value="releaseDate"/></td>
 </s:if>
 <s:else>
-<td bgcolor="pink"><s:property value="productName"/></td>
-<td bgcolor="pink"><s:property value="productNameKana"/></td>
+<td class="details" bgcolor="pink"><s:property value="productName"/></td>
+<td class="details" bgcolor="pink"><s:property value="productNameKana"/></td>
 <td bgcolor="pink"><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>'width="80px" height="80px"/></td>
 <td bgcolor="pink"><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName2"/>'width="80px" height="80px"/></td>
 <td bgcolor="pink"><s:property value="price"/>円</td>
-<td bgcolor="pink"><s:property value="releaseCompany"/></td>
+<td class="details" bgcolor="pink"><s:property value="releaseCompany"/></td>
 <td bgcolor="pink"><s:property value="releaseDate"/></td>
 </s:else>
 </tr>

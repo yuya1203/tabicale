@@ -45,7 +45,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
             </div>
             <div class="right">
 
-                <table class="vertical-list-table">
+                <table style="table-layout: fixed;" class="vertical-list-table">
                      <tr>
                            <th scope= "row"><s:label value="商品名"/></th>
                            <td><s:property value="%{#session.productName}"/></td>
@@ -72,7 +72,7 @@ document.getElementById("ex_out").addEventListener("mouseout", function(){
                      </tr>
                      <tr>
                           <th scope="row"><s:label value="商品詳細"/></th>
-                          <td><s:property value="%{#session.productDescription}"/></td>
+                          <td><div id="details"><s:property value="%{#session.productDescription}"/></div></td>
                      </tr>
 
                  </table>

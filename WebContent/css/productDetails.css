@@ -62,6 +62,15 @@ table.vertical-list-table th {
 	color:#ffffff;
 }
 
+table.vertical-list-table td {
+	max-width:280px
+}
+
+#details{
+	max-width:270px;
+	word-wrap: break-word;
+}
+
 .box2{
 	height:auto;
 	width:1080px;
