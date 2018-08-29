@@ -133,7 +133,7 @@
 	<action name="SettlementCompleteAction" class="com.internousdev.tabicale.action.SettlementCompleteAction" method="execute">
 		<interceptor-ref name="token"></interceptor-ref>
 		<interceptor-ref name="defaultStack"></interceptor-ref>
-		<result name="invalid.token">settlementComplete.jsp</result>
+		<result name="invalid.token">error.html</result>
 		<result name="success">settlementComplete.jsp</result>
 		<result name="error">settlementConfirm.jsp</result>
 	</action>
