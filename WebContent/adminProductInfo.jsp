@@ -13,7 +13,7 @@
 <script type="text/javascript">
 	function alertFunction(){
 
-		if(window.confirm('本当に削除しますか？')){ // 確認ダイアログを表示
+		if(window.confirm('本当に非表示にしますか？')){ // 確認ダイアログを表示
 
 			return true; // 「OK」時は送信を実行
 
