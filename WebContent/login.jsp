@@ -55,7 +55,7 @@
 						</s:if>
 						<s:else>
 							<td><s:textfield name="loginId" class="txt"
-									value="" placeholder="ログインID" autocomplete="off" /></td>
+									placeholder="ログインID" autocomplete="off" /></td>
 						</s:else>
 					</tr>
 

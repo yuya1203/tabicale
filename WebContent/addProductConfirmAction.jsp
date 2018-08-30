@@ -64,11 +64,11 @@
 			</table>
 			<div class="image-box">
 				<div class="image-inner-box">
-					<div class="left-image">
+					<div class="image-file">
 						<p class="image-p">商品画像 表</p><br>
 						<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class=" image">
 					</div>
-					<div class="right-image">
+					<div class="image-file">
 						<p class="image-p">商品画像 中</p><br>
 						<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class=" image">
 					</div>

@@ -24,7 +24,7 @@
 			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" value='%{#session.saveId}' autocomplete="off"/></td>
 			</s:if>
 			<s:else>
-			<td><s:textfield name="loginId" class="txt" value="" placeholder="ログインID" autocomplete="off"/></td>
+			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" autocomplete="off"/></td>
 			</s:else>
 		</tr>
 			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
