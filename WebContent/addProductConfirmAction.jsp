@@ -62,13 +62,17 @@
 					<td class="border-none"><img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class="right-image image"></td>
 				<tr>
 			</table>
-			<div class="left-image">
-				<p>商品画像 表</p><br>
-				<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class=" image">
-			</div>
-			<div class="right-image">
-				<p>商品画像 中</p><br>
-				<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class=" image">
+			<div class="image-box">
+				<div class="image-inner-box">
+					<div class="left-image">
+						<p class="image-p">商品画像 表</p><br>
+						<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName}"/>' class=" image">
+					</div>
+					<div class="right-image">
+						<p class="image-p">商品画像 中</p><br>
+						<img src='<s:property value="%{#session.imageFilePath}"/>/<s:property value="%{#session.imageFileName2}"/>' class=" image">
+					</div>
+				</div>
 			</div>
 		<s:hidden name="productId" value="%{#session.productId}"/>
 		<s:hidden name="productName" value="%{#session.productName}"/>

@@ -33,29 +33,26 @@ body{
 .no-image{
 	display: none;
 }
-.left-image{
-	float: left;
-	margin-left: 15%;
+.image-box{
+	width: 1000px;
+	text-align: center;
+	margin: 0 18.4%;
 }
-.left-image p{
-	margin-left: 25%;
-	margin-right: 27%;
-	background-color: orange;
-	padding: 20px 50px 20px 50px;
-	border:1px solid #333;
-	font-weight: bold;
-
+.image-inner-box{
+	text-align: center;
+}
+.left-image{
+	display:inline-block;
+	margin-right: 100px;
 }
 .right-image{
-	float: right;
-	margin-right: 15%;
-	background-color: ;
+	display:inline-block;
 }
-.right-image p{
-	margin-left: 25%;
-	margin-right: 27%;
+.image-p{
+	text-align: center;
 	background-color: orange;
 	padding: 20px 50px 20px 50px;
+	margin:0 20%;
 	border:1px solid #333;
 	font-weight: bold;
 }
@@ -74,7 +71,7 @@ body{
 }
 .submit-button{
 	position: relative;
-	left: 44%;
+	left: 43.5%;
 	width:200px;
 	height:50px;
 	padding:10px;
