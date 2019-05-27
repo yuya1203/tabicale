@@ -28,6 +28,7 @@ public class GoLoginAction extends ActionSupport implements SessionAware{
 		return SUCCESS;
 	}
 
+	
 	public String getCategoryId(){
 		return categoryId;
 	}
